@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo.png";
 import ListMenu from "../Home/ListMenu";
 import MainTuyenDung from "./MainTuyenDung";
 import ItemTuyenDung from "./ItemTuyenDung";
+import BannerTD from "./BannerTD";
 
 const TuyenDungComponent = () => {
   return (
@@ -24,6 +25,7 @@ const TuyenDungComponent = () => {
       <div className="max-w-[1240px] mx-auto  pt-10 md:pt-20 px-4">
         <MainTuyenDung />
         <ItemTuyenDung />
+     
       </div>
     </div>
   );
