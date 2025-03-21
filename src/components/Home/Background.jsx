@@ -18,7 +18,7 @@ const Background = () => {
       </div>
 
       {/* Gradient Overlay (chỉ 10% chiều cao) */}
-      <div className="absolute bottom-0 left-0 w-full h-[35%] ">
+      <div className="absolute bottom-0 left-0 w-full h-[80%] md:h-[35%] ">
         <div className="h-full w-full bg-gradient-to-t from-[#09303D] via-[#09303de0] to-transparent z-0"></div>
       </div>
 

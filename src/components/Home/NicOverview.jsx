@@ -2,7 +2,7 @@ import React from "react";
 
 const NicOverview = () => {
   return (
-    <div className="py-5 md:py-10 px-2 mt-20  lg:px-0 ">
+    <div className="relative z-50 py-5 md:py-10 px-2 mt-20  lg:px-0 ">
       <span className="text-[42px] lg:text-[80px] font-utm-avo-bold  bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
         NEWLINK
       </span>

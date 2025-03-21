@@ -90,7 +90,7 @@ const ImageSlider = () => {
         </h2>
         <div className="py-2 bg-[linear-gradient(to_right,#09303D_0%,#09303D_20%,#0C5E77_50%,#09303D_80%,#09303D_100%)] text-center">
           <p className="font-bold text-[16px] md:text-[24px] bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">{activeProjectName.name}</p>
-          <p className="font-utm-avo text-[12px] md:font-[16px]">{activeProjectName.desc}</p>
+          <p className="font-medium text-[12px] md:font-[16px]">{activeProjectName.desc}</p>
         </div>
       </div>
       <Swiper
