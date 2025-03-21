@@ -1,11 +1,13 @@
 import BanLanhDao from "@/components/Ban-Lanh-Dao/BanLanhDao";
 import Footer from "@/components/Footer";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
   return (
     <div>
-      <BanLanhDao />
+      <Suspense fallback={<div>Loading...</div>}>
+        <BanLanhDao />
+      </Suspense>
       <Footer />
     </div>
   );
