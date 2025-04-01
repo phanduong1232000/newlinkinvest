@@ -1,23 +1,32 @@
+"use client";
 import Footer from "@/components/Footer";
 import Background from "@/components/Home/Background";
 import Directors from "@/components/Home/Directors";
 import Partner from "@/components/Home/Partner";
 import ProjectNic from "@/components/Home/ProjectNic";
 import ItemProject from "@/components/Home/ItemProject";
-
-import { FiPhone } from "react-icons/fi";
+import { useRef } from "react";
 
 export default function Home() {
+  const itemProjectRef = useRef(null);
+
+  const scrollToItemProject = () => {
+    itemProjectRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div>
-      <Background />
+      <h1 className="hidden">
+        New Link - New Link - New Link - New Link - New Link
+      </h1>
+      <Background onExploreClick={scrollToItemProject} />
       <ProjectNic />
-      <ItemProject />
+      <div ref={itemProjectRef}>
+        <ItemProject />
+      </div>
       <Directors />
       <Partner />
       <Footer />
-
-      
     </div>
   );
 }

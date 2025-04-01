@@ -3,7 +3,7 @@ import banner from "../../assets/images/bannerTD.png";
 import Image from "next/image";
 const BannerTD = () => {
   return (
-    <div className="md:py-10 py-20">
+    <div className="md:py-20 py-10">
       <div className=" w-full  flex flex-col md:flex-row justify-center items-center bg-gradient-to-r from-[#0C6985] via-[#09303d] to-transparent">
         <Image
           src={banner}

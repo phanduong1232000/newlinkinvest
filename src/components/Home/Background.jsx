@@ -5,7 +5,7 @@ import ListMenu from "./ListMenu";
 import NicOverview from "./NicOverview";
 import MenuSightsee from "./MenuSightsee";
 
-const Background = () => {
+const Background = ({ onExploreClick }) => {
   return (
     <div className="relative h-screen md:h-[1050px]">
       {/* Background Image */}
@@ -34,9 +34,9 @@ const Background = () => {
           </div>
           <ListMenu />
         </div>
-   
+
         <NicOverview />
-        <MenuSightsee />
+        <MenuSightsee onExploreClick={onExploreClick} />
       </div>
     </div>
   );

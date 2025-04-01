@@ -2,14 +2,16 @@ import trantuananh from "../assets/images/trantuananh.png";
 import tranquochuy from "../assets/images/tranquochuy.png";
 import doduynghi from "../assets/images/doduynghi.png";
 
-import dkra from "../assets/images/dkra.png";
-import cbre from "../assets/images/cbre.png";
-import xoan from "../assets/images/xoan.png";
-import houze from "../assets/images/houze.png";
-import rever from "../assets/images/rever.png";
-import smartland from "../assets/images/smartland.png";
-import salereal from "../assets/images/salereal.png";
-import tm from "../assets/images/tm.png";
+import gamuda from "../assets/images/gamuda.png";
+import capitaland from "../assets/images/capitaland.png";
+import sungroup from "../assets/images/sungroup.png";
+import namlong from "../assets/images/namlong.png";
+import keppel from "../assets/images/keppel.png";
+import vins from "../assets/images/vins.png";
+import khangdien from "../assets/images/khangdien.png";
+import masterise from "../assets/images/masterise.png";
+import kita from "../assets/images/kita.png";
+import prodezi from "../assets/images/prodezi.png";
 
 import linhvuc1 from "../assets/images/linhvuc1.png";
 import linhvuc2 from "../assets/images/linhvuc2.png";
@@ -18,8 +20,34 @@ import tuyendung1 from "../assets/images/tuyendung1.png";
 import tuyendung2 from "../assets/images/tuyendung2.png";
 import tuyendung3 from "../assets/images/tuyendung3.png";
 
+import lahome from "../assets/images/lahome.png";
+import kitahome from "../assets/images/kitahome.png";
+import mt from "../assets/images/mt eastmark.png";
+import lancaster from "../assets/images/lancaster Legacy.png";
+import delasol from "../assets/images/delasol.png";
+import eaton from "../assets/images/eaton park.png";
+import glocal from "../assets/images/glocal city.png";
+import celadon from "../assets/images/celadon city.png";
+
 export const Menu = [
-  { id: 1, text: "Tổng Quan", sourceLink: "/" },
+  {
+    id: 1,
+    text: "Tổng Quan",
+    sourceLink: "/",
+    hiddenList: [
+      { text: "Ý Nghĩa Thương Hiệu", link: "/y-nghia-thuong-hieu" },
+      { text: "Sơ Đồ Tổ Chức", link: "/so-do-to-chuc" },
+    ],
+  },
+  {
+    id: 2,
+    text: "Dự Án",
+    sourceLink: "/du-an",
+    hiddenList: [
+      { text: "Phát Triển Và Đầu Tư", link: "/phat-trien-va-dau-tu" },
+    ],
+  },
+  { id: 3, text: "Tin Tức", sourceLink: "/tin-tuc" },
   {
     id: 5,
     text: "Ban Lãnh Đạo",
@@ -100,14 +128,66 @@ export const Directors = [
 ];
 
 export const Partner = [
-  { id: 1, name: "DKRA", image: dkra },
-  { id: 2, name: "CBRE", image: cbre },
-  { id: 3, name: "XOAN", image: xoan },
-  { id: 4, name: "HOUSE", image: houze },
-  { id: 5, name: "REVER", image: rever },
-  { id: 6, name: "SMARTLAND", image: smartland },
-  { id: 7, name: "SALEREAL", image: salereal },
-  { id: 8, name: "TM", image: tm },
+  {
+    id: 1,
+    name: "gamuda",
+    image: gamuda,
+    className: "w-[50px] md:w-[150px] md:h-[40px] ",
+  },
+  {
+    id: 2,
+    name: "capitaland",
+    image: capitaland,
+    className: "w-[50px] md:w-[120px] md:h-[55px] ",
+  },
+  {
+    id: 3,
+    name: "sungroup",
+    image: sungroup,
+    className: "w-[50px] md:w-[130px] md:h-[44px] ",
+  },
+  {
+    id: 4,
+    name: "namlong",
+    image: namlong,
+    className: "w-[50px] md:w-[134px] md:h-[39px] ",
+  },
+  {
+    id: 5,
+    name: "keppel",
+    image: keppel,
+    className: "w-[50px] md:w-[134px] md:h-[28px] ",
+  },
+  {
+    id: 6,
+    name: "vins",
+    image: vins,
+    className: "w-[50px] md:w-[134px] md:h-[59px] ",
+  },
+  {
+    id: 7,
+    name: "khangdien",
+    image: khangdien,
+    className: "w-[55px] md:w-[180px] md:h-[29px] ",
+  },
+  {
+    id: 8,
+    name: "masterise",
+    image: masterise,
+    className: "w-[35px] md:w-[95px] md:h-[65px] ",
+  },
+  {
+    id: 9,
+    name: "kita",
+    image: kita,
+    className: "w-[50px] md:w-[124px] md:h-[41px] ",
+  },
+  {
+    id: 10,
+    name: "prodezi",
+    image: prodezi,
+    className: "w-[50px] md:w-[130px] md:h-[34px] ",
+  },
 ];
 
 export const TuyenDung = [
@@ -122,7 +202,7 @@ export const TuyenDung = [
   },
   {
     id: 2,
-    role: "GIÁM ĐỐC KINH DOANH",
+    role: "TRƯỞNG PHÒNG KINH DOANH",
     yc: "Ít nhất 2 năm kinh nghiệm trong ngành bất động sản và khả năng quản lý đội ngũ sales từ 5-10 người.",
     ql: "Bạn sẽ nhận thu nhập cao với hoa hồng lũy tiến lên đến 70%, thưởng KPI cuối năm lên đến 1 tỷ đồng.",
     cddn: "Chế độ đãi ngộ hấp dẫn, cùng sự hỗ trợ mạnh mẽ về data khách hàng và ngân sách marketing.",
@@ -131,11 +211,71 @@ export const TuyenDung = [
   },
   {
     id: 3,
-    role: "GIÁM ĐỐC KINH DOANH",
+    role: "NHÂN VIÊN KINH DOANH",
     yc: "không yêu cầu kinh nghiệm trong ngành bất động sản, nhưng kinh nghiệm trong lĩnh vực sales bảo hiểm, chứng khoán, ngân hàng là một lợi thế.",
     ql: "Bạn sẽ nhận thu nhập cao với hoa hồng lũy tiến lên đến 70%, thưởng doanh số hấp dẫn và có cơ hội phát triển nghề nghiệp.",
     cddn: "Công ty cung cấp data khách hàng tiềm năng, ngân sách marketing mạnh và đào tạo chuyên sâu để bạn có thể nhanh chóng nắm bắt công việc.",
     mt: "Môi trường làm việc chuyên nghiệp, năng động với cơ hội thăng tiến rõ ràng.",
     image: tuyendung3,
+  },
+  {
+    id: 4,
+    role: "GIÁM ĐỐC SÀN",
+    yc: "Ít nhất 2 năm kinh nghiệm trong ngành bất động sản và khả năng quản lý đội ngũ sales từ 5-10 người.",
+    ql: "Bạn sẽ nhận thu nhập cao với hoa hồng lũy tiến lên đến 70%, thưởng KPI cuối năm lên đến 1 tỷ đồng.",
+    cddn: "Chế độ đãi ngộ hấp dẫn, cùng sự hỗ trợ mạnh mẽ về data khách hàng và ngân sách marketing.",
+    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
+    image: tuyendung2,
+  },
+];
+
+export const DuAn = [
+  {
+    id: 1,
+    name: "LaHome ",
+    desc: "Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ",
+    image: lahome,
+  },
+  {
+    id: 2,
+    name: "Kiều By Kita",
+    desc: "Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
+    image: kitahome,
+  },
+  {
+    id: 3,
+    name: "MT Eastmark",
+    desc: "Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
+    image: mt,
+  },
+  {
+    id: 4,
+    name: "Lancaster Legacy",
+    desc: "",
+    image: lancaster,
+  },
+  {
+    id: 5,
+    name: "DE LA SOL",
+    desc: "",
+    image: delasol,
+  },
+  {
+    id: 6,
+    name: "Eaton Park",
+    desc: "",
+    image: eaton,
+  },
+  {
+    id: 7,
+    name: "Global City",
+    desc: "Tiện ích trung tâm thương mại, khu nhạc nước lớn nhất ĐNA, công viên, trường học quốc tế, bênh viện",
+    image: glocal,
+  },
+  {
+    id: 8,
+    name: "Celadon City",
+    desc: "Công viên 16,4 ha, câu lạc bộ thể thao, trung tâm thương mại, trường học quốc tế",
+    image: celadon,
   },
 ];

@@ -1,5 +1,4 @@
 "use client";
-import duan1 from "../../assets/images/duan1.png";
 
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,41 +10,11 @@ import "swiper/css/navigation";
 // Import các module cần thiết của Swiper
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
+import { DuAn } from "@/utils/data";
 
 // Danh sách ảnh (thay thế bằng ảnh của bạn)
 
-const DuAn = [
-  {
-    id: 1,
-    name: "Vinhomes Global Gate ",
-    desc: "Thành phố thương mại quốc tế sôi động đẳng cấp thế giới",
-    image: duan1,
-  },
-  {
-    id: 2,
-    name: "Sunshine Diamond River ",
-    desc: "Quận 7 chuẩn bị mở bán",
-    image: duan1,
-  },
-  {
-    id: 3,
-    name: "Masteri Centre Point ",
-    desc: "Khu Đông Sài Gòn phát triển",
-    image: duan1,
-  },
-  {
-    id: 4,
-    name: "The Beverly Solari ",
-    desc: "Vinhomes Grand Park đẳng cấp",
-    image: duan1,
-  },
-  {
-    id: 5,
-    name: "Celesta Rise ",
-    desc: "Nhà Bè tăng trưởng mạnh mẽ",
-    image: duan1,
-  },
-];
+
 
 const ImageSlider = () => {
   const [activeProjectName, setActiveProjectName] = useState(DuAn[0].name); // Default to first project name

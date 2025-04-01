@@ -14,7 +14,7 @@ const ItemBLD = () => {
   const checkBLD = Directors.find((item) => item.link === name);
 
   return (
-    <div className=" h-[70vh] flex md:items-center w-full pt-10 md:pt-0 px-2 ">
+    <div className=" h-[70vh] flex md:items-center w-full pt-20 md:pt-0 px-2 ">
       <div className="w-[50%] hidden md:block">
         <div className="flex justify-center relative">
           <div className="relative">

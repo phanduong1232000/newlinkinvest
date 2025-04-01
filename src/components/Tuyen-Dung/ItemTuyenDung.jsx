@@ -1,9 +1,23 @@
+"use client";
 import Image from "next/image";
-import React from "react";
-import hinh1 from "../../assets/images/background.png";
+import React, { useState } from "react";
 import { TuyenDung } from "@/utils/data";
+import FormTD from "./FormTD";
 
 const ItemTuyenDung = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+
+  const openModal = (job) => {
+    setSelectedJob(job);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedJob(null);
+  };
+
   return (
     <div className="mt-10 md:mt-20 space-y-20 md:space-y-40 ">
       {TuyenDung.map((item, index) => (
@@ -41,7 +55,10 @@ const ItemTuyenDung = () => {
                   </div>{" "}
                   <div className="absolute inset-0 -bottom-5 ">
                     <div className="flex justify-center items-end h-full ">
-                      <button className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer">
+                      <button
+                        onClick={() => openModal(item)}
+                        className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer"
+                      >
                         ỨNG TUYỂN NGAY
                       </button>
                     </div>
@@ -77,7 +94,10 @@ const ItemTuyenDung = () => {
                   </div>
                   <div className="absolute inset-0 -bottom-5 ">
                     <div className="flex justify-center items-end h-full ">
-                      <button className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer">
+                      <button
+                        onClick={() => openModal(item)}
+                        className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer"
+                      >
                         ỨNG TUYỂN NGAY
                       </button>
                     </div>
@@ -93,6 +113,8 @@ const ItemTuyenDung = () => {
           )}
         </div>
       ))}
+
+      {isOpen && <FormTD closeModal={closeModal} selectedJob={selectedJob} />}
     </div>
   );
 };

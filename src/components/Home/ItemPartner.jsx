@@ -1,11 +1,19 @@
 import { Partner } from "@/utils/data";
 import Image from "next/image";
 import React from "react";
-import dtcl from "../../assets/images/dtcl.png";
+
 const ItemPartner = () => {
   return (
-    <div className="border border-[#FAD48A]/60 rounded-[20px] py-4 md:py-10 w-full p-5 flex justify-center">
-      <Image src={dtcl} alt="dtcl" />
+    <div className="border border-[#FAD48A]/60 rounded-[20px] py-2 md:py-10 w-full p-5 grid grid-cols-5 gap-4 justify-items-center ">
+      {Partner.map((partner) => (
+        <div key={partner.id} className={`md:w-50 h-5 md:h-20 flex justify-center items-center  `}>
+          <Image
+            src={partner.image}
+            alt={partner.name}
+            className={`${partner.className}`}
+          />
+        </div>
+      ))}
     </div>
   );
 };

@@ -2,6 +2,13 @@ import BanLanhDao from "@/components/Ban-Lanh-Dao/BanLanhDao";
 import Footer from "@/components/Footer";
 import React, { Suspense } from "react";
 
+export const metadata = {
+  title: "Ban Lãnh Đạo - NewLink",
+  alternates: {
+    canonical: "https://newlinkinvest.com/ban-lanh-dao",
+  },
+};
+
 const page = () => {
   return (
     <div>

@@ -12,7 +12,7 @@ const NicOverview = () => {
       </span>
       <div className="md:w-[430px] lg:w-[540px] space-y-4 relative z-50">
         <p className="text-[12px] md:text-[16px] font-utm-avo">
-          <span className="font-utm-avo-bold">NIC</span> là công ty chuyên đầu
+          <span className="font-utm-avo-bold">NEWLINK </span> là công ty chuyên đầu
           tư và phát triển bất động sản, với sứ mệnh mang đến những cơ hội đầu
           tư tiềm năng và giá trị lâu dài cho khách hàng. NIC tập trung vào việc
           phân phối độc quyền các dự án bất động sản uy tín, chất lượng cao từ
@@ -21,9 +21,9 @@ const NicOverview = () => {
           tin cậy trong ngành bất động sản.
         </p>
         <p className="text-[12px] lg:text-[16px] font-utm-avo ">
-          Bên cạnh hoạt động phân phối, <span className="font-utm-avo-bold">NIC</span> cũng đang hướng đến phát triển các
+          Bên cạnh hoạt động phân phối, <span className="font-utm-avo-bold">NEWLINK </span> cũng đang hướng đến phát triển các
           dự án bất động sản của riêng mình trong tương lai, với tầm nhìn trở
-          thành nhà đầu tư và phát triển dự án hàng đầu trong ngành. NIC cam kết
+          thành nhà đầu tư và phát triển dự án hàng đầu trong ngành. <span className="font-utm-avo-bold">NEWLINK </span> cam kết
           đem lại những sản phẩm và dịch vụ vượt trội, đáp ứng nhu cầu ngày càng
           cao của thị trường bất động sản và sự kỳ vọng của khách hàng.
         </p>
