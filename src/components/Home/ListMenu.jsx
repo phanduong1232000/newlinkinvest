@@ -52,11 +52,11 @@ const DesktopMenu = ({ pathname }) => {
 const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
   return (
     <div
-      className={`md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-100 transition-transform ${
+      className={`md:hidden fixed inset-0 bg-[#09303d] bg-opacity-90 z-100 transition-transform ${
         isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <div className=" w-64 bg-gray-800 text-white h-full shadow-lg p-5 fixed right-0 top-0">
+      <div className=" w-64 bg-[#0c3d4a] text-white h-full shadow-lg p-5 fixed right-0 top-0">
         <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="mb-4 text-gray-300 flex justify-end w-full"
@@ -75,7 +75,7 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
                 href={item.sourceLink}
                 className={`block px-4 py-2 rounded-lg text-lg ${
                   isActive
-                    ? "bg-blue-500 text-white"
+                    ? "bg-[#12728a] text-white"
                     : "text-gray-300 hover:bg-gray-700"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
