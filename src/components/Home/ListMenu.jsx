@@ -56,7 +56,7 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
         isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <div className=" w-64 bg-[#0c3d4a] text-white h-full shadow-lg p-5 fixed right-0 top-0">
+      <div className="w-64 bg-[#0c3d4a] text-white h-full shadow-lg p-5 fixed right-0 top-0">
         <button
           onClick={() => setIsMobileMenuOpen(false)}
           className="mb-4 text-gray-300 flex justify-end w-full"

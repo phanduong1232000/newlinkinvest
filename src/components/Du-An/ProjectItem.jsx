@@ -5,7 +5,7 @@ import React from "react";
 const ProjectItem = () => {
   return (
     <div className="relative z-50 py-5 md:py-10 px-2 mt-20  lg:px-0 ">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10 px-2">
         {DuAn.map((project) => {
           return (
             <div key={project.id}>

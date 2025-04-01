@@ -8,7 +8,7 @@ const SDComponent = () => {
   return (
     <div className="max-w-[1240px]  mx-auto py-5 px-1 md:px-0 ">
       <div className="relative ">
-        <div className="absolute left-0">
+        <div className="absolute left-2">
           <Image
             src={logo}
             alt="Logo"
