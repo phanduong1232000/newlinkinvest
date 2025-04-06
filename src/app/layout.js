@@ -1,33 +1,35 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "New Link Company",
+  title: "NewLink Investment Company",
   description:
-    "New Link là công ty chuyên đầu tư và phát triển bất động sản, với sứ mệnh mang đến những cơ hội đầu tư tiềm năng và giá trị lâu dài cho khách hàng",
+    "NewLink Investment là công ty chuyên đầu tư và phát triển bất động sản, với sứ mệnh mang đến những cơ hội đầu tư tiềm năng và giá trị lâu dài cho khách hàng",
   keywords: [
+    "NewLink",
+    "NewLink Investment",
     "bất động sản",
     "đầu tư",
     "New Link",
     "phát triển dự án",
     "cơ hội đầu tư",
   ],
-  authors: [{ name: "New Link Company" }],
+  authors: [{ name: "NewLink Investment" }],
   robots: "index, follow",
   charset: "utf-8",
 
   openGraph: {
-    title: "New Link Company - Đầu tư và phát triển bất động sản",
+    title: "NewLink Investment Company - Đầu tư và phát triển bất động sản",
     description:
-      "New Link mang đến những cơ hội đầu tư tiềm năng và giá trị lâu dài cho khách hàng.",
+      "NewLink Investment mang đến những cơ hội đầu tư tiềm năng và giá trị lâu dài cho khách hàng.",
     images: ["https://newlinkinvest.com/web-app-manifest-192x192.png"],
     url: "https://newlinkinvest.com/",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "New Link Company - Đầu tư và phát triển bất động sản",
+    title: "NewLink Company - Đầu tư và phát triển bất động sản",
     description:
-      "New Link mang đến những cơ hội đầu tư tiềm năng và giá trị lâu dài cho khách hàng.",
+      "NewLink mang đến những cơ hội đầu tư tiềm năng và giá trị lâu dài cho khách hàng.",
     images: ["https://newlinkinvest.com/web-app-manifest-192x192.png"],
     site: "@NewLinkCompany",
   },

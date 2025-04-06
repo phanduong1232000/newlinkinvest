@@ -32,9 +32,13 @@ const ItemFooter = () => {
           rel="noopener noreferrer"
           className="text-[10px] md:text-[14px] w-[200px] md:w-full font-utm-avo  hover:underline"
         >
-          277 Trương Văn Bang, P. Thạnh Mỹ Lợi, Thành phố Thủ Đức
+          Văn Phòng New Link : 277 Trương Văn Bang, P. Thạnh Mỹ Lợi, Thành phố
+          Thủ Đức
         </a>
       </div>
+      <p className="text-[10px] md:text-[14px] font-utm-avo text-white">
+        © 2025 New Link Investment - Giải pháp đầu tư bền vững
+      </p>
     </div>
   );
 };

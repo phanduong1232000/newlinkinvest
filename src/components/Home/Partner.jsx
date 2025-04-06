@@ -5,7 +5,7 @@ import ItemPartner from "./ItemPartner";
 const Partner = () => {
   return (
     <div className="w-full  relative -z-50 ">
-      <Image src={doitac} alt="doi tac" className="w-full object-cover" />
+      <Image src={doitac} alt="Đối Tác của New Link Investment" className="w-full object-cover" />
 
       <div className="absolute inset-0  z-50 h-full px-2">
         <div className="max-w-[1240px] h-full mx-auto md:pb-20">

@@ -9,7 +9,7 @@ export const metadata = {
   },
 };
 
-const page = () => {
+const BanLanhDaoPage = () => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
@@ -20,4 +20,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default BanLanhDaoPage;

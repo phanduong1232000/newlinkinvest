@@ -3,7 +3,9 @@ import SDComponent from "@/components/So-Do/SDComponent";
 import React from "react";
 
 export const metadata = {
-  title: "Sơ Đồ - NewLink",
+  title: "Sơ Đồ Tổ Chức - NewLink Investment",
+  description:
+    "Tìm hiểu chi tiết sơ đồ tổ chức của NewLink Invest - cấu trúc quản lý, đội ngũ lãnh đạo và các phòng ban.",
   alternates: {
     canonical: "https://newlinkinvest.com/so-do-to-chuc",
   },
@@ -12,7 +14,8 @@ export const metadata = {
 const SoDo = () => {
   return (
     <div>
-      <SDComponent /> <Footer />
+      <SDComponent />
+      <Footer />
     </div>
   );
 };

@@ -16,9 +16,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="hidden">
-        New Link - New Link - New Link - New Link - New Link
-      </h1>
+      
       <Background onExploreClick={scrollToItemProject} />
       <ProjectNic />
       <div ref={itemProjectRef}>

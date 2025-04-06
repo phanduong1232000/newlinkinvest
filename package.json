@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start -p 10005",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "15.2.1",
+    "next-sitemap": "^4.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",

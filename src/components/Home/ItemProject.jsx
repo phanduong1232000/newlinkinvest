@@ -97,7 +97,7 @@ const ImageSlider = () => {
           >
             <Image
               src={image.image}
-              alt={`Slide ${index}`}
+              alt={image.alt}
               className="w-full h-full object-cover rounded-lg"
             />
           </SwiperSlide>

@@ -26,7 +26,7 @@ const ItemTuyenDung = () => {
             <>
               <Image
                 src={item.image}
-                alt={`Hình ${index + 1}`}
+                alt={item.alt}
                 className="hidden md:block"
               />
               <div className="w-[530px]  ">
@@ -106,7 +106,7 @@ const ItemTuyenDung = () => {
               </div>
               <Image
                 src={item.image}
-                alt={`Hình ${index + 1}`}
+                alt={item.alt}
                 className="hidden md:block"
               />
             </>

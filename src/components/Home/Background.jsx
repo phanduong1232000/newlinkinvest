@@ -12,7 +12,7 @@ const Background = ({ onExploreClick }) => {
       <div className="absolute right-0 -z-50">
         <Image
           src={background}
-          alt="background"
+          alt="New Link Investment"
           className="md:w-[1158px] md:h-[1050px] h-screen"
         />
       </div>
@@ -28,7 +28,7 @@ const Background = ({ onExploreClick }) => {
           <div className="absolute left-2">
             <Image
               src={logo}
-              alt="Logo"
+              alt="New Link Investment"
               className="w-[40px] md:w-[80px] md:block border"
             />
           </div>

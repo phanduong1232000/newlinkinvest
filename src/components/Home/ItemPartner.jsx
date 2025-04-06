@@ -9,7 +9,7 @@ const ItemPartner = () => {
         <div key={partner.id} className={`md:w-50 h-5 md:h-20 flex justify-center items-center  `}>
           <Image
             src={partner.image}
-            alt={partner.name}
+            alt={partner.alt}
             className={`${partner.className}`}
           />
         </div>

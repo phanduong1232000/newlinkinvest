@@ -74,13 +74,15 @@ export const Field = [
   {
     id: 1,
     text: "Đầu Tư Phát Triển",
-    desc: "NIC đầu tư và phát triển các dự án bất động sản.",
+    desc: "New Link đầu tư và phát triển các dự án bất động sản.",
+    alt: "New Link Investment đầu tư và phát triển các dự án bất động sản.",
     image: linhvuc1,
   },
   {
     id: 2,
     text: "Phân Phối Độc Quyền",
-    desc: "NIC phân phối độc quyền các dự án bất động sản của các đối tác uy tín.",
+    desc: "New Link phân phối độc quyền các dự án bất động sản của các đối tác uy tín.",
+    alt: "New Link Investment phân phối độc quyền các dự án bất động sản của các đối tác uy tín.",
     image: linhvuc2,
   },
 ];
@@ -93,6 +95,7 @@ export const Directors = [
     year: 10,
     image: trantuananh,
     link: "tran-tuan-anh",
+    alt: "New Link Investment - Trần Tuấn Anh",
     li: [
       "Kinh Nghiệm: Trên <span class='font-utm-avo-bold bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent'>10 năm</span> kinh nghiệm BĐS Úc và Việt Nam.",
       "Các dự án đã triển khai: Đô thị vệ tinh, đô thị nghỉ dưỡng, căn hộ cao cấp, trong TP.HCM, Đồng Nai, Phan Thiết,... tại tập đoàn Nova Group.",
@@ -107,6 +110,7 @@ export const Directors = [
     image: tranquochuy,
     style: true,
     link: "tran-quoc-huy",
+    alt: "New Link Investment - Trân Quốc Huy",
     li: [
       "Kinh Nghiệm: Trên <span class='font-utm-avo-bold bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent'>15 năm</span> kinh nghiệm bất động sản cho Nova Group.",
       "Các dự án đã triển khai: Đô thị vệ tinh, đô thị nghỉ dưỡng, căn hộ cao cấp, trong TP.HCM, Đồng Nai, Phan Thiết,...",
@@ -120,6 +124,7 @@ export const Directors = [
     year: 20,
     image: doduynghi,
     link: "do-duy-nghi",
+    alt: "New Link Investment - Đỗ Duy Nghi",
     li: [
       "Kinh Nghiệm: Trên <span class='font-utm-avo-bold bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent'>20 năm</span> kinh nghiệm ngành BĐS.",
       "Từng phụ trách kế toán trưởng công ty Vạn Phát Hưng, An Gia, Phó TGĐ Tập đoàn Seaholding, TGĐ NTC Group.. phụ trách triển khai môi giới độc quyền nhiều dựng án tại khu đông từ năm 2014 đến nay.",
@@ -132,60 +137,70 @@ export const Partner = [
     id: 1,
     name: "gamuda",
     image: gamuda,
+    alt: "New Link Investment - Gamuda",
     className: "w-[50px] md:w-[150px] md:h-[40px] ",
   },
   {
     id: 2,
     name: "capitaland",
     image: capitaland,
+    alt: "New Link Investment - Capitaland",
     className: "w-[50px] md:w-[120px] md:h-[55px] ",
   },
   {
     id: 3,
     name: "sungroup",
     image: sungroup,
+    alt: "New Link Investment - Sung Group",
     className: "w-[50px] md:w-[130px] md:h-[44px] ",
   },
   {
     id: 4,
     name: "namlong",
     image: namlong,
+    alt: "New Link Investment - Nam Long",
     className: "w-[50px] md:w-[134px] md:h-[39px] ",
   },
   {
     id: 5,
     name: "keppel",
     image: keppel,
+    alt: "New Link Investment - Keppel",
     className: "w-[50px] md:w-[134px] md:h-[28px] ",
   },
   {
     id: 6,
     name: "vins",
     image: vins,
+    alt: "New Link Investment - VinGroup",
     className: "w-[50px] md:w-[134px] md:h-[59px] ",
   },
   {
     id: 7,
     name: "khangdien",
     image: khangdien,
+    alt: "New Link Investment - Khang Điền",
     className: "w-[55px] md:w-[180px] md:h-[29px] ",
   },
   {
     id: 8,
     name: "masterise",
     image: masterise,
+    alt: "New Link Investment - Masterise",
     className: "w-[35px] md:w-[95px] md:h-[65px] ",
   },
   {
     id: 9,
     name: "kita",
     image: kita,
+    alt: "New Link Investment - Kita",
     className: "w-[50px] md:w-[124px] md:h-[41px] ",
   },
   {
     id: 10,
     name: "prodezi",
     image: prodezi,
+    alt: "New Link Investment - Prodezi",
     className: "w-[50px] md:w-[130px] md:h-[34px] ",
   },
 ];
@@ -199,6 +214,7 @@ export const TuyenDung = [
     cddn: "Đãi ngộ hấp dẫn, hỗ trợ tối đa trong việc mở rộng đội ngũ và phát triển quy mô. Công ty cung cấp data khách hàng tiềm năng, ngân sách marketing mạnh mẽ và đào tạo chuyên sâu.",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng.",
     image: tuyendung1,
+    alt: "New Link Investment Tuyển Dụng Giám Đốc Kinh Doanh",
   },
   {
     id: 2,
@@ -208,6 +224,7 @@ export const TuyenDung = [
     cddn: "Chế độ đãi ngộ hấp dẫn, cùng sự hỗ trợ mạnh mẽ về data khách hàng và ngân sách marketing.",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
     image: tuyendung2,
+    alt: "New Link Investment Tuyển Dụng Trường Phòng Kinh Doanh",
   },
   {
     id: 3,
@@ -217,6 +234,7 @@ export const TuyenDung = [
     cddn: "Công ty cung cấp data khách hàng tiềm năng, ngân sách marketing mạnh và đào tạo chuyên sâu để bạn có thể nhanh chóng nắm bắt công việc.",
     mt: "Môi trường làm việc chuyên nghiệp, năng động với cơ hội thăng tiến rõ ràng.",
     image: tuyendung3,
+    alt: "New Link Investment Tuyển Dụng Nhân Viên Kinh Doanh",
   },
   {
     id: 4,
@@ -226,6 +244,7 @@ export const TuyenDung = [
     cddn: "Chế độ đãi ngộ hấp dẫn, cùng sự hỗ trợ mạnh mẽ về data khách hàng và ngân sách marketing.",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
     image: tuyendung2,
+     alt:"New Link Investment Tuyển Dụng Giám Đốc Sàn"
   },
 ];
 
@@ -234,48 +253,56 @@ export const DuAn = [
     id: 1,
     name: "LaHome ",
     desc: "Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ",
+    alt: "New Link - Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ ",
     image: lahome,
   },
   {
     id: 2,
     name: "Kiều By Kita",
     desc: "Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
+    alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
     image: kitahome,
   },
   {
     id: 3,
     name: "MT Eastmark",
     desc: "Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
+    alt: "New Link - Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
     image: mt,
   },
   {
     id: 4,
     name: "Lancaster Legacy",
     desc: "",
+    alt: "New Link",
     image: lancaster,
   },
   {
     id: 5,
     name: "DE LA SOL",
     desc: "",
+    alt: "New Link",
     image: delasol,
   },
   {
     id: 6,
     name: "Eaton Park",
     desc: "",
+    alt: "New Link",
     image: eaton,
   },
   {
     id: 7,
     name: "Global City",
     desc: "Tiện ích trung tâm thương mại, khu nhạc nước lớn nhất ĐNA, công viên, trường học quốc tế, bênh viện",
+    alt: "New Link - Tiện ích trung tâm thương mại, khu nhạc nước lớn nhất ĐNA, công viên, trường học quốc tế, bênh viện",
     image: glocal,
   },
   {
     id: 8,
     name: "Celadon City",
     desc: "Công viên 16,4 ha, câu lạc bộ thể thao, trung tâm thương mại, trường học quốc tế",
+    alt: "New Link - Công viên 16,4 ha, câu lạc bộ thể thao, trung tâm thương mại, trường học quốc tế",
     image: celadon,
   },
 ];

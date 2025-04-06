@@ -14,13 +14,13 @@ const ItemDirectors = () => {
           <div className="relative w-[300px] ">
             <div className="absolute inset-0 -z-30">
               <div className="flex items-end pb-10 h-full scale-125">
-                <Image src={clippath} alt="clippath" />
+                <Image src={clippath} alt="New Link Investment" />
               </div>
             </div>
 
             <Image
               src={director.image}
-              alt={director.name.toLowerCase().replace(/\s/g, "-")}
+              alt={director.alt}
               className={`${director.style && "pt-2"} `}
             />
 

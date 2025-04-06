@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://newlinkinvest.com
+
+# Sitemaps
+Sitemap: https://newlinkinvest.com/sitemap.xml

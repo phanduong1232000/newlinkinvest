@@ -6,7 +6,7 @@ import ProjectItem from "@/components/Du-An/ProjectItem";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Dự án - NewLink",
+  title: "Dự Án Đầu Tư - NewLink",
   alternates: {
     canonical: "https://newlinkinvest.com/du-an",
   },
@@ -19,13 +19,15 @@ const Project = () => {
         <div className="absolute left-2">
           <Image
             src={logo}
-            alt="Logo"
+            alt="NewLink Investment Logo"
             className="w-[40px] md:w-[80px] md:block border"
           />
         </div>
         <ListMenu />
       </div>
-      <ProjectItem /> <Footer />
+      <h1 className="hidden">Dự Án Của NewLink Investment</h1>
+      <ProjectItem />
+      <Footer />
     </div>
   );
 };

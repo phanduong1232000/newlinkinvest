@@ -12,7 +12,7 @@ const BanLanhDao = () => {
           <div className="absolute left-2">
             <Image
               src={logo}
-              alt="Logo"
+              alt="NewLink Investment Logo"
               className="w-[40px] md:w-[80px] md:block"
             />
           </div>

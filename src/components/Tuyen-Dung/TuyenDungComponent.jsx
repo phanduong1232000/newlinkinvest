@@ -15,7 +15,7 @@ const TuyenDungComponent = () => {
           <div className="absolute left-2">
             <Image
               src={logo}
-              alt="Logo"
+              alt="New Link Investment"
               className="w-[40px] md:w-[80px] md:block"
             />
           </div>
@@ -25,7 +25,6 @@ const TuyenDungComponent = () => {
       <div className="max-w-[1240px] mx-auto  pt-10 md:pt-20 px-4">
         <MainTuyenDung />
         <ItemTuyenDung />
-     
       </div>
     </div>
   );

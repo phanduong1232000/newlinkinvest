@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import trantuananh from "../../assets/images/trantuananh.png";
 import Image from "next/image";
 import { Directors } from "@/utils/data";
 import clippath from "../../assets/images/clippath.png";
@@ -18,7 +17,7 @@ const ItemBLD = () => {
       <div className="w-[50%] hidden md:block">
         <div className="flex justify-center relative">
           <div className="relative w-[300px]">
-            <Image src={checkBLD?.image} alt="tran tuan anh" className="" />
+            <Image src={checkBLD?.image} alt={checkBLD.alt} className="" />
             <div className="absolute inset-0 -bottom-8">
               <div className="flex items-end justify-center -mb-2 md:-mb-4 h-full">
                 <div className="bg-gradient-to-r from-[#0C6985] to-[#09303D] px-8 md:px-4 py-2 rounded-2xl  flex flex-col items-center justify-center border border-[#E7CE8D]">
@@ -37,14 +36,14 @@ const ItemBLD = () => {
       <div className="w-full md:w-[50%] ">
         <div className="md:w-[90%] flex flex-col space-y-5 md:space-y-10">
           <div>
-            <h2 className="font-utm-avo text-[24px] md:text-[32px] bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-              Ban Lãnh Đạo
-            </h2>
-            <p className="font-utm-avo text-[12px] md:text-[14px]">
-              Với đội ngũ lãnh đạo giàu kinh nghiệm, NIC luôn nỗ lực không ngừng
+            <h1 className="font-utm-avo text-[24px] md:text-[32px] bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
+              Ban Lãnh Đạo NewLink
+            </h1>
+            <h2 className="font-utm-avo text-[12px] md:text-[14px]">
+              Với đội ngũ lãnh đạo tại giàu kinh nghiệm, NewLink luôn nỗ lực không ngừng
               để mang lại những giá trị bền vững cho các nhà đầu tư, khách hàng
               và cộng đồng.
-            </p>
+            </h2>
           </div>
           <div className=" font-utm-avo  flex space-x-2 md:space-x-5 border-b-[0.1px] border-[#536E77] pb-4">
             {Directors.map((item) => {
@@ -71,7 +70,7 @@ const ItemBLD = () => {
                 <div className="relative w">
                   <Image
                     src={checkBLD?.image}
-                    alt="tran tuan anh"
+                    alt={checkBLD.alt}
                     className=""
                   />
                   <div className="absolute inset-0 -bottom-8">
@@ -85,7 +84,7 @@ const ItemBLD = () => {
                   </div>
                 </div>
                 <div className="absolute -z-50 ">
-                  <Image src={clippath} alt="clippath" />
+                  <Image src={clippath} alt="NewLink Investment" />
                 </div>
               </div>
             </div>

@@ -9,7 +9,7 @@ const ItemField = () => {
         <div key={item.id} className="flex items-center space-x-2">
           <div className="flex">
             <div className="border border-[#FAD48A] rounded-full p-3 h-[45px] md:h-[60px] w-[45px] md:w-[60px]">
-              <Image src={item.image} alt={item.text} className="" />
+              <Image src={item.image} alt={item.alt} className="" />
             </div>
           </div>
           <div >

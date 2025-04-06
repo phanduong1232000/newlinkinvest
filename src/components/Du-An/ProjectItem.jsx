@@ -10,7 +10,7 @@ const ProjectItem = () => {
           return (
             <div key={project.id}>
               <div className=" shadow-2xl  ">
-                <Image src={project.image} alt={project.name} />
+                <Image src={project.image} alt={project.alt} />
                 <div className="bg-white rounded-b-lg p-4 text-black font-utm-avo ">
                   <h2 className="text-[16px] md:text-[20px] font-utm-avo-bold">{project.name}</h2>
                   <p className="text-[#2B2B2B] text-[12px] md:text-[16px]">{project.desc}</p>
