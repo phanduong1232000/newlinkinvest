@@ -17,7 +17,7 @@ const ItemBLD = () => {
     <div className=" h-[70vh] flex md:items-center w-full pt-20 md:pt-0 px-2 ">
       <div className="w-[50%] hidden md:block">
         <div className="flex justify-center relative">
-          <div className="relative">
+          <div className="relative w-[300px]">
             <Image src={checkBLD?.image} alt="tran tuan anh" className="" />
             <div className="absolute inset-0 -bottom-8">
               <div className="flex items-end justify-center -mb-2 md:-mb-4 h-full">
@@ -66,7 +66,7 @@ const ItemBLD = () => {
             <p className="font-utm-avo text-center md:text-start text-[32px] md:text-[48px] bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
               {checkBLD?.name}
             </p>
-            <div className="w-[80%] mx-auto pb-10 block md:hidden">
+            <div className="w-[70%] mx-auto pb-10 block md:hidden">
               <div className="flex justify-center relative">
                 <div className="relative w">
                   <Image
