@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import emailjs from "@emailjs/browser";
 
 const FormTD = ({ closeModal, selectedJob }) => {
   const [formData, setFormData] = useState({
@@ -21,20 +22,67 @@ const FormTD = ({ closeModal, selectedJob }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorEmail(false);
     if (formData.email !== formData.confirmEmail) {
       setErrorEmail(true);
       return;
     }
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Đơn tuyển dụng đã được gửi",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+
+    let cvLink = "";
+
+    try {
+      // Upload CV lên server
+      const uploadForm = new FormData();
+      uploadForm.append("cvFile", formData.cvFile);
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: uploadForm,
+      });
+      console.log(res)
+      const data = await res.json();
+      cvLink = `${window.location.origin}${data.url}`;
+    } catch (err) {
+      Swal.fire("Lỗi", "Không thể upload CV", "error");
+      return;
+    }
+
+    const emailParams = {
+      fullName: formData.fullName,
+      gender: formData.gender,
+      email: formData.email,
+      birthYear: formData.birthYear,
+      coverLetter: formData.coverLetter,
+      cvLink: cvLink,
+      role: selectedJob?.role,
+    };
+
+    try {
+      // Gửi email qua EmailJS
+      await emailjs.send(
+        "service_8tkc1cj",      // Thay bằng Service ID của bạn
+        "template_37wmeec",     // Thay bằng Template ID của bạn
+        emailParams,
+        "Wmb7d8CfYB41xZPvz"       // Thay bằng Public Key của bạn
+      );
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Đơn tuyển dụng đã được gửi",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      // Đóng modal sau khi gửi thành công
+      closeModal();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      Swal.fire("Lỗi", "Không thể gửi email", "error");
+    }
+
+   
   };
 
   return (
