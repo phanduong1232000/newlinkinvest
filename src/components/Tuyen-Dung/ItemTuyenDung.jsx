@@ -26,7 +26,7 @@ const ItemTuyenDung = () => {
             <>
               <Image
                 src={item.image}
-                alt={item.alt}
+                alt="anh"
                 className="hidden md:block"
               />
               <div className="w-[530px]  ">
@@ -42,13 +42,12 @@ const ItemTuyenDung = () => {
                     <p className="">{item.yc}</p>
                   </div>
                   <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Quyền Lợi:</h4>
-                    <p className="">{item.ql}</p>
+                    <h4 className="font-utm-avo-bold">
+                      Quyền Lợi Và Chế Độ Đãi Ngộ:
+                    </h4>
+                    <p dangerouslySetInnerHTML={{ __html: item.ql }} />
                   </div>{" "}
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Chế Độ Đãi Ngộ:</h4>
-                    <p className="">{item.cddn}</p>
-                  </div>
+                  
                   <div className="font-utm-avo">
                     <h4 className="font-utm-avo-bold">Môi Trường:</h4>
                     <p className="">{item.mt}</p>
@@ -81,13 +80,12 @@ const ItemTuyenDung = () => {
                     <p className="">{item.yc}</p>
                   </div>
                   <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Quyền Lợi:</h4>
-                    <p className="">{item.ql}</p>
+                  <h4 className="font-utm-avo-bold">
+                      Quyền Lợi Và Chế Độ Đãi Ngộ:
+                    </h4>
+                    <p dangerouslySetInnerHTML={{ __html: item.ql }} />
                   </div>{" "}
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Chế Độ Đãi Ngộ:</h4>
-                    <p className="">{item.cddn}</p>
-                  </div>
+                  
                   <div className="font-utm-avo">
                     <h4 className="font-utm-avo-bold">Môi Trường:</h4>
                     <p className="">{item.mt}</p>
@@ -106,7 +104,7 @@ const ItemTuyenDung = () => {
               </div>
               <Image
                 src={item.image}
-                alt={item.alt}
+                alt="anh"
                 className="hidden md:block"
               />
             </>
