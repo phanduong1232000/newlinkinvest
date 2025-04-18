@@ -48,7 +48,7 @@ const RegisterPage = () => {
       try {
         const res = await register(formData).unwrap();
 
-        console.log(res);
+        console.log("thành Công");
       } catch (err) {
         console.log("Đã có lỗi Register");
       }
