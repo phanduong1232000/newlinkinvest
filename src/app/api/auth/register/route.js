@@ -5,9 +5,13 @@ import { NextResponse } from "next/server"
 
 
 export async function POST(req) {
-  await connectDB()
+
   const body = await req.json()
   const { firstName, lastName, email, password } = body
+
+  console.log("Dữ liệu" + firstName)
+
+  await connectDB()
 
   if (!firstName || !lastName || !email || !password) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
