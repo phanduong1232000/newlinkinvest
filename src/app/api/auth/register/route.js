@@ -9,8 +9,6 @@ export async function POST(req) {
   const body = await req.json()
   const { firstName, lastName, email, password } = body
 
-  console.log("Dữ liệu" + firstName)
-
   await connectDB()
 
   if (!firstName || !lastName || !email || !password) {
