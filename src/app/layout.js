@@ -1,4 +1,6 @@
+import Footer from "@/components/Footer";
 import "./globals.css";
+import ReduxProvider from "./ReduxProvider";
 
 export const metadata = {
   title: "NewLink Investment Company",
@@ -41,7 +43,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="flex flex-col min-h-screen">
+          <main className="flex-grow">
+            <ReduxProvider>{children}</ReduxProvider>
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

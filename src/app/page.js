@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       <Directors />
       <Partner />
-      <Footer />
+   
     </div>
   );
 }

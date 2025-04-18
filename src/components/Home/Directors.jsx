@@ -9,7 +9,7 @@ const Directors = () => {
       </h2>
       <div className="mt-2 w-[350px] md:w-[600px] mx-auto">
         <h3 className="text-center text-[12px] md:text-[14px]">
-          Với đội ngũ lãnh đạo giàu kinh nghiệm, NIC luôn nỗ lực không ngừng để
+          Với đội ngũ lãnh đạo giàu kinh nghiệm, <span className="font-utm-avo-bold">NEWLINK</span> luôn nỗ lực không ngừng để
           mang lại những giá trị bền vững cho các nhà đầu tư, khách hàng và cộng
           đồng.
         </h3>

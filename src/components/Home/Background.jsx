@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo.png";
 import ListMenu from "./ListMenu";
 import NicOverview from "./NicOverview";
 import MenuSightsee from "./MenuSightsee";
+import Menu from "../Menu";
 
 const Background = ({ onExploreClick }) => {
   return (
@@ -24,17 +25,7 @@ const Background = ({ onExploreClick }) => {
 
       {/* Nội Dung */}
       <div className="max-w-[1240px]  mx-auto py-5 px-1 md:px-0 ">
-        <div className="relative ">
-          <div className="absolute left-2">
-            <Image
-              src={logo}
-              alt="New Link Investment"
-              className="w-[40px] md:w-[80px] md:block border"
-            />
-          </div>
-          <ListMenu />
-        </div>
-
+        <Menu />
         <NicOverview />
         <MenuSightsee onExploreClick={onExploreClick} />
       </div>

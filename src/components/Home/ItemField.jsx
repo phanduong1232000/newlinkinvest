@@ -14,7 +14,7 @@ const ItemField = () => {
           </div>
           <div >
             <p className="text-[14px] md:text-[16px] font-utm-avo-bold">{item.text}</p>
-            <p className="text-[12px] md:text-[14px] font-utm-avo">{item.desc}</p>
+            <p className="text-[12px] md:text-[14px] font-utm-avo"><span className="font-utm-avo-bold">NEWLINK </span> {item.desc}</p>
           </div>
         </div>
       ))}

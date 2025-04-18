@@ -15,7 +15,7 @@ const BanLanhDaoPage = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <BanLanhDao />
       </Suspense>
-      <Footer />
+   
     </div>
   );
 };

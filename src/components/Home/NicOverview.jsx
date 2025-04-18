@@ -14,7 +14,7 @@ const NicOverview = () => {
         <h3 className="text-[12px] md:text-[16px] font-utm-avo">
           <span className="font-utm-avo-bold">NEWLINK </span> là công ty chuyên đầu
           tư và phát triển bất động sản, với sứ mệnh mang đến những cơ hội đầu
-          tư tiềm năng và giá trị lâu dài cho khách hàng. NIC tập trung vào việc
+          tư tiềm năng và giá trị lâu dài cho khách hàng. <span className="font-utm-avo-bold">NEWLINK </span> tập trung vào việc
           phân phối độc quyền các dự án bất động sản uy tín, chất lượng cao từ
           các chủ đầu tư lớn trong ngành. Mục tiêu của công ty là xây dựng một
           mạng lưới phân phối vững mạnh và trở thành một đối tác chiến lược đáng

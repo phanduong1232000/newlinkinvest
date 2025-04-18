@@ -24,7 +24,7 @@ const TuyenDung = () => {
     <div>
       <TuyenDungComponent />
       <BannerTD />
-      <Footer />
+  
     </div>
   );
 };

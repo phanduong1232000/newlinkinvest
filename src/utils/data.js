@@ -22,30 +22,25 @@ import tuyendung3 from "../assets/images/tuyendung3.png";
 
 import lahome from "../assets/images/lahome.png";
 import kitahome from "../assets/images/kitahome.png";
-import mt from "../assets/images/mt eastmark.png";
+import mt from "../assets/images/mt eastmark.jpg";
 import lancaster from "../assets/images/lancaster Legacy.png";
 import delasol from "../assets/images/delasol.png";
 import eaton from "../assets/images/eaton park.png";
 import glocal from "../assets/images/glocal city.png";
 import celadon from "../assets/images/celadon city.png";
+import greenHill from '../assets/images/greenhill.jpg'
 
 export const Menu = [
   {
     id: 1,
     text: "Tổng Quan",
     sourceLink: "/",
-    hiddenList: [
-      { text: "Ý Nghĩa Thương Hiệu", link: "/y-nghia-thuong-hieu" },
-      { text: "Sơ Đồ Tổ Chức", link: "/so-do-to-chuc" },
-    ],
+    hiddenList: [{ text: "Sơ Đồ Tổ Chức", link: "/so-do-to-chuc" }],
   },
   {
     id: 2,
     text: "Dự Án",
     sourceLink: "/du-an",
-    hiddenList: [
-      { text: "Phát Triển Và Đầu Tư", link: "/phat-trien-va-dau-tu" },
-    ],
   },
   { id: 3, text: "Tin Tức", sourceLink: "/tin-tuc" },
   {
@@ -74,14 +69,14 @@ export const Field = [
   {
     id: 1,
     text: "Đầu Tư Phát Triển",
-    desc: "New Link đầu tư và phát triển các dự án bất động sản.",
+    desc: "đầu tư và phát triển các dự án bất động sản.",
     alt: "New Link Investment đầu tư và phát triển các dự án bất động sản.",
     image: linhvuc1,
   },
   {
     id: 2,
     text: "Phân Phối Độc Quyền",
-    desc: "New Link phân phối độc quyền các dự án bất động sản của các đối tác uy tín.",
+    desc: "phân phối độc quyền các dự án bất động sản của các đối tác uy tín.",
     alt: "New Link Investment phân phối độc quyền các dự án bất động sản của các đối tác uy tín.",
     image: linhvuc2,
   },
@@ -218,7 +213,7 @@ export const TuyenDung = [
   {
     id: 2,
     role: "TRƯỞNG PHÒNG KINH DOANH",
-    yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và khả năng quản lý đội ngũ sales tối thiểu 15 người.",
+    yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có sẵn ngũ sales tối thiểu 5 người.",
     ql: "Lương cơ bản từ 15 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 2 tỷ. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên quản ký cấp cao. ",
     cddn: "Hấp dẫn nhất thị trường",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
@@ -228,7 +223,7 @@ export const TuyenDung = [
   {
     id: 3,
     role: "GIÁM ĐỐC SÀN",
-    yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và khả năng quản lý đội ngũ sales tối thiểu 15 người.",
+    yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có sẵn ngũ sales tối thiểu 15 người.",
     ql: "Lương cơ bản từ 25 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 5 tỷ. <br /> - Thưởng hoa hồng trên doanh thu đem về. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến và hỗ trợ mở sàn và chi nhánh riêng trong tương lai. ",
     cddn: "Hấp dẫn nhất thị trường",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
@@ -243,6 +238,7 @@ export const DuAn = [
     desc: "Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ",
     alt: "New Link - Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ ",
     image: lahome,
+    da: "longan",
   },
   {
     id: 2,
@@ -250,6 +246,7 @@ export const DuAn = [
     desc: "Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
     alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
     image: kitahome,
+    da: "hcm",
   },
   {
     id: 3,
@@ -257,6 +254,7 @@ export const DuAn = [
     desc: "Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
     alt: "New Link - Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
     image: mt,
+    da: "hcm",
   },
   {
     id: 4,
@@ -264,6 +262,7 @@ export const DuAn = [
     desc: "",
     alt: "New Link",
     image: lancaster,
+    da: "hcm",
   },
   {
     id: 5,
@@ -271,6 +270,7 @@ export const DuAn = [
     desc: "",
     alt: "New Link",
     image: delasol,
+    da: "hcm",
   },
   {
     id: 6,
@@ -278,6 +278,7 @@ export const DuAn = [
     desc: "",
     alt: "New Link",
     image: eaton,
+    da: "hcm",
   },
   {
     id: 7,
@@ -285,6 +286,7 @@ export const DuAn = [
     desc: "Tiện ích trung tâm thương mại, khu nhạc nước lớn nhất ĐNA, công viên, trường học quốc tế, bênh viện",
     alt: "New Link - Tiện ích trung tâm thương mại, khu nhạc nước lớn nhất ĐNA, công viên, trường học quốc tế, bênh viện",
     image: glocal,
+    da: "hcm",
   },
   {
     id: 8,
@@ -292,5 +294,14 @@ export const DuAn = [
     desc: "Công viên 16,4 ha, câu lạc bộ thể thao, trung tâm thương mại, trường học quốc tế",
     alt: "New Link - Công viên 16,4 ha, câu lạc bộ thể thao, trung tâm thương mại, trường học quốc tế",
     image: celadon,
+    da: "hcm",
+  },
+  {
+    id: 9,
+    name: "Green Hill Retreat",
+    desc: "Nhà dưới tán rừng retreat đầu tiên tại Việt Nam, nơi mỗi mái ấm là một hành trình chữa lành giữa thiên nhiên thuần khiết",
+    alt: "New Link - Nhà dưới tán rừng retreat đầu tiên tại Việt Nam, nơi mỗi mái ấm là một hành trình chữa lành giữa thiên nhiên thuần khiết",
+    image: greenHill,
+    da: "baoloc",
   },
 ];

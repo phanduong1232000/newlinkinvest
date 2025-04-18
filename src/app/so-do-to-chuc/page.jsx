@@ -15,7 +15,7 @@ const SoDo = () => {
   return (
     <div>
       <SDComponent />
-      <Footer />
+
     </div>
   );
 };
