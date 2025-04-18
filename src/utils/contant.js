@@ -1,6 +1,6 @@
 // export const DOMAIN = "http://localhost:3000/api/";
 //export const DOMAIN = `https://3062-2402-800-6345-a909-69c8-9a86-b06f-8eba.ngrok-free.app/api/`;
-export const DOMAIN = "http://192.168.80.100:3000/api/";
+export const DOMAIN = process.env.DOMAIN_URL;
 export const API = {
   // --------------- AUTH ---------------
   AUTH: DOMAIN + `auth`,
