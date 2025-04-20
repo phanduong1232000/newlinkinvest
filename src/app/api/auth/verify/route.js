@@ -16,7 +16,6 @@ export async function POST(req) {
     }
 
     const isPasswordValid = await compare(password, user.password);
-    console.log(!isPasswordValid + "Mew Mew");
     if (!isPasswordValid) {
       return new Response(JSON.stringify(null), { status: 401 });
     }

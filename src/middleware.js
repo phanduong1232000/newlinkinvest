@@ -5,6 +5,8 @@ import { NextResponse } from "next/server";
 export async function middleware(request) {
   const session = await auth(); // Lấy thông tin session của người dùng
 
+  console.log(session)
+
   // Kiểm tra nếu không có session (chưa đăng nhập)
   if (!session?.user) {
     return NextResponse.redirect(new URL("/login", request.url));

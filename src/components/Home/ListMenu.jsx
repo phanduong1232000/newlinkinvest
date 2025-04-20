@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { FiMenu, FiPhone, FiX } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 
 const DesktopMenu = ({ pathname }) => {
   return (
@@ -18,15 +19,17 @@ const DesktopMenu = ({ pathname }) => {
           <div key={item.id} className="relative pb-1 group">
             <Link
               href={item.sourceLink}
-              className={`font-utm-avo relative block md:inline-block p-2 ${
-                isActive ? "border-b pb-0.5" : ""
-              }`}
+             className={`font-utm-avo relative flex items-center gap-1 p-2 ${isActive ? "border-b pb-0.5" : ""}`}
+
             >
-              {item.text}
+              <span>{item.text}</span>
+              <div>{item.hiddenList && (
+                <FiChevronDown className="text-white  group-hover:rotate-180 transition-transform duration-200" />
+              )}    </div>
             </Link>
 
             {item.hiddenList && (
-              <div className="absolute left-0 top-8 mt-2 hidden group-hover:block bg-[#33525C] shadow-lg rounded-b-lg rounded-r-lg w-50">
+              <div className="absolute left-0 top-8 mt-2 hidden group-hover:block bg-[#33525C] shadow-lg rounded-b-lg rounded-r-lg w-50 z-10">
                 {item.hiddenList.map((subItem, index) => (
                   <div key={index}>
                     <Link

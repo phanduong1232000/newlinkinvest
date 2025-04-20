@@ -12,14 +12,13 @@ export const authOptions = {
       },
 
       async authorize(credentials) {
-        console.log(credentials + "hello");
         const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/verify`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(credentials),
         });
         const user = await res.json();
-
+        console.log("API /api/auth/verify response:", { resOk: res.ok, user });
         if (res.ok && user) {
           return user;
         }
@@ -37,6 +36,7 @@ export const authOptions = {
     strategy: "jwt",
     maxAge: 24 * 60 * 60 * 7,
   },
+  
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user }) {

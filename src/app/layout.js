@@ -1,4 +1,4 @@
-import Footer from "@/components/Footer";
+import FooterProvider from "./FooterProvider";
 import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
 
@@ -48,8 +48,8 @@ export default function RootLayout({ children }) {
           <main className="flex-grow">
             <ReduxProvider>{children}</ReduxProvider>
           </main>
-          <Footer />
         </div>
+        <FooterProvider />
       </body>
     </html>
   );
