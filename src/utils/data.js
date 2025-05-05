@@ -30,8 +30,8 @@ import glocal from "../assets/images/glocal city.png";
 import celadon from "../assets/images/celadon city.png";
 import greenHill from "../assets/images/greenhill.jpg";
 
-import logoLaHome from "../assets/logo/Ảnh LaHome.png";
-import logoKieu from "../assets/logo/Ảnh Kiều.png";
+import logoLaHome from "../assets/logo/logoLaHome.png";
+import logoKieu from "../assets/logo/logoKieu.png";
 import logoMt from "../assets/logo/mt-eastmark-logo-main.svg";
 import logoLancaster from "../assets/logo/Lancaster.png";
 import logoDelasol from "../assets/logo/delasol.png";
