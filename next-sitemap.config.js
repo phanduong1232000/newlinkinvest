@@ -1,9 +1,20 @@
+const { TinTucData } = require("./src/utils/tintuc");
+
 module.exports = {
   siteUrl: "https://newlinkinvest.com", // Đặt siteUrl là https://newlinkinvest.com
   changefreq: "daily", // Tần suất thay đổi của các trang trong sitemap
   priority: 0.8, // Độ ưu tiên của các trang
   sitemapSize: 5000, // Số lượng tối đa URL trong mỗi sitemap
   generateRobotsTxt: true, // Tạo robots.txt tự động
+
+  additionalPaths: async (config) => {
+    return TinTucData.map((post) => ({
+      loc: `/tin-tuc/${post.slug}`,
+      changefreq: "weekly",
+      priority: 0.7,
+      lastmod: new Date(post.date).toISOString(),
+    }));
+  },
 
   transform: async (config, path) => {
     let priority = config.priority;

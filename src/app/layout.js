@@ -1,3 +1,4 @@
+import { LenisProvider } from "@/components/Lenis";
 import FooterProvider from "./FooterProvider";
 import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
@@ -46,7 +47,9 @@ export default function RootLayout({ children }) {
       <body>
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">
-            <ReduxProvider>{children}</ReduxProvider>
+            <ReduxProvider>
+              <LenisProvider>{children}</LenisProvider>
+            </ReduxProvider>
           </main>
         </div>
         <FooterProvider />

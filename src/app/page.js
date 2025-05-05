@@ -6,6 +6,7 @@ import Partner from "@/components/Home/Partner";
 import ProjectNic from "@/components/Home/ProjectNic";
 import ItemProject from "@/components/Home/ItemProject";
 import { useRef } from "react";
+import { LenisProvider } from "@/components/Lenis";
 
 export default function Home() {
   const itemProjectRef = useRef(null);
@@ -16,7 +17,6 @@ export default function Home() {
 
   return (
     <div>
-      
       <Background onExploreClick={scrollToItemProject} />
       <ProjectNic />
       <div ref={itemProjectRef}>
@@ -24,7 +24,6 @@ export default function Home() {
       </div>
       <Directors />
       <Partner />
-   
     </div>
   );
 }

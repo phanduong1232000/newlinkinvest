@@ -1,16 +1,34 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import clippath from "../../assets/images/clippath.png";
 import bangten from "../../assets/images/bangten.png";
 import Image from "next/image";
 import { Directors } from "@/utils/data";
 import Link from "next/link";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ItemDirectors = () => {
+  useEffect(() => {
+    gsap.from(".director-item", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.3,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".director-item", // Kích hoạt khi phần tử này xuất hiện
+        start: "top 80%", // Bắt đầu animation khi phần tử này cách 80% từ trên xuống
+        end: "top 30%",
+      },
+    });
+  }, []);
+
   return (
     <div className="max-w-[200px] mx-auto md:max-w-full grid grid-cols-1 md:grid-cols-3 gap-y-10">
       {Directors.map((director) => (
-        <div key={director.id} className="flex justify-center">
+        <div key={director.id} className="director-item flex justify-center">
           <div className="relative w-[300px] ">
             <div className="absolute inset-0 -z-30">
               <div className="flex items-end pb-10 h-full scale-125">

@@ -28,7 +28,17 @@ import delasol from "../assets/images/delasol.png";
 import eaton from "../assets/images/eaton park.png";
 import glocal from "../assets/images/glocal city.png";
 import celadon from "../assets/images/celadon city.png";
-import greenHill from '../assets/images/greenhill.jpg'
+import greenHill from "../assets/images/greenhill.jpg";
+
+import logoLaHome from "../assets/logo/Ảnh LaHome.png";
+import logoKieu from "../assets/logo/Ảnh Kiều.png";
+import logoMt from "../assets/logo/mt-eastmark-logo-main.svg";
+import logoLancaster from "../assets/logo/Lancaster.png";
+import logoDelasol from "../assets/logo/delasol.png";
+import logoEaton from "../assets/logo/Logo-Eaton-Park.png";
+import logoGlobol from "../assets/logo/the global.png";
+import logoCeladon from "../assets/logo/celadoncity-logo-4.png";
+import logoGreenHill from "../assets/logo/green-hill-retreat-logo.png";
 
 export const Menu = [
   {
@@ -235,50 +245,56 @@ export const DuAn = [
   {
     id: 1,
     name: "LaHome ",
-    desc: "Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ",
+    desc: "LA Home kiến tạo không gian sống thịnh vượng, an yên và hạnh phúc. Nơi tôn tạo cách sống cân bằng giữa hiện đại và bình yên trong không gian xanh mát.",
     alt: "New Link - Khu đô thị - công nghiệp xanh cách TP.HCM 5km, tiện ích nội khu đầy đủ ",
     image: lahome,
     da: "longan",
+    logo: logoLaHome,
   },
   {
     id: 2,
     name: "Kiều By Kita",
-    desc: "Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
+    desc: "Tọa lạc tại vị trí đắt giá trên Đại lộ Trần Hưng Đạo - tuyến đường huyết mạch 100 năm lịch sử, là nơi kết nối giao thương kinh tế, văn hóa trọng điểm của Sài Gòn xưa và nay.",
     alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
     image: kitahome,
     da: "hcm",
+    logo: logoKieu,
   },
   {
     id: 3,
     name: "MT Eastmark",
-    desc: "Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
+    desc: "Nằm tại trung tâm TP. Thủ Đức, gần Khu Công nghệ cao và các tuyến huyết mạch như Vành đai 3, cao tốc Long Thành – Dầu Giây, MT Eastmark City sở hữu tiềm năng tăng giá và cho thuê vượt trội.",
     alt: "New Link - Vị trí chiến lược, gần cao tốc Long Thành - Dầu Giây, tiện ích resort, tiềm năng tăng giá cao",
     image: mt,
     da: "hcm",
+    logo: logoMt,
   },
   {
     id: 4,
     name: "Lancaster Legacy",
-    desc: "",
+    desc: "Tọa lạc tại trung tâm Quận 1, TPHCM, Lancaster Legacy hiện lên như một biểu tượng mới trên cung đường Nguyễn Trãi.",
     alt: "New Link",
     image: lancaster,
     da: "hcm",
+    logo: logoLancaster,
   },
   {
     id: 5,
     name: "DE LA SOL",
-    desc: "",
+    desc: "Căn hộ cao cấp CapitaLand tại quận 4, TP.HCM, lấy cảm hứng từ âm nhạc, thiết kế hiện đại và giàu tính nghệ thuật.",
     alt: "New Link",
     image: delasol,
     da: "hcm",
+    logo: logoDelasol,
   },
   {
     id: 6,
     name: "Eaton Park",
-    desc: "",
+    desc: "Eaton Park nằm trên đại lộ Mai Chí Thọ, An Phú, TP. Thủ Đức, gần hầm Thủ Thiêm, cao tốc Long Thành và Xa lộ Hà Nội, dễ dàng kết nối trung tâm và vùng lân cận.",
     alt: "New Link",
     image: eaton,
     da: "hcm",
+    logo: logoEaton,
   },
   {
     id: 7,
@@ -287,6 +303,7 @@ export const DuAn = [
     alt: "New Link - Tiện ích trung tâm thương mại, khu nhạc nước lớn nhất ĐNA, công viên, trường học quốc tế, bênh viện",
     image: glocal,
     da: "hcm",
+    logo: logoGlobol,
   },
   {
     id: 8,
@@ -295,6 +312,7 @@ export const DuAn = [
     alt: "New Link - Công viên 16,4 ha, câu lạc bộ thể thao, trung tâm thương mại, trường học quốc tế",
     image: celadon,
     da: "hcm",
+    logo: logoCeladon,
   },
   {
     id: 9,
@@ -303,5 +321,6 @@ export const DuAn = [
     alt: "New Link - Nhà dưới tán rừng retreat đầu tiên tại Việt Nam, nơi mỗi mái ấm là một hành trình chữa lành giữa thiên nhiên thuần khiết",
     image: greenHill,
     da: "baoloc",
+    logo: logoGreenHill,
   },
 ];
