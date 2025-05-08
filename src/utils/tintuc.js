@@ -42,15 +42,15 @@ const TinTucData = [
   },
   {
     id: 2,
-    title: "NewLink – Đối tác phân phối chính thức dự án LAHOME",
+    title: "NewLink – Đối tác phân phối chính thức dự án LA HOME",
     slug: "ky-ket-lahome",
     image: "https://lahome.com.vn/wp-content/uploads/2024/10/banner-2.webp",
     imageAlt: "Dự án khu đô thị sinh thái LAHOME",
     excerpt:
-      "NIC tự hào là đối tác phân phối chính thức của LAHOME – khu đô thị sinh thái hiện đại, biểu tượng của phong cách sống xanh.",
+      "NIC tự hào là đối tác phân phối chính thức của LA HOME – khu đô thị sinh thái hiện đại, biểu tượng của phong cách sống xanh.",
     content: `
-        <p><strong>NewLink</strong> tự hào trở thành <strong>đối tác phân phối chính thức</strong> của khu đô thị sinh thái <strong>LAHOME</strong> – một biểu tượng mới của phong cách sống xanh và hiện đại.</p>
-        <h3 class="text-2xl font-bold mt-6 mb-4">💎 Tại sao chọn LAHOME?</h3>
+        <p><strong>NewLink</strong> tự hào trở thành <strong>đối tác phân phối chính thức</strong> của khu đô thị sinh thái <strong>LA HOME</strong> – một biểu tượng mới của phong cách sống xanh và hiện đại.</p>
+        <h3 class="text-2xl font-bold mt-6 mb-4">💎 Tại sao chọn LA HOME?</h3>
         <ul class="list-disc pl-6 mb-4">
           <li><strong>Vị trí đắc địa:</strong> Kết nối thuận tiện đến các khu vực trọng điểm.</li>
           <li><strong>Môi trường sống xanh:</strong> Không gian sinh thái trong lành, chuẩn mực.</li>
@@ -77,9 +77,9 @@ const TinTucData = [
       "Sở hữu nhà phố, shophouse, biệt thự tại LAHOME – khu đô thị sống xanh, tiện ích quốc tế ngay cửa ngõ TP.HCM, chỉ từ 3.5 tỷ/căn!",
     content: `
         <h2 class="text-3xl font-bold text-white mb-4">🏡 ƯỚC MƠ SỞ HỮU NHÀ PHỐ, SHOPHOUSE, BIỆT THỰ LIỀN KỀ NGAY TP.HCM KHÔNG CÒN XA VỜI</h2>
-        <p class="text-white mb-4">Chỉ từ <strong>3.5 tỷ/căn</strong>, dự án <strong>LAHOME</strong> mang đến cơ hội sở hữu nhà phố, shophouse, biệt thự trong khu đô thị sinh thái đẳng cấp <strong>All-in-One</strong> ngay cửa ngõ TP.HCM.</p>
+        <p class="text-white mb-4">Chỉ từ <strong>3.5 tỷ/căn</strong>, dự án <strong>LA HOME</strong> mang đến cơ hội sở hữu nhà phố, shophouse, biệt thự trong khu đô thị sinh thái đẳng cấp <strong>All-in-One</strong> ngay cửa ngõ TP.HCM.</p>
                <img src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/482268911_122110048004769635_3441929604055263822_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6xJma1W6rNAQ7kNvwEIsIIs&_nc_oc=AdmOXZBD-J94eXlAJkkdJi9la-yCEiXKMglaxJ5BQ26WGvI_WRsI-SilatFJeu9Y-64&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=7sR-z9RPwwFBLkf4i5Pp6A&oh=00_AfFa70Dj3WyqLKmzYloZzg2kpiPzajQ5Lx94Fj7uIW5wVA&oe=681E684B" alt="Hình ảnh dự án LAHOME" class="mx-auto block mt-4 mb-4 rounded-lg shadow-md">
-        <h3 class="text-2xl font-bold text-white mt-6 mb-4">LÝ DO LAHOME TRỞ THÀNH XU HƯỚNG ĐẦU TƯ HOT NHẤT HIỆN NAY</h3>
+        <h3 class="text-2xl font-bold text-white mt-6 mb-4">LÝ DO LA HOME TRỞ THÀNH XU HƯỚNG ĐẦU TƯ HOT NHẤT HIỆN NAY</h3>
         <div class="mb-6">
           <h4 class="text-xl font-semibold text-white mb-2">1. Sống xanh – Sống trọn vẹn</h4>
           <ul class="list-disc pl-6 text-white">
@@ -118,7 +118,7 @@ const TinTucData = [
         
       `,
     date: "2025-01-15",
-    author: "Ban Quản lý Dự án LAHOME",
+    author: "NewLink",
     category: "Dự án",
     tags: [
       "LAHOME",

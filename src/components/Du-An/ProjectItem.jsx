@@ -4,6 +4,7 @@ import { DuAn } from "@/utils/data";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 const ProjectItem = () => {
   const [selectedLocation, setSelectedLocation] = useState("");
@@ -75,34 +76,36 @@ const ProjectItem = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10 px-2 mt-6">
         {filteredProjects.map((project, index) => (
           <div key={project.id} ref={(el) => (projectRefs.current[index] = el)}>
-            <div className="shadow-2xl">
-              <div className="relative">
-                <Image
-                  src={project.image}
-                  alt={project.alt}
-                  width={500}
-                  height={300}
-                  className="h-[200px] w-full object-cover"
-                />
-                <div className="absolute top-0 right-0 border-l border-b shadow-xl rounded-bl-2xl border-gray-300  bg-opacity-60 backdrop-blur-xl p-2 flex items-center">
+            <Link href={`/du-an/${project.link}`}>
+              <div className="shadow-2xl">
+                <div className="relative">
                   <Image
-                    src={project.logo}
+                    src={project.image}
                     alt={project.alt}
-                    width={100}
-                    height={100}
-                    className="h-[60px] w-[120px] object-contain"
+                    width={500}
+                    height={300}
+                    className="h-[200px] w-full object-cover"
                   />
+                  <div className="absolute top-0 right-0 border-l border-b shadow-xl rounded-bl-2xl border-gray-300  bg-opacity-60 backdrop-blur-xl p-2 flex items-center">
+                    <Image
+                      src={project.logo}
+                      alt={project.alt}
+                      width={100}
+                      height={100}
+                      className="h-[60px] w-[120px] object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="bg-white rounded-b-lg p-4 text-black font-utm-avo">
+                  <h2 className="text-[16px] md:text-[20px] font-utm-avo-bold">
+                    {project.name}
+                  </h2>
+                  <p className="text-[#2B2B2B] text-[12px] md:text-[16px]">
+                    {project.desc}
+                  </p>
                 </div>
               </div>
-              <div className="bg-white rounded-b-lg p-4 text-black font-utm-avo">
-                <h2 className="text-[16px] md:text-[20px] font-utm-avo-bold">
-                  {project.name}
-                </h2>
-                <p className="text-[#2B2B2B] text-[12px] md:text-[16px]">
-                  {project.desc}
-                </p>
-              </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>

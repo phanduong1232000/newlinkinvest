@@ -11,6 +11,7 @@ import Image from "next/image";
 import { DuAn } from "@/utils/data";
 import gsap from "gsap"; // Import GSAP
 import ScrollTrigger from "gsap/ScrollTrigger"; // Import ScrollTrigger
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger); // Đăng ký plugin ScrollTrigger
 
@@ -101,10 +102,24 @@ const ImageSlider = () => {
           Dự Án
         </h2>
         <div className="py-2 bg-[linear-gradient(to_right,#09303D_0%,#09303D_20%,#0C5E77_50%,#09303D_80%,#09303D_100%)] text-center">
-          <p className="font-bold text-[16px] md:text-[24px] bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-            {activeProjectName.name}
-          </p>
-          <p className="font-medium text-[12px] md:font-[16px]">
+          <div className="flex justify-center py-2">
+            <div>
+              {activeProjectName?.logo ? (
+                <Image
+                  src={activeProjectName.logo}
+                  width={1000}
+                  height={1000}
+                  alt="logo"
+                  className="w-[70px] md:w-[130px] max-h-[60px] "
+                />
+              ) : (
+                <div className="w-[70px] md:w-[140px] bg-gray-200 flex items-center justify-center">
+                  <span>No Logo</span>
+                </div>
+              )}
+            </div>
+          </div>
+          <p className="font-medium text-[12px] md:font-[16px] mt-2">
             {activeProjectName.desc}
           </p>
         </div>
@@ -137,11 +152,13 @@ const ImageSlider = () => {
               overflow: "hidden",
             }}
           >
-            <Image
-              src={image.image}
-              alt={image.alt}
-              className="object-cover rounded-lg md:max-w-[1000px] md:max-h-[480px] mx-auto"
-            />
+            <Link href={`/du-an/${image.link}`}>
+              <Image
+                src={image.image}
+                alt={image.alt}
+                className="object-cover rounded-lg md:max-w-[1000px] md:max-h-[480px] mx-auto"
+              />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
