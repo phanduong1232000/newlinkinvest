@@ -33,7 +33,7 @@ import logoGreenHill from "../assets/logo/green-hill-retreat-logo.png";
 const DuAnDetail = [
   {
     id: "lahome",
-    name: "LaHome",
+    name: "La Home",
     location: "Bến Lức, Long An",
     developer: "Prodezi - Hướng Việt",
     project_type: "Khu đô thị sinh thái",

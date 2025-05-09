@@ -14,6 +14,20 @@ const ProjectDetail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
 
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [type, setType] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
   // Function to open modal with selected image
   const openModal = (image) => {
     setSelectedImage(typeof image === "string" ? image.trimEnd() : image);
@@ -31,6 +45,27 @@ const ProjectDetail = () => {
       <div className="text-white text-center mt-20">Dự án không tồn tại</div>
     );
   }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      // Gửi request đến server của bạn
+      await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, project: project.name }),
+      });
+
+      setFormData({ fullName: "", phone: "", email: "" });
+      setIsLoading(false);
+      setType(true);
+    } catch (err) {
+      console.log(err);
+    }
+
+    // Reset form
+  };
 
   return (
     <div
@@ -115,7 +150,6 @@ const ProjectDetail = () => {
             ))}
           </div>
         </section>
-
         {/* Utilities Section */}
         <section className="mb-20">
           <motion.h2
@@ -142,7 +176,6 @@ const ProjectDetail = () => {
             ))}
           </div>
         </section>
-
         {/* Story Section */}
         <section className="mb-20">
           <motion.h2
@@ -162,7 +195,6 @@ const ProjectDetail = () => {
             {project.story}
           </motion.p>
         </section>
-
         {/* Map Section */}
         <section className="mb-20">
           <motion.h2
@@ -189,7 +221,6 @@ const ProjectDetail = () => {
             />
           </motion.div>
         </section>
-
         {/* Floor Plans Section */}
         <section className="mb-20">
           <motion.h2
@@ -232,9 +263,8 @@ const ProjectDetail = () => {
             ))}
           </div>
         </section>
-
         {/* Image Gallery */}
-        <section>
+        <section className="mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -263,6 +293,79 @@ const ProjectDetail = () => {
               </motion.div>
             ))}
           </div>
+        </section>
+        {/* Learn More Form Section */}
+
+        <section className="mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-bold bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770] bg-clip-text text-transparent text-center mb-12"
+          >
+            Tìm Hiểu Thêm Về Dự Án
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl mx-auto bg-gray-100 p-8 rounded-xl shadow-xl border border-gray-300"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {["fullName", "phone", "email"].map((field) => (
+                <div key={field}>
+                  <label className="block text-sm font-medium text-black">
+                    {field === "fullName"
+                      ? "Họ và Tên"
+                      : field === "phone"
+                      ? "Số Điện Thoại"
+                      : "Email"}
+                  </label>
+                  <input
+                    type={
+                      field === "email"
+                        ? "email"
+                        : field === "phone"
+                        ? "tel"
+                        : "text"
+                    }
+                    name={field}
+                    value={formData[field]}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 w-full p-3 rounded-lg bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-300"
+                    placeholder={`Nhập ${
+                      field === "fullName"
+                        ? "họ và tên"
+                        : field === "phone"
+                        ? "số điện thoại"
+                        : "email"
+                    }`}
+                  />
+                </div>
+              ))}
+
+              <div className="text-center">
+                {!type ? (
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300"
+                  >
+                    {!isLoading ? "Gửi Thông Tin" : "Đang gửi..."}
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={true}
+                    className="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  >
+                    Đã Gửi
+                  </button>
+                )}
+              </div>
+            </form>
+          </motion.div>
         </section>
       </div>
 
