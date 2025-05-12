@@ -250,7 +250,7 @@ export const DuAn = [
     image: lahome,
     da: "longan",
     logo: logoLaHome,
-    link: "lahome",
+    link: "/du-an/lahome",
   },
   {
     id: 2,
@@ -260,7 +260,7 @@ export const DuAn = [
     image: kitahome,
     da: "hcm",
     logo: logoKieu,
-    link: "kieu-by-kita",
+    link: "/kieu-by-kita",
   },
   {
     id: 3,
@@ -270,7 +270,7 @@ export const DuAn = [
     image: mt,
     da: "hcm",
     logo: logoMt,
-    link: "mt-eastmark",
+    link: "/du-an/mt-eastmark",
   },
   {
     id: 4,
@@ -280,7 +280,7 @@ export const DuAn = [
     image: lancaster,
     da: "hcm",
     logo: logoLancaster,
-    link: "lancaster-legacy",
+    link: "/du-an/lancaster-legacy",
   },
   {
     id: 5,
@@ -290,7 +290,7 @@ export const DuAn = [
     image: delasol,
     da: "hcm",
     logo: logoDelasol,
-    link: "de-la-sol",
+    link: "/du-an/de-la-sol",
   },
   {
     id: 6,
@@ -300,7 +300,7 @@ export const DuAn = [
     image: eaton,
     da: "hcm",
     logo: logoEaton,
-    link: "eaton-park",
+    link: "/du-an/eaton-park",
   },
   {
     id: 7,
@@ -310,7 +310,7 @@ export const DuAn = [
     image: glocal,
     da: "hcm",
     logo: logoGlobol,
-    link: "global-city",
+    link: "/du-an/global-city",
   },
   {
     id: 8,
@@ -320,7 +320,7 @@ export const DuAn = [
     image: celadon,
     da: "hcm",
     logo: logoCeladon,
-    link: "celadon-city",
+    link: "/du-an/celadon-city",
   },
   {
     id: 9,
@@ -330,6 +330,6 @@ export const DuAn = [
     image: greenHill,
     da: "baoloc",
     logo: logoGreenHill,
-    link: "green-hill-retreat",
+    link: "/du-an/green-hill-retreat",
   },
 ];

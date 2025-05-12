@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap");
 
 @font-face {
   font-family: "UTM Avo";
@@ -14,9 +15,48 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "PD Bold";
+  src: url("../assets/kieubykita/font/PD-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PD Regular";
+  src: url("../assets/kieubykita/font/PD-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BR Regular";
+  src: url("../assets/kieubykita/font/BR-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PS Regular";
+  src: url("../assets/kieubykita/font/PinyonScript-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MV Regular";
+  src: url("../assets/kieubykita/font/MV-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background: #09303d;
   --foreground: #ededed;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 @theme inline {
@@ -26,6 +66,11 @@
   --font-mono: var(--font-geist-mono);
   --font-utm-avo: "UTM Avo";
   --font-utm-avo-bold: "UTM Avo Bold";
+  --font-pd-bold: "PD Bold";
+  --font-pd-regular: "PD Regular";
+  --font-br-regular: "BR Regular";
+  --font-ps-regular: "PS Regular";
+  --font-mv-regular: "MV Regular";
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,9 +121,13 @@ body {
     #fff5be 99%,
     #d9b770 100%
   );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   mask-composite: exclude;
 }
 
@@ -99,8 +148,24 @@ body {
     #fff5be 99%,
     #d9b770 100%
   );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
   mask-composite: exclude;
+}
+
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  margin-right: 70px;
+  color: #000000;
+}
+
+.swiper-button-next:after {
+  font-size: 20px !important;
+  margin-left: 70px;
+  color: #000000;
 }

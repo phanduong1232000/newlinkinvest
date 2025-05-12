@@ -38,6 +38,7 @@ const DuAnDetail = [
     developer: "Prodezi - Hướng Việt",
     project_type: "Khu đô thị sinh thái",
     logo: logoLaHome,
+    link:"/du-an/lahome",
     utilities: [
       "Công viên trung tâm, vườn thiền, spa thư giãn và trung tâm thể dục thể thao giúp cư dân cân bằng thân – tâm – trí.",
       "Trung tâm thương mại, siêu thị và shophouse đa dạng phục vụ nhu cầu mua sắm, giải trí.",
@@ -84,6 +85,7 @@ const DuAnDetail = [
     developer: "KITA Group",
     project_type: "Căn hộ cao cấp",
     logo: logoKieu,
+    link:"/kieu-by-kita",
     utilities: [
       "Khu Vui Chơ Trẻ Em",
       "Phòng Yến Tiệc",
@@ -184,6 +186,7 @@ const DuAnDetail = [
       "3 Mặt tiền Trường Lưu – Vành Đai 3 – Lò Lu, P Long Trường, Tp Thủ Đức",
     developer: "Công ty TNHH Xây dựng và Kinh doanh nhà Điền Phúc Thành",
     project_type: "Khu căn hộ",
+    link:"/du-an/mt-eastmark",
     utilities: [
       "Căn hộ Mt Eastmark City quận 9 chuẩn tiện ích resort 5 sao",
       "1.700m2 Hồ bơi Resort 5 sao",
@@ -239,6 +242,7 @@ const DuAnDetail = [
     location: "230 Nguyễn Trãi, phường Nguyễn Cư Trinh, Quận 1, TP.HCM",
     developer: "Tập đoàn Trung Thủy",
     project_type: "Khu căn hộ cao cấp",
+    link:"/du-an/lancaster-legacy",
     utilities: [
       "Hồ bơi tràn bờ",
       "Khối đế thương mại",
@@ -352,6 +356,7 @@ const DuAnDetail = [
     location: "Đường Tôn Thất Thuyết, phường 1, Quận 4, TP.HCM",
     developer: "CapitaLand",
     project_type: "Căn hộ cao cấp",
+    link:"/du-an/de-la-sol",
     utilities: [
       "Hơn 50 tiện ích đỉnh cao",
       "Party pool",
@@ -623,6 +628,7 @@ const DuAnDetail = [
     location: "Đại lộ Mai Chí Thọ, phường An Phú, TP. Thủ Đức, TP.HCM",
     developer: "Gamuda Land",
     project_type: "Căn hộ cao cấp",
+    link:"/du-an/eaton-park",
     utilities: [
       "Câu lạc bộ thể dục thể thao",
       "Khu vui chơi trẻ em",
@@ -798,6 +804,7 @@ const DuAnDetail = [
     location: "Phường An Phú, TP. Thủ Đức, TP.HCM",
     developer: "Masterise Homes",
     project_type: "Khu đô thị phức hợp",
+    link:"/du-an/global-city",
     utilities: [
       "Trung tâm thương mại",
       "Khu BBQ tiệc nướng ngoài trời, khu clubhouse cao cấp",
@@ -903,6 +910,7 @@ const DuAnDetail = [
     location: "Số 68 đường N1, phường Sơn Kỳ, quận Tân Phú, TP.HCM",
     developer: "Gamuda Land",
     project_type: "Khu đô thị sinh thái",
+    link:"/du-an/celadon-city",
     utilities: [
       "Trung tâm thương mại",
       "Trung tâm thể thao",
@@ -962,6 +970,7 @@ const DuAnDetail = [
     location: "Thôn 5, Lộc Tân, Bảo Lâm, Lâm Đồng",
     developer: "An Thịnh Phát",
     project_type: "Phân Khu Biệt Thự Rừng",
+    link:"/du-an/green-hill-retreat",
     utilities: [
       "Quảng trường ca nhạc",
       "Cafe, Nhà Hàng",

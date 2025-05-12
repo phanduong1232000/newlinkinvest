@@ -110,7 +110,7 @@ const ImageSlider = () => {
                   width={1000}
                   height={1000}
                   alt="logo"
-                  className="w-[70px] md:w-[130px] max-h-[60px] "
+                  className="h-[30px] md:h-[50px] object-contain"
                 />
               ) : (
                 <div className="w-[70px] md:w-[140px] bg-gray-200 flex items-center justify-center">

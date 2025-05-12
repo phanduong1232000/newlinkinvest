@@ -36,11 +36,13 @@ const ItemDirectors = () => {
               </div>
             </div>
 
-            <Image
-              src={director.image}
-              alt={director.alt}
-              className={`${director.style && "pt-2"} `}
-            />
+            <div className=" w-full  flex justify-center">
+              <Image
+                src={director.image}
+                alt={director.alt}
+                className={` ${director.style && "pt-2 "}`}
+              />
+            </div>
 
             <div className="absolute text-[32px] md:text-[44px] font-utm-avo-bold top-[60px] md:top-[74px] left-0 bg-clip-text text-transparent bg-gradient-to-b from-[#ffffffde] to-[#09303D]">
               +{director.year}

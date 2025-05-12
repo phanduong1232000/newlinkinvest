@@ -76,7 +76,7 @@ const ProjectItem = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10 px-2 mt-6">
         {filteredProjects.map((project, index) => (
           <div key={project.id} ref={(el) => (projectRefs.current[index] = el)}>
-            <Link href={`/du-an/${project.link}`}>
+            <Link href={`${project.link}`}>
               <div className="shadow-2xl">
                 <div className="relative">
                   <Image
