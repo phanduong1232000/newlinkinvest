@@ -26,7 +26,7 @@ const ItemDirectors = () => {
   }, []);
 
   return (
-    <div className="max-w-[200px] mx-auto md:max-w-full grid grid-cols-1 md:grid-cols-3 gap-y-10">
+    <div className="max-w-[200px] mx-auto md:max-w-full grid grid-cols-1 md:grid-cols-3 gap-y-10 mt-10">
       {Directors.map((director) => (
         <div key={director.id} className="director-item flex justify-center">
           <div className="relative w-[300px] ">
@@ -37,11 +37,7 @@ const ItemDirectors = () => {
             </div>
 
             <div className=" w-full  flex justify-center">
-              <Image
-                src={director.image}
-                alt={director.alt}
-                className={` ${director.style && "pt-2 "}  `}
-              />
+              <Image src={director.image} alt={director.alt} />
             </div>
 
             <div className="absolute text-[32px] md:text-[44px] font-utm-avo-bold top-[60px] md:top-[74px] left-0 bg-clip-text text-transparent bg-gradient-to-b from-[#ffffffde] to-[#09303D]">
