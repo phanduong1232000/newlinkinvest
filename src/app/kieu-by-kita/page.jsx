@@ -10,6 +10,7 @@ import TienIch from "@/components/Kieu-By-Kita/TienIch";
 import LienHe from "@/components/Kieu-By-Kita/LienHe";
 import BackNic from "@/components/BackNic";
 import CauChuyen from "@/components/Kieu-By-Kita/CauChuyen";
+import DichVuDangCap from "@/components/Kieu-By-Kita/DichVuDangCap";
 
 const KieuByKita = () => {
   return (
@@ -19,10 +20,6 @@ const KieuByKita = () => {
         minHeight: "100vh",
       }}
     >
-      <div className="fixed w-screen h-[60px] bg-[#3A0000] text-white rounded z-50">
-        <Link href="#">Home</Link>
-      </div>
-
       <BackgroundKieu />
       <CauChuyen />
       <TongQuanKieu />
@@ -31,6 +28,7 @@ const KieuByKita = () => {
       <SoDoMatBang />
       <BoSuuTap />
       <TienIch />
+      <DichVuDangCap />
       <LienHe />
 
       <BackNic />

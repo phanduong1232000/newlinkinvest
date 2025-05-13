@@ -219,6 +219,12 @@ const BackgroundKieu = () => {
               animate={{ scale: [1, 0.95, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
               className="bg-gradient-to-l relative z-30 from-[#F3DBB8] via-[#FFFEFD] to-[#F3DBB8] mt-6 text-black py-2 px-4 rounded-3xl cursor-pointer font-bold text-[16px] md:text-[20px] hover:bg-white hover:text-black hover:from-white hover:via-white hover:to-white"
+              onClick={() =>
+                window.scrollTo({
+                  top: document.body.scrollHeight,
+                  behavior: "smooth",
+                })
+              }
             >
               THAM QUAN DỰ ÁN
             </motion.div>
@@ -245,7 +251,7 @@ const BackgroundKieu = () => {
           />
         </div>
 
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 md:translate-0  md:top-[180px] md:right-[105px] z-40 ">
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 md:translate-0  md:top-[180px] md:right-[105px] z-40 ">
           <div className="relative ">
             <div className="relative z-40">
               <Image
@@ -253,7 +259,7 @@ const BackgroundKieu = () => {
                 alt="Ảnh Tòa Nhà"
                 width={1000}
                 height={1000}
-                className="w-[240px] md:w-[500px]"
+                className="w-[220px] md:w-[500px]"
               />
             </div>
             <motion.div
@@ -308,7 +314,7 @@ const BackgroundKieu = () => {
             className="w-[950px]"
           />
         </div>
-        <div  className="absolute -bottom-40 left-0 z-[39] hidden md:block">
+        <div className="absolute -bottom-40 left-0 z-[39] hidden md:block">
           <Image
             src={`https://w.ladicdn.com/s2500x1100/5c7362c6c417ab07e5196b05/2197-20241209044920-ofdgs.png`}
             alt="Ảnh Dây Đàn"

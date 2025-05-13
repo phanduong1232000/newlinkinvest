@@ -12,19 +12,23 @@ const CauChuyen = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="h-[1250px] w-[100vw] relative"
+      className="h-[1000px] md:h-[1250px] w-[100vw] relative"
     >
       <div className=" w-[100vw] h-full  md:max-w-[1440px]  md:mx-auto relative pt-40 md:pt-20  ">
-        <div className="w-[100vw] h-full md:max-w-[1000px] md:mx-auto flex">
-          <div className="w-[550px] flex items-center  flex-col relative z-40">
-            <p className="font-mv-regular font-light text-[60px] ">
+        <div className="w-[100vw] h-full md:max-w-[1000px] md:mx-auto flex flex-col md:flex-row">
+          <div className="w-full md:w-[550px] flex items-center  flex-col relative z-40">
+            <p className="font-mv-regular font-light text-[32px] md:text-[60px] ">
               Câu chuyện
             </p>
 
-            <p className="font-ps-regular text-[90px] -mt-6 text-[#E9C496]">
-              Kiều <span className=" text-[60px] font-br-regular">By</span> Kita
+            <p className="font-ps-regular text-[60px] md:text-[90px] -mt-2 md:-mt-6 text-[#E9C496]">
+              Kiều{" "}
+              <span className="text-[40px] md:text-[60px] font-br-regular">
+                By
+              </span>{" "}
+              Kita
             </p>
-            <div className="absolute top-40 -left-40 z-[39] ">
+            <div className="absolute top-40 -left-40 z-[29] ">
               <Image
                 src={`https://w.ladicdn.com/s800x800/5c7362c6c417ab07e5196b05/hoa-bb-20241209172534-ybjcw.png`}
                 alt="Ảnh Hoa Sen"
@@ -34,7 +38,7 @@ const CauChuyen = () => {
               />
             </div>
           </div>
-          <div className="w-[450px] pt-18 space-y-5 text-white relative z-40 ">
+          <div className="w-full md:w-[450px] px-4 pt-5 text-center md:pt-18 space-y-5 text-white relative z-40 ">
             <p>
               Vươn mình kiêu hãnh trên đại lộ Trần Hưng Đạo phồn vinh, Kiều by
               KITA như một “nàng thơ” tuyệt đẹp tỏa sáng rực rỡ, là kiệt tác độc
@@ -64,7 +68,7 @@ const CauChuyen = () => {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute top-60 -left-60 z-[40] "
+              className="absolute top-60 -left-60 z-[30] "
             >
               <Image
                 src={`https://w.ladicdn.com/s550x450/5c7362c6c417ab07e5196b05/line-2-20241209064105-xgjiq.png`}
@@ -84,7 +88,7 @@ const CauChuyen = () => {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute top-20 -right-60 z-[40] "
+              className="absolute top-20 -right-60 z-[30] "
             >
               <Image
                 src={`https://w.ladicdn.com/s600x450/5c7362c6c417ab07e5196b05/line-b-20241210180353-lxcrc.png`}

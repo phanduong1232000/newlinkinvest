@@ -57,8 +57,8 @@ const LienHe = () => {
           />
         </div>
         <div className="bg-[#EFEFEF] py-10 rounded-2xl px-10">
-          <h2 className="text-center font-bold text-[24px] text-[#6A0B0B]">
-            LIÊN HỆ TƯ VẤN
+          <h2 className="text-center font-bold text-[20px] md:text-[24px] text-[#6A0B0B]">
+            Đăng Ký Tham Quan Dự Án
           </h2>
           <form
             onSubmit={handleSubmit}

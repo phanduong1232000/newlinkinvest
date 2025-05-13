@@ -40,7 +40,7 @@ const ItemDirectors = () => {
               <Image
                 src={director.image}
                 alt={director.alt}
-                className={` ${director.style && "pt-2 "}`}
+                className={` ${director.style && "pt-2 "}  `}
               />
             </div>
 
