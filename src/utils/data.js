@@ -250,7 +250,7 @@ export const DuAn = [
     image: lahome,
     da: "longan",
     logo: logoLaHome,
-    link: "/du-an/lahome",
+    link: "/la-home",
   },
   {
     id: 2,
