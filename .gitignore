@@ -44,3 +44,5 @@ next-env.d.ts
 /public/sitemap-0.txt
 /public/sitemap.txt
 
+/.idea/
+

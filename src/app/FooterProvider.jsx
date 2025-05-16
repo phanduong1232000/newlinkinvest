@@ -5,7 +5,10 @@ import React from "react";
 
 const FooterProvider = () => {
   const pathname = usePathname();
-  const isExcluded = pathname.startsWith("/dashboard") || pathname.startsWith("/kieu-by-kita");
+  const isExcluded =
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/kieu-by-kita") ||
+    pathname.startsWith("/la-home");
 
   return <div> {!isExcluded && <Footer />}</div>;
 };
