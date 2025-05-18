@@ -152,7 +152,7 @@ const ImageSlider = () => {
               overflow: "hidden",
             }}
           >
-            <Link href={`/du-an/${image.link}`}>
+            <Link href={`${image.link}`}>
               <Image
                 src={image.image}
                 alt={image.alt}
