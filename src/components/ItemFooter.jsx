@@ -39,8 +39,8 @@ const ItemFooter = () => {
           rel="noopener noreferrer"
           className="text-[10px] md:text-[14px] w-[200px] md:w-[600px] font-utm-avo  hover:underline"
         >
-          Văn Phòng NewLink : Văn Phòng NewLink : 277 Trương Văn Bang, Khu Phố
-          4, P. Thạnh Mỹ Lợi, Thành phố Thủ Đức, Thành Phố Hồ Chí Minh, Việt Nam
+          Văn Phòng NewLink : 277 Trương Văn Bang, Khu Phố 4, P. Thạnh Mỹ Lợi,
+          Thành phố Thủ Đức, Thành Phố Hồ Chí Minh, Việt Nam
         </a>
       </div>
       <p className="text-[10px] md:text-[14px] font-utm-avo text-white">

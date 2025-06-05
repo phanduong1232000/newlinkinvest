@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="flex justify-between items-end">
           <ItemFooter />
           <IconFooter />
-        </div>
+        </div> 
       </div>
       <div className="absolute bottom-0 w-full -z-50">
         <Image src={footer1} alt="footer1" className="w-full object-cover" />
