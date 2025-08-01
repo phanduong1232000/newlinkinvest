@@ -1,6 +1,9 @@
+import {
+  useSendMailMutation,
+  useUploadPdfMutation,
+} from "@/redux/api/dpfSlice";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import emailjs from "@emailjs/browser";
 
 const FormTD = ({ closeModal, selectedJob }) => {
   const [formData, setFormData] = useState({
@@ -9,10 +12,12 @@ const FormTD = ({ closeModal, selectedJob }) => {
     email: "",
     confirmEmail: "",
     birthYear: "",
-    coverLetter: "",
-    cvFile: null,
+    desc: "",
   });
   const [errorEmail, setErrorEmail] = useState(false);
+
+  const [uploadCv] = useUploadPdfMutation();
+  const [sendMail, { isLoading }] = useSendMailMutation();
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -35,16 +40,13 @@ const FormTD = ({ closeModal, selectedJob }) => {
     try {
       // Upload CV lên server
       const uploadForm = new FormData();
-      uploadForm.append("cvFile", formData.cvFile);
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body: uploadForm,
-      });
-      console.log(res)
-      const data = await res.json();
-      cvLink = `${window.location.origin}${data.url}`;
+      uploadForm.append("pdfs", formData.cvFile);
+
+      const cv = await uploadCv(uploadForm).unwrap();
+
+      cvLink = `${process.env.NEXT_PUBLIC_URL_NONE}${cv.data[0].url}`;
     } catch (err) {
-      Swal.fire("Lỗi", "Không thể upload CV", "error");
+      Swal.fire("Lỗi", "Không thể upload CV hoặc file lớn hơn 2MB", "error");
       return;
     }
 
@@ -53,19 +55,15 @@ const FormTD = ({ closeModal, selectedJob }) => {
       gender: formData.gender,
       email: formData.email,
       birthYear: formData.birthYear,
-      coverLetter: formData.coverLetter,
+      desc: formData.desc,
       cvLink: cvLink,
       role: selectedJob?.role,
     };
 
     try {
       // Gửi email qua EmailJS
-      await emailjs.send(
-        "service_8tkc1cj",      // Thay bằng Service ID của bạn
-        "template_37wmeec",     // Thay bằng Template ID của bạn
-        emailParams,
-        "Wmb7d8CfYB41xZPvz"       // Thay bằng Public Key của bạn
-      );
+      const res = await sendMail(emailParams);
+      console.log(res);
 
       Swal.fire({
         position: "top-end",
@@ -81,12 +79,10 @@ const FormTD = ({ closeModal, selectedJob }) => {
       console.error("EmailJS error:", error);
       Swal.fire("Lỗi", "Không thể gửi email", "error");
     }
-
-   
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 text-black flex justify-center items-center px-4 overflow-y-auto">
+    <div className="fixed z-50 inset-0 bg-black bg-opacity-70 text-black flex justify-center items-center px-4 overflow-y-auto">
       <div className="bg-white p-4 rounded-lg max-w-[100%] md:max-w-[500px] w-full relative max-h-[90vh] overflow-y-auto">
         <button className="absolute top-2 right-2 text-xl" onClick={closeModal}>
           &times;
@@ -193,7 +189,8 @@ const FormTD = ({ closeModal, selectedJob }) => {
               Tải CV <span className="text-red-500">*</span>
             </label>
             <div className="text-[12px] text-gray-500 mb-2">
-              Vui lòng tải lên CV có định dạng (.PDF)
+              Vui lòng tải lên CV có định dạng (.PDF){" "}
+              <span className="font-bold">dưới 2MB</span>
             </div>
             <label className="flex justify-center items-center border border-dashed p-3 cursor-pointer rounded-lg text-center">
               <span className="bg-blue-600 text-white py-2 px-4 rounded-lg text-sm">

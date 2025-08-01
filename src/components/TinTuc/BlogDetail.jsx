@@ -1,55 +1,129 @@
 "use client";
 import { useParams } from "next/navigation";
 import React from "react";
-import { TinTucData } from "@/utils/tintuc";
+import useBlogId from "@/hooks/Dashboard/Blog/useBlogId";
+import { Calendar, User } from "lucide-react";
+import { format } from "date-fns";
+import { Badge } from "../ui/badge";
+import { useSelector } from "react-redux";
+import styles from "@/app/tin-tuc/blog.module.css"; // Assuming you have some styles defined in this file
 
 const BlogDetail = () => {
   const { id } = useParams();
-  const blog = TinTucData.find((item) => item.slug === id);
+  const { dataBlogIdLoading } = useBlogId(id);
 
-  if (!blog) {
-    return (
-      <div className="flex items-center justify-center h-[50vh] text-xl text-red-500">
-        Không tìm thấy bài viết.
-      </div>
-    );
+  const blog = useSelector((state) => state.blog.blogId);
+
+  let tagsArray = [];
+
+  if (Array.isArray(blog.tags)) {
+    tagsArray = blog.tags;
+  } else if (typeof blog.tags === "string") {
+    tagsArray = blog.tags
+      .split(",")
+      .map((t) => t.trim())
+      .filter(Boolean);
   }
 
-  return (
-    <div className=" text-slate-200 min-h-screen px-4 md:px-8 pt-24 pb-16">
-      <div className="max-w-3xl mx-auto">
-        {/* Tiêu đề */}
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
-          {blog.title}
-        </h1>
+  if (!blog && dataBlogIdLoading) {
+    return (
+      <div className="flex items-center justify-center h-[50vh] text-xl text-red-500">
+        Đang tải bài viết...
+      </div>
+    );
+  } else {
+    <div>Không tìm thấy bài viết</div>;
+  }
 
-        {/* Ngày & tác giả */}
-        <div className="flex items-center gap-3 text-sm text-slate-400 mb-6">
-          <span>{blog.date}</span>
-          <span className="w-1 h-1 rounded-full bg-slate-500"></span>
-          <span>{blog.author || "NewLink Team"}</span>
+  const transformSpaces = (html) =>
+    html?.replace(/(<p>) {1,}/g, (match) => {
+      const spaces = match.match(/ +/)?.[0].length || 1;
+      return `<p>${"&nbsp;".repeat(spaces)}`;
+    });
+
+  const transformHeadings = (html) =>
+    html
+      ?.replace(/<h2>/g, '<h2 class="!text-[16px] md:!text-[24px] my-2">')
+      .replace(/<p>/g, '<p class="text-[14px] md:text-[16px]  ">')
+      .replace(
+        /<li([^>]*)>/g,
+        '<li$1 class="text-[13px] md:text-[16px] my-1 md:my-2 leading-relaxed">'
+      );
+
+  const transformedContent = transformHeadings(transformSpaces(blog.content));
+
+  return (
+    <div className="pt-24 max-w-[1100px] mx-auto relative z-10">
+      <div
+        className="relative h-64 bg-cover bg-center rounded-lg overflow-hidden z-10"
+        style={{
+          backgroundImage: `url(${blog.image?.url})`,
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
+          <div className="text-center text-white px-4">
+            <h1 className="text-2xl md:text-4xl font-bold max-w-[800px] mx-auto">
+              {blog?.title || "Tiêu đề bài viết"}
+            </h1>
+            {blog?.metaDescription && (
+              <p className="mt-2 text-[12px] md:text-base max-w-[800px] mx-auto opacity-90 ">
+                {blog.metaDescription}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Breadcrumbs và thông tin bài viết */}
+      <div className="px-2 md:px-6 pt-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+            <span className="text-blue-500 font-medium hover:cursor-pointer text-[12px] md:text-[16px]">
+              Blog
+            </span>{" "}
+            &gt;
+            <span className="hover:text-blue-500 hover:cursor-pointer text-[12px] md:text-[16px]">
+              {blog?.title}
+            </span>
+          </div>
+          <div className="flex gap-2 flex-wrap">
+            {blog.cateBlog && (
+              <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                {blog.cateBlog.label}
+              </Badge>
+            )}
+            {/* Sử lý tag bằng cách tách các dấu phẩy */}
+            {tagsArray?.map((t, idx) => (
+              <Badge
+                key={idx}
+                className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
+              >
+                {t}
+              </Badge>
+            ))}
+          </div>
         </div>
 
-        {/* Ảnh */}
-        {blog.image && (
-          <div className="w-full aspect-[16/9] overflow-hidden rounded-xl shadow-lg mb-8">
-            <img
-              src={blog.image}
-              alt={blog.imageAlt || blog.title}
-              className="w-full h-full object-cover transition duration-300 hover:scale-105"
-            />
+        {/* Thông tin tác giả và ngày */}
+        <div className="mt-4 flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex items-center gap-2">
+            <User className="w-4 h-4" />
+            <span>{blog?.author || "Ẩn danh"}</span>
           </div>
-        )}
+          <div className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
+            <span>{format(new Date(), "dd/MM/yyyy")}</span>
+          </div>
+        </div>
+      </div>
 
-        {/* Trích dẫn ngắn */}
-        <p className="text-lg text-slate-300 italic mb-6">
-          {blog.excerpt}
-        </p>
-
-        {/* Nội dung chính */}
-        <article
-          className="prose prose-invert prose-lg max-w-none text-slate-100"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
+      {/* Nội dung bài viết */}
+      <div
+        className={`mt-8 px-2 md:px-6 pb-6 max-w-[1000px] mx-auto  ${styles.listContainer}`}
+      >
+        <div
+          className="ql-editor blog-content prose dark:prose-invert max-w-none custom-line-height"
+          dangerouslySetInnerHTML={{ __html: transformedContent }}
         />
       </div>
     </div>

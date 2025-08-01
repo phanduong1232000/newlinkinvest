@@ -66,16 +66,16 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
     // Animate the menu container
     tl.fromTo(
       menuRef.current,
-      { x: '100%', autoAlpha: 0 },
-      { x: '0%', autoAlpha: 1, duration: 0.5, ease: 'power3.out' }
+      { x: "100%", autoAlpha: 0 },
+      { x: "0%", autoAlpha: 1, duration: 0.5, ease: "power3.out" }
     );
 
     // Animate menu items with stagger
     tl.fromTo(
       menuItemsRef.current,
       { x: 20, autoAlpha: 0 },
-      { x: 0, autoAlpha: 1, duration: 0.3, stagger: 0.1, ease: 'power2.out' },
-      '-=0.3'
+      { x: 0, autoAlpha: 1, duration: 0.3, stagger: 0.1, ease: "power2.out" },
+      "-=0.3"
     );
 
     // Play or reverse the timeline based on isMobileMenuOpen
@@ -95,7 +95,7 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
     <div
       ref={menuRef}
       className={`md:hidden fixed inset-0 bg-[#09303d] bg-opacity-90 z-100 ${
-        isMobileMenuOpen ? 'visible' : 'invisible'
+        isMobileMenuOpen ? "visible" : "invisible"
       }`}
     >
       <div className="w-64 bg-[#0c3d4a] text-white h-full shadow-lg p-5 fixed right-0 top-0">
@@ -106,10 +106,10 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
           <FiX size={24} color="white" />
         </button>
         {Menu.map((item, index) => {
-          const cleanSourceLink = item.sourceLink.split('?')[0];
+          const cleanSourceLink = item.sourceLink.split("?")[0];
           const isActive =
             pathname === cleanSourceLink ||
-            (cleanSourceLink !== '/' && pathname.startsWith(cleanSourceLink));
+            (cleanSourceLink !== "/" && pathname.startsWith(cleanSourceLink));
 
           return (
             <div
@@ -121,8 +121,8 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
                 href={item.sourceLink}
                 className={`block px-4 py-2 rounded-lg text-lg ${
                   isActive
-                    ? 'bg-[#12728a] text-white'
-                    : 'text-gray-300 hover:bg-gray-700'
+                    ? "bg-[#12728a] text-white"
+                    : "text-gray-300 hover:bg-gray-700"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -149,8 +149,6 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen, pathname }) => {
     </div>
   );
 };
-
-
 
 const ListMenu = () => {
   let pathname = usePathname();
@@ -213,7 +211,7 @@ const ListMenu = () => {
       {/* Nút gọi điện */}
       <div
         ref={phoneWrapperRef}
-        className="absolute md:-bottom-14 -bottom-20 right-4 md:right-0 flex items-center space-x-2"
+        className="absolute md:-bottom-14 -bottom-20 right-4 md:right-0 flex items-center space-x-2 z-50"
       >
         <div className="relative group">
           <a

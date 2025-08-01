@@ -1,6 +1,5 @@
 import React from "react";
 import ProjectItem from "@/components/Du-An/ProjectItem";
-import Footer from "@/components/Footer";
 import Menu from "@/components/Menu";
 
 export const metadata = {

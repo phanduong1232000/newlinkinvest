@@ -8,7 +8,10 @@ const FooterProvider = () => {
   const isExcluded =
     pathname.startsWith("/dashboard") ||
     pathname.startsWith("/kieu-by-kita") ||
-    pathname.startsWith("/la-home");
+    pathname.startsWith("/la-home") ||
+    pathname.startsWith("/lang-omm") ||
+    pathname.startsWith("/auth") ||
+    pathname.startsWith("/verify-email");
 
   return <div> {!isExcluded && <Footer />}</div>;
 };

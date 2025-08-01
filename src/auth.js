@@ -1,4 +1,6 @@
-// src/auth.js
+export const runtime = "nodejs";
+
+import axios from "axios";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
@@ -10,59 +12,61 @@ export const authOptions = {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-
       async authorize(credentials) {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/verify`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(credentials),
-        });
-        const user = await res.json();
-        console.log("API /api/auth/verify response:", { resOk: res.ok, user });
-        if (res.ok && user) {
-          return user;
+        try {
+          const { data: user } = await axios.post(
+            `${process.env.NEXTAUTH_URL}/api/auth/verify`,
+            credentials
+          );
+          return user || null;
+        } catch (err) {
+          console.error(
+            "Authorization failed:",
+            err.response?.data || err.message
+          );
+          return null;
         }
-        return null;
       },
     }),
   ],
   pages: {
-    signIn: "/login",
+    signIn: "/auth/login",
   },
-  jwt: {
-    encryption: true,
-  },
+
   session: {
     strategy: "jwt",
     maxAge: 24 * 60 * 60 * 7,
   },
-  
+
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token, user }) {
+      // Khi user đăng nhập lần đầu
       if (user) {
         token.id = user.id;
         token.email = user.email;
-        token.firstName = user.firstName;
+        token.fullName = user.fullName;
         token.role = user.role;
-        token.exp = Math.floor(Date.now() / 1000) + 24 * 60 * 60 * 7;
+        token.verify = user.verify;
       }
 
-      const now = Math.floor(Date.now() / 1000);
-      const timeLeft = token.exp - now;
-      const fourDaysInSeconds = 4 * 24 * 60 * 60;
-
-      if (timeLeft <= fourDaysInSeconds) {
-        token.exp = now + 24 * 60 * 60 * 7;
+      // Tự động cập nhật "verify" mỗi lần
+      try {
+        const { data: updatedUser } = await axios.get(
+          `${process.env.NEXTAUTH_URL}/api/auth/account/${token.id}`
+        );
+        token.verify = updatedUser.data.emailVerified;
+      } catch (err) {
+        console.error("Failed to refresh verify status", err.message);
       }
-
       return token;
     },
     async session({ session, token }) {
-      if (token?.id) session.user.id = token.id;
-      if (token?.email) session.user.email = token.email;
-      if (token?.firstName) session.user.firstName = token.firstName;
-      if (token?.role) session.user.role = token.role;
+      session.user.id = token.id;
+      session.user.email = token.email;
+      session.user.fullName = token.fullName;
+      session.user.role = token.role;
+      session.user.verify = token.verify;
       return session;
     },
   },

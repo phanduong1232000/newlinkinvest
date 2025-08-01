@@ -263,6 +263,16 @@ export const DuAn = [
     link: "/kieu-by-kita",
   },
   {
+    id: 10,
+    name: "Làng Omm",
+    desc: "Tọa lạc tại vị trí đắt giá trên Đại lộ Trần Hưng Đạo - tuyến đường huyết mạch 100 năm lịch sử, là nơi kết nối giao thương kinh tế, văn hóa trọng điểm của Sài Gòn xưa và nay.",
+    alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
+    image: kitahome,
+    da: "baoloc",
+    logo: logoKieu,
+    link: "/lang-omm",
+  },
+  {
     id: 3,
     name: "MT Eastmark",
     desc: "Nằm tại trung tâm TP. Thủ Đức, gần Khu Công nghệ cao và các tuyến huyết mạch như Vành đai 3, cao tốc Long Thành – Dầu Giây, MT Eastmark City sở hữu tiềm năng tăng giá và cho thuê vượt trội.",

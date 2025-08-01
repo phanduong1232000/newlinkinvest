@@ -2,6 +2,7 @@ import { LenisProvider } from "@/components/Lenis";
 import FooterProvider from "./FooterProvider";
 import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata = {
   title: "NewLink Investment Company",
@@ -47,9 +48,11 @@ export default function RootLayout({ children }) {
       <body>
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">
-            <ReduxProvider>
-              <LenisProvider>{children}</LenisProvider>
-            </ReduxProvider>
+            <SessionProvider>
+              <ReduxProvider>
+                <LenisProvider>{children}</LenisProvider>
+              </ReduxProvider>
+            </SessionProvider>
           </main>
         </div>
         <FooterProvider />

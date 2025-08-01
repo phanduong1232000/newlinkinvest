@@ -1,12 +1,10 @@
 "use client";
-import Footer from "@/components/Footer";
 import Background from "@/components/Home/Background";
 import Directors from "@/components/Home/Directors";
 import Partner from "@/components/Home/Partner";
 import ProjectNic from "@/components/Home/ProjectNic";
 import ItemProject from "@/components/Home/ItemProject";
 import { useRef } from "react";
-import { LenisProvider } from "@/components/Lenis";
 
 export default function Home() {
   const itemProjectRef = useRef(null);

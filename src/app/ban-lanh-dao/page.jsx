@@ -1,5 +1,4 @@
 import BanLanhDao from "@/components/Ban-Lanh-Dao/BanLanhDao";
-import Footer from "@/components/Footer";
 import React, { Suspense } from "react";
 
 export const metadata = {

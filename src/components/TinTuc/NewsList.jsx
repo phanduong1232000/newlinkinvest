@@ -1,25 +1,39 @@
-import { TinTucData } from "@/utils/tintuc";
+"use client";
+import { setBlogId } from "@/redux/feature/blogSlice";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const NewsList = () => {
-  // Sắp xếp TinTucData theo date (giảm dần)
-  const sortedNews = [...TinTucData].sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
+  const [blog, setBlog] = useState([]);
+
+  const dataBlog = useSelector((state) => state.blog);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Cập nhật blog state khi dataBlog thay đổi
+    if (dataBlog?.blog) {
+      setBlog(dataBlog.blog);
+    }
   });
+
+  const handleOnChange = async (item) => {
+    await dispatch(setBlogId(item));
+  };
 
   return (
     <div className="relative z-50 py-8 md:py-12 px-4 mt-20 lg:px-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 mt-8 max-w-7xl mx-auto">
-        {sortedNews.map((item) => (
+        {blog.map((item) => (
           <div
-            key={item.id}
+            key={item._id}
             className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
+            onMouseEnter={(e) => handleOnChange(item)}
           >
             <div className="relative w-full h-[220px] md:h-[250px]">
               <Image
-                src={item.image}
+                src={item.image.url}
                 alt={item.imageAlt || item.title}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -30,7 +44,7 @@ const NewsList = () => {
                 {item.title}
               </h2>
               <p className="text-gray-600 text-xs md:text-sm line-clamp-3">
-                {item.excerpt || item.desc}
+                {item.metaDescription}
               </p>
               <Link
                 href={`/tin-tuc/${item.slug}`}
