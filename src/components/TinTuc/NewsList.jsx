@@ -12,15 +12,18 @@ const NewsList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Cập nhật blog state khi dataBlog thay đổi
-    if (dataBlog?.blog) {
-      setBlog(dataBlog.blog);
-    }
-  });
+  if (dataBlog?.blog) {
+    const sorted = [...dataBlog.blog].sort(
+      (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    );
+    setBlog(sorted);
+  }
+}, [dataBlog]);
 
   const handleOnChange = async (item) => {
     await dispatch(setBlogId(item));
   };
+
 
   return (
     <div className="relative z-50 py-8 md:py-12 px-4 mt-20 lg:px-8">
