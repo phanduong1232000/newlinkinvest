@@ -29,6 +29,7 @@ import eaton from "../assets/images/eaton park.png";
 import glocal from "../assets/images/glocal city.png";
 import celadon from "../assets/images/celadon city.png";
 import greenHill from "../assets/images/greenhill.jpg";
+import langOmm from "../assets/langomm/background.png";
 
 import logoLaHome from "../assets/logo/logoLaHome.png";
 import logoKieu from "../assets/logo/logoKieu.png";
@@ -39,6 +40,7 @@ import logoEaton from "../assets/logo/Logo-Eaton-Park.png";
 import logoGlobol from "../assets/logo/the global.png";
 import logoCeladon from "../assets/logo/celadoncity-logo-4.png";
 import logoGreenHill from "../assets/logo/green-hill-retreat-logo.png";
+import logoLangOmm from "../assets/langomm/logo.png";
 
 export const Menu = [
   {
@@ -262,16 +264,16 @@ export const DuAn = [
     logo: logoKieu,
     link: "/kieu-by-kita",
   },
-  {
-    id: 10,
-    name: "Làng Omm",
-    desc: "Tọa lạc tại vị trí đắt giá trên Đại lộ Trần Hưng Đạo - tuyến đường huyết mạch 100 năm lịch sử, là nơi kết nối giao thương kinh tế, văn hóa trọng điểm của Sài Gòn xưa và nay.",
-    alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
-    image: kitahome,
-    da: "baoloc",
-    logo: logoKieu,
-    link: "/lang-omm",
-  },
+  // {
+  //   id: 10,
+  //   name: "Làng Omm",
+  //   desc: "Giữa nhịp sống bộn bề, Làng Omm hiện lên như một chốn dừng chân lý tưởng – nơi bạn có thể thả lỏng cơ thể và để tâm trí được chữa lành trong không gian xanh mát của thiên nhiên nguyên sơ. Tọa lạc giữa núi rừng trập trùng, bên những con suối trong veo và đồi chè xanh ngát, Làng Omm không chỉ là một điểm đến nghỉ dưỡng mà còn là hành trình tìm về sự tĩnh tại bên trong.",
+  //   alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
+  //   image: langOmm,
+  //   da: "baoloc",
+  //   logo: logoLangOmm,
+  //   link: "/lang-omm",
+  // },
   {
     id: 3,
     name: "MT Eastmark",

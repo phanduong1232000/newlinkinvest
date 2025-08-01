@@ -4,7 +4,8 @@ import { NextResponse } from "next/server";
 export async function POST(request) {
   try {
     // Lấy dữ liệu từ body của request
-    const { role, fullName, email, gender, birthYear, desc, cvLink } = await request.json();
+    const { role, fullName, email, gender, birthYear, desc, cvLink } =
+      await request.json();
 
     // Cấu hình Nodemailer với Gmail
     const transporter = nodemailer.createTransport({
@@ -18,7 +19,7 @@ export async function POST(request) {
     // Cấu hình nội dung email (HTML)
     const mailOptions = {
       from: `"Admin NewLink Investment" <${process.env.GMAIL_USERNAME}>`,
-      to: process.env.RECIPIENT_EMAIL,
+      to: process.env.NHANSU_EMAIL,
       subject: `Tuyển dụng vị trí ${role} - ${fullName}`,
       html: `
     <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
