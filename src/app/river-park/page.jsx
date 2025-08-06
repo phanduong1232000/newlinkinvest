@@ -74,6 +74,7 @@ const RiverParkPage = () => {
       <ThanhTo />
       <BanHang />
       <ThanhToan />
+      <TuVan />
       <Footer />
       <BackNic />
     </div>

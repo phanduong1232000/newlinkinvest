@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import HD1 from "../../assets/RiverPark/HD1.png";
 import HD2 from "../../assets/RiverPark/HD2.png";
 import HD3 from "../../assets/RiverPark/HD3.png";

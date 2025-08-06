@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import Bg from "../../assets/RiverPark/Background.png";
-import LogoLH from "../../assets/RiverPark/logoLH2.png";
+import LogoLH from "../../assets/RiverPark/LogoLH2.png";
 import LayerBg from "../../assets/RiverPark/LayerBg.png";
 import { useGSAP } from "@gsap/react";
 

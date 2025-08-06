@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import NPBG from "../../assets/RiverPark/NPBG.png";
 import Image from "next/image";
 import gsap from "gsap";

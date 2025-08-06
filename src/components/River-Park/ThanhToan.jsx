@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import MiniLogo from "../../assets/RiverPark/MiniLogo.png";
 import TT1 from "../../assets/RiverPark/TT1.png";
 import TT2 from "../../assets/RiverPark/TT2.png";
-import Footer from "./Footer";
 
 const ThanhToan = () => {
   return (

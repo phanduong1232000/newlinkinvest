@@ -50,7 +50,6 @@ const ThanhTo = () => {
           trigger: titleRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
-          markers: true, // Remove in production
         },
       }
     );
@@ -67,7 +66,6 @@ const ThanhTo = () => {
           trigger: iconRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
-          markers: true, // Remove in production
         },
       }
     );
@@ -84,7 +82,6 @@ const ThanhTo = () => {
           trigger: imageRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
-          markers: true, // Remove in production
         },
       }
     );

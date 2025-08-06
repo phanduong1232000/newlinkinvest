@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import MiniLogo from "../../assets/RiverPark/MiniLogo.png";
 
 import gsap from "gsap";
