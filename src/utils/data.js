@@ -30,7 +30,7 @@ import glocal from "../assets/images/glocal city.png";
 import celadon from "../assets/images/celadon city.png";
 import greenHill from "../assets/images/greenhill.jpg";
 import langOmm from "../assets/langomm/background.png";
-import RiverPark from '../assets/RiverPark/Background.png'
+import RiverPark from "../assets/RiverPark/Background.png";
 
 import logoLaHome from "../assets/logo/logoLaHome.png";
 import logoKieu from "../assets/logo/logoKieu.png";
@@ -42,7 +42,7 @@ import logoGlobol from "../assets/logo/the global.png";
 import logoCeladon from "../assets/logo/celadoncity-logo-4.png";
 import logoGreenHill from "../assets/logo/green-hill-retreat-logo.png";
 import logoLangOmm from "../assets/langomm/logo.png";
-import logoRP from '../assets/RiverPark/LogoRP.png'
+import logoRP from "../assets/RiverPark/LogoRP.png";
 
 export const Menu = [
   {
@@ -279,7 +279,7 @@ export const DuAn = [
   {
     id: 11,
     name: "River Park",
-    desc: "Giữa nhịp sống bộn bề, Làng Omm hiện lên như một chốn dừng chân lý tưởng – nơi bạn có thể thả lỏng cơ thể và để tâm trí được chữa lành trong không gian xanh mát của thiên nhiên nguyên sơ. Tọa lạc giữa núi rừng trập trùng, bên những con suối trong veo và đồi chè xanh ngát, Làng Omm không chỉ là một điểm đến nghỉ dưỡng mà còn là hành trình tìm về sự tĩnh tại bên trong.",
+    desc: "Tọa lạc ngay cửa ngõ khu Tây TP.HCM, Khu đô thị sinh thái LA Home ôm trọn vị thế đắc địa với mặt tiền Đại lộ Lương Hòa Bình Chánh.",
     alt: "New Link - Tầm view đẹp trung tâm TP.HCM, tiện ích 5 sao, vị trí kim cương, phong cách sống riêng tư",
     image: RiverPark,
     da: "baoloc",
