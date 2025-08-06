@@ -3,6 +3,8 @@ import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 
 export async function middleware(request) {
+ 
+
   const session = await auth(); // Lấy thông tin session của người dùng
   const pathname = request.nextUrl.pathname;
 
@@ -17,7 +19,10 @@ export async function middleware(request) {
   }
 
   // Chặn riêng /dashboard/account nếu không phải admin
-  if (pathname === "/dashboard/account/manager" && session.user.role !== "admin") {
+  if (
+    pathname === "/dashboard/account/manager" &&
+    session.user.role !== "admin"
+  ) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 

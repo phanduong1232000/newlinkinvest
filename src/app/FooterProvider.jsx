@@ -11,7 +11,8 @@ const FooterProvider = () => {
     pathname.startsWith("/la-home") ||
     pathname.startsWith("/lang-omm") ||
     pathname.startsWith("/auth") ||
-    pathname.startsWith("/verify-email");
+    pathname.startsWith("/verify-email") ||
+    pathname.startsWith("/river-park");
 
   return <div> {!isExcluded && <Footer />}</div>;
 };

@@ -16,6 +16,7 @@ const ProjectNic = () => {
   const headingRef = useRef(null);
   const itemFieldRef = useRef(null);
 
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({

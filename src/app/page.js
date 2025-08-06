@@ -8,7 +8,6 @@ import { useRef } from "react";
 
 export default function Home() {
   const itemProjectRef = useRef(null);
-
   const scrollToItemProject = () => {
     itemProjectRef.current?.scrollIntoView({ behavior: "smooth" });
   };

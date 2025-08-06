@@ -5,9 +5,11 @@ import Image from "next/image";
 import logo from "../assets/images/logo.png";
 import Link from "next/link";
 import useBlogList from "@/hooks/Dashboard/Blog/useBlogList";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 
 const Menu = () => {
   const { dataBlog } = useBlogList();
+  useTrackUserIP();
 
   return (
     <div className="relative ">

@@ -1,5 +1,6 @@
 import BannerTD from "@/components/Tuyen-Dung/BannerTD";
 import TuyenDungComponent from "@/components/Tuyen-Dung/TuyenDungComponent";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 import React from "react";
 
 export const metadata = {

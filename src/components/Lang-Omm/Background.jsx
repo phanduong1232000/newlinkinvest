@@ -6,10 +6,13 @@ import logo from "@/assets/langomm/logo.png";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Background = () => {
+   useTrackUserIP(); 
+  
   const logoRef = useRef(null);
   const textWrapperRef = useRef(null);
   const wrapperRef = useRef(null);

@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import SDComponent from "@/components/So-Do/SDComponent";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 import React from "react";
 
 export const metadata = {
@@ -12,6 +13,7 @@ export const metadata = {
 };
 
 const SoDo = () => {
+
   return (
     <div>
       <SDComponent />

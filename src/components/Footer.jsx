@@ -5,6 +5,8 @@ import footer1 from "../assets/images/footer1.png";
 import Image from "next/image";
 
 const Footer = () => {
+
+  
   return (
     <div className="relative ">
       <div className="max-w-[1240px]  mx-auto py-5 pt-10 px-2 ">
@@ -17,7 +19,7 @@ const Footer = () => {
         <div className="flex justify-between items-end">
           <ItemFooter />
           <IconFooter />
-        </div> 
+        </div>
       </div>
       <div className="absolute bottom-0 w-full -z-50">
         <Image src={footer1} alt="footer1" className="w-full object-cover" />

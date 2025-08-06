@@ -1,5 +1,6 @@
 import Menu from "@/components/Menu";
 import BlogDetail from "@/components/TinTuc/BlogDetail";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 import React from "react";
 
 export async function generateMetadata({ params }) {

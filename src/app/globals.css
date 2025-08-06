@@ -67,12 +67,25 @@
   font-style: normal;
 }
 
+/* River Park */
+@font-face {
+  font-family: "1FTV Nillota";
+  src: url("../assets/RiverPark/font/1FTV-Nillota.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "UTM Alter Gothic";
+  src: url("../assets/RiverPark/font/UTM-Alter-Gothic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   overflow-x: hidden;
 }
-
-
 
 @theme inline {
   --color-background: #09303d;
@@ -88,6 +101,8 @@ body {
   --font-mv-regular: "MV Regular";
   --font-svn-ameyallinda: "SVN Ameyallinda";
   --font-ftv-blushing-rose: "FTV Blushing Rose";
+  --font-1ftv-nillota: "1FTV Nillota";
+  --font-utm-alter-gothic: "UTM Alter Gothic";
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

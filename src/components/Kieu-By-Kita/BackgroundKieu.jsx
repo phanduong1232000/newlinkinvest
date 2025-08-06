@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 
 const BackgroundKieu = () => {
+  useTrackUserIP();
+
   return (
     <div
       style={{

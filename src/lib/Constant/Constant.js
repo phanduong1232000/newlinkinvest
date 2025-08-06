@@ -26,6 +26,9 @@ export const API = {
 
   // --------------- CATEGORY BLOG ---------------
   CATEBLOG: DOMAIN + "cate-blog",
+
+  // --------------- Cloudflare ---------------
+  USERIP: DOMAIN + "cloudflare",
 };
 
 export const LOCAL_STORAGE = {

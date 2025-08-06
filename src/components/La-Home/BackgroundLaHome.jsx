@@ -4,8 +4,11 @@ import bg from "../../assets/lahome/bg.png";
 import logo from "../../assets/lahome/logo.png";
 import Image from "next/image";
 import { motion } from "motion/react";
+import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
 
 const BackgroundLaHome = () => {
+   useTrackUserIP(); 
+  
   // Animation variants for the background image
   const bgVariants = {
     initial: { scale: 1.1, opacity: 0 },

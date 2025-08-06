@@ -3,6 +3,7 @@ import Menu from "../Menu";
 import NewsList from "./NewsList";
 
 const NewsComponent = () => {
+  
   return (
     <div className="relative  md:h-full ">
       {/* Nội Dung */}

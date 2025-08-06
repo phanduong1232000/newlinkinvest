@@ -57,6 +57,7 @@ export const metadata = {
 };
 
 const LaHome = () => {
+  
   return (
     <div
       style={{
