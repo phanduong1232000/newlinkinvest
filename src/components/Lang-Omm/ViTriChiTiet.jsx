@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import logonocolor from "@/assets/langomm/logonocolor.png";
 import laban from "@/assets/langomm/laban.png";
-import tongquan from "@/assets/langomm/tongquan.png";
+import tongquan from "@/assets/langomm/TQ2.png";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
@@ -56,27 +56,6 @@ const ViTriChiTiet = () => {
           width={1440}
           height={800} // Adjust based on actual image dimensions
         />
-        <div
-          ref={labanRef}
-          className="absolute top-2 left-2 md:top-5 md:left-5"
-        >
-          <Image
-            src={laban}
-            alt="Làng Omm - La Bàn"
-            className="w-[60px] md:w-[150px]"
-            width={150}
-            height={150} // Adjust based on actual image dimensions
-          />
-        </div>
-        <div className="absolute top-2 right-2 md:top-5 md:right-5">
-          <Image
-            src={logonocolor}
-            alt="Làng Omm - Logo"
-            className="w-[80px] md:w-[250px]"
-            width={250}
-            height={100} // Adjust based on actual image dimensions
-          />
-        </div>
       </div>
     </div>
   );

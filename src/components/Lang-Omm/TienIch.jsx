@@ -64,7 +64,7 @@ const TienIch = () => {
         ease: "power2.out",
         scrollTrigger: {
           trigger: ".text-content",
-          start: "top 80%",
+          start: "top 95%",
           toggleActions: "play none none none",
         },
       }
@@ -81,7 +81,7 @@ const TienIch = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: ".swiper-container",
-          start: "top 80%",
+          start: "top 95%",
           toggleActions: "play none none none",
         },
       }
@@ -99,7 +99,7 @@ const TienIch = () => {
         ease: "elastic.out(1, 0.5)",
         scrollTrigger: {
           trigger: ".swiper-container",
-          start: "top 80%",
+          start: "top 95%",
           toggleActions: "play none none none",
         },
       }
@@ -107,12 +107,12 @@ const TienIch = () => {
   }, []);
 
   return (
-    <div className="w-full h-full pt-10 ">
+    <div className="w-full h-full py-20 mx-auto backdrop-blur-md ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
         {/* Text Content Section */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-content">
           <div className="flex flex-row items-center justify-center md:justify-start sm:items-start gap-4">
-            <h2 className="text-[20px] sm:text-4xl font-bold bg-gradient-to-b from-[#41A347] via-[#336532] to-[#3F6D34] bg-clip-text text-transparent">
+            <h2 className="text-[20px] sm:text-4xl font-bold text-[#41A347]">
               TIỆN ÍCH <br /> NỔI BẬT CỦA
             </h2>
             <Image
@@ -122,7 +122,7 @@ const TienIch = () => {
               priority
             />
           </div>
-          <div className="mt-8 max-w-lg text-[14px] md:text-[16px] text-gray-700 leading-relaxed">
+          <div className="mt-8 max-w-lg text-[14px] md:text-[16px] text-white leading-relaxed">
             <p className="text-paragraph">
               Làng Omm không chỉ là dự án nghỉ dưỡng, mà còn là một “ốc đảo
               xanh” hòa mình trong thiên nhiên giữa đồi chè và rừng thông. Nội
