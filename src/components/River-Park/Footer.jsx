@@ -11,12 +11,12 @@ const Footer = () => {
     <div className=" pt-20">
       <div className="bg-[#54D9DF]">
         <div className="w-full max-w-[1440px] mx-auto p-2 py-10 md:p-10 md:py-20 flex justify-between">
-          <div className="flex flex-col space-x-10">
-            <div className="w-full flex justify-center md:justify-start">
+          <div className="flex flex-col md:flex-row space-x-10">
+            <div className="flex justify-center md:justify-start ">
               <Image
                 src={LogoNIC}
                 alt="Logo NIC"
-                className="w-[100px] md:w-[220px]"
+                className="w-[200px] md:w-[220px]"
               />
             </div>
             <div>

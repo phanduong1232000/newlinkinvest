@@ -61,14 +61,24 @@ const TienIchFirst = () => {
             { time: "40 Phút", places: ["AEON Mall Bình Tân"] },
           ].map((item, index) => (
             <div key={index} className="relative z-0 moc">
-              <div className="w-[120px] md:w-[200px] h-[1px] border border-[#00979C] relative z-0"></div>
+              <div className="w-[120px] md:w-[180px] h-[1px] border border-[#00979C] relative z-0"></div>
               <div
                 className={`absolute -top-8 ${
                   index === 0
                     ? "md:-left-24"
-                    : index === 5
-                      ? "md:-right-14 right-[-48px]"
-                      : "md:-left-10"
+                    : index === 1
+                      ? "md:-left-6"
+                      : index === 3
+                        ? "md:left-20"
+                        : index === 4
+                          ? "md:left-28"
+                          : index === 2
+                            ? "md:-left-2"
+                            : index === 5
+                              ? "md:-right-14 right-[-48px]"
+                              : index === 3
+                                ? "md:left-10"
+                                : "md:left-10"
                 } flex flex-col items-center`}
               >
                 <div

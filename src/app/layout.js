@@ -5,6 +5,7 @@ import ReduxProvider from "./ReduxProvider";
 import { SessionProvider } from "next-auth/react";
 import ZaloPixel from "@/components/Pixel/ZaloPixel";
 import Script from "next/script";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export const metadata = {
   title: "NewLink Investment Company",
@@ -45,6 +46,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       <body>
@@ -75,6 +77,7 @@ export default function RootLayout({ children }) {
         </noscript>
 
         <div className="flex flex-col min-h-screen">
+          <BackgroundMusic />
           <main className="flex-grow">
             <SessionProvider>
               <ReduxProvider>

@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const TuVan = () => {
@@ -12,6 +13,7 @@ const TuVan = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -59,6 +61,7 @@ const TuVan = () => {
         product: "",
       });
       setIsSuccess(true);
+      router.push("/river-park/thank-you");
     } catch (err) {
       console.error("Error submitting form:", err);
       setIsSuccess(false);
@@ -154,7 +157,11 @@ const TuVan = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="bg-white px-4 py-2 rounded-xl font-bold text-[#54D9DF] text-[18px]"
+            className={`bg-white px-4 py-2 rounded-xl font-bold text-[#54D9DF] text-[18px] transition-colors duration-300 cursor-pointer ${
+              isLoading
+                ? "opacity-60 cursor-not-allowed"
+                : "hover:bg-[#C6F5F7] hover:text-[#2BA7AC]"
+            }`}
           >
             {isLoading ? "Đang gửi..." : "Đăng Ký"}
           </button>

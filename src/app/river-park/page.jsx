@@ -65,16 +65,18 @@ const RiverParkPage = () => {
   return (
     <div className="bg-[#E4F7FB] w-full h-full text-black">
       <Header />
-      <Background />
-      <TienIch />
-      <MatBang />
-      <NhaPhoFirst />
-      <NhaPhoSecond />
-      <HienDai />
-      <ThanhTo />
-      <BanHang />
-      <ThanhToan />
-      <TuVan />
+      <div>
+        <Background />
+        <TienIch />
+        <MatBang />
+        <NhaPhoFirst />
+        <NhaPhoSecond />
+        <HienDai />
+        <ThanhTo />
+        <BanHang />
+        <ThanhToan />
+        <TuVan />
+      </div>
       <Footer />
       <BackNic />
     </div>
