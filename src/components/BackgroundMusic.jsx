@@ -11,22 +11,6 @@ export default function BackgroundMusic() {
     audioRef.current.volume = 1;
     audioRef.current.muted = true;
 
-    const tryAutoplay = () => {
-      setTimeout(() => {
-        audioRef.current
-          .play()
-          .then(() => {
-            console.log("Autoplay started successfully");
-            setIsPlaying(true);
-          })
-          .catch((err) => {
-            console.warn("Autoplay failed:", err);
-          });
-      }, 1000); // Trì hoãn 1 giây
-    };
-
-    tryAutoplay();
-
     return () => {
       audioRef.current.pause();
       audioRef.current = null;
@@ -64,7 +48,7 @@ export default function BackgroundMusic() {
           onMouseLeave={togglePlay}
           onScroll={togglePlay}
           onTouchStart={togglePlay} // cho iOS & Android
-          className="w-full h-full px-4 py-2  text-black rounded-lg shadow"
+          className="w-full h-full  px-4 py-2  text-black rounded-lg shadow"
         >
           {isPlaying ? "" : ""}
         </button>
