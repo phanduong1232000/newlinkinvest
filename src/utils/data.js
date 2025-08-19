@@ -227,7 +227,7 @@ export const TuyenDung = [
   {
     id: 2,
     role: "TRƯỞNG PHÒNG KINH DOANH",
-    yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có sẵn ngũ sales tối thiểu 5 người.",
+    yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có đội ngũ sales tối thiểu 5 người.",
     ql: "Lương cơ bản từ 15 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 2 tỷ. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên quản ký cấp cao. ",
     cddn: "Hấp dẫn nhất thị trường",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
