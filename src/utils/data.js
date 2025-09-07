@@ -219,7 +219,7 @@ export const TuyenDung = [
     id: 1,
     role: "NHÂN VIÊN KINH DOANH",
     yc: "không yêu cầu kinh nghiệm trong ngành bất động sản, nhưng kinh nghiệm trong lĩnh vực sales bảo hiểm, chứng khoán, ngân hàng là một lợi thế.",
-    ql: "Lương Cơ bản 7 triệu/tháng. <br /> - Hoa hồng lên đến 70% + thưởng nóng hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 1 tỷ. <br /> - Thưởng hoa hồng trên doanh thu đem về. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên cấp quản lý.",
+    ql: "Lương Cơ bản 7,5 triệu/tháng. <br /> - Hoa hồng lên đến 70% + thưởng nóng hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 1 tỷ. <br /> - Thưởng hoa hồng trên doanh thu đem về. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên cấp quản lý.",
     cddn: "Công ty cung cấp data khách hàng tiềm năng, ngân sách marketing mạnh và đào tạo chuyên sâu để bạn có thể nhanh chóng nắm bắt công việc.",
     mt: "Môi trường làm việc chuyên nghiệp, năng động với cơ hội thăng tiến rõ ràng.",
     image: tuyendung3,
@@ -228,12 +228,11 @@ export const TuyenDung = [
     id: 2,
     role: "TRƯỞNG PHÒNG KINH DOANH",
     yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có đội ngũ sales tối thiểu 5 người.",
-    ql: "Lương cơ bản từ 15 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 2 tỷ. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên quản ký cấp cao. ",
+    ql: "Lương cơ bản từ 15,5 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 2 tỷ. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên quản ký cấp cao. ",
     cddn: "Hấp dẫn nhất thị trường",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
     image: tuyendung2,
   },
-
   {
     id: 3,
     role: "GIÁM ĐỐC SÀN",
@@ -241,7 +240,7 @@ export const TuyenDung = [
     ql: "Lương cơ bản từ 25 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 5 tỷ. <br /> - Thưởng hoa hồng trên doanh thu đem về. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến và hỗ trợ mở sàn và chi nhánh riêng trong tương lai. ",
     cddn: "Hấp dẫn nhất thị trường",
     mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
-    image: tuyendung2,
+    image: tuyendung3,
   },
 ];
 
