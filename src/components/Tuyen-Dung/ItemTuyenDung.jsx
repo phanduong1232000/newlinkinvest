@@ -60,7 +60,6 @@ const ItemTuyenDung = () => {
             <div className="font-utm-avo">
               <h4 className="font-utm-avo-bold">Yêu cầu:</h4>
               <ul className="">
-                <li>- Tốt nghiệp đại học trở lên</li>
                 <li>
                   - Có ít nhất 5 năm kinh nghiệm trong lĩnh vực bất động sản
                 </li>
@@ -80,7 +79,7 @@ const ItemTuyenDung = () => {
                 Quyền Lợi Và Chế Độ Đãi Ngộ:
               </h4>
               <ul className="">
-                <li>Lương cơ bản từ 25,5 triệu/ tháng</li>
+                <li>Lương cơ bản từ 40 triệu/ tháng</li>
                 <li>- Tốt nghiệp đại học trở lên</li>
                 <li>- Thu nhập hấp dẫn: lương cơ bản + hoa hồng + thưởng.</li>
                 <li>- Đầy đủ BHXH, BHYT, BHTN theo luật.</li>
@@ -185,8 +184,6 @@ const ItemTuyenDung = () => {
           )}
         </div>
       ))}
-
-      
 
       {isOpen && <FormTD closeModal={closeModal} selectedJob={selectedJob} />}
     </div>
