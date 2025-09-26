@@ -80,7 +80,6 @@ const ItemTuyenDung = () => {
               </h4>
               <ul className="">
                 <li>Lương cơ bản từ 40 triệu/ tháng</li>
-                <li>- Tốt nghiệp đại học trở lên</li>
                 <li>- Thu nhập hấp dẫn: lương cơ bản + hoa hồng + thưởng.</li>
                 <li>- Đầy đủ BHXH, BHYT, BHTN theo luật.</li>
                 <li>- Thưởng lễ, Tết, thưởng nóng theo hiệu quả.</li>
