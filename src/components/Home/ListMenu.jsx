@@ -33,7 +33,7 @@ const DesktopMenu = ({ pathname }) => {
             </Link>
 
             {item.hiddenList && (
-              <div className="absolute left-0 top-8 mt-2 hidden group-hover:block bg-[#33525C] shadow-lg rounded-b-lg rounded-r-lg w-50 z-10">
+              <div className="absolute left-0 top-8 mt-2 hidden group-hover:block bg-[#33525C] shadow-lg rounded-b-lg rounded-r-lg w-50 z-[1000]">
                 {item.hiddenList.map((subItem, index) => (
                   <div key={index}>
                     <Link
