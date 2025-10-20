@@ -59,7 +59,7 @@ export const Menu = [
   {
     id: 4,
     text: "Thông Tin Dự Án",
-    sourceLink: "/thong-tin-du-an/kieu-by-kita",
+    sourceLink: "/thong-tin-du-an",
     hiddenList: [
       { text: "Kiều By KITA", link: "/thong-tin-du-an/kieu-by-kita" },
       { text: "LA Home", link: "/thong-tin-du-an/la-home" },

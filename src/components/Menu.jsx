@@ -12,7 +12,7 @@ const Menu = () => {
   useTrackUserIP();
 
   return (
-    <div className="relative ">
+    <div className="relative">
       <div className="absolute left-2 z-50">
         <Link href={"/"}>
           <Image
