@@ -11,12 +11,14 @@ import KieuBZ from "../../assets/images/KieuBZ.png";
 import KieuMap from "../../assets/images/KieuMap.png";
 import KieuTR1 from "../../assets/images/KieuTR1.png";
 import KieuTR2 from "../../assets/images/KieuTR2.png";
+import KieuImage from "../../assets/logo/logoKieu.png"
 
 const ProjectData = [
   {
     id: 0,
     link: "kieu-by-kita",
     name: "Kiều By KITA",
+    image: KieuImage,
     toroi: [KieuTR1, KieuTR2],
     banner: KieuBZ,
     map: KieuMap,
@@ -65,6 +67,7 @@ const ProjectData = [
     id: 1,
     name: "LA Home",
     link: "la-home",
+    image: KieuImage,
     toroi: [LHTR1],
     banner: LHBZ,
     map: LHMap,
@@ -75,74 +78,46 @@ const ProjectData = [
       {
         number: "01",
         name: "Thông tin dự án",
-        link: "https://drive.google.com/drive/u/0/folders/1LGrkZGoyb7GdGDvAp5bOc2k7r_WclQHM",
+        link: "https://drive.google.com/drive/folders/1kkR0cMw6t7epZH47SoaMYt4Pq_b7pcwT",
       },
       {
         number: "02",
-        name: "Tài liệu bán hàng",
-        link: "https://drive.google.com/drive/u/0/folders/1KjX14jJhASXooN_3aOViiBCAhi9d2GOS",
+        name: "Chính sách bán hàng",
+        link: "https://drive.google.com/drive/folders/1cb1ewQlyJz2vz9230q4AmhgCcQlRbtlG",
       },
       {
         number: "03",
-        name: "Q&A - Danh mục bàn giao",
-        link: "https://drive.google.com/drive/u/0/folders/11_2CEhm8aoaRh-uN2QpNpLhiLPEYUbto",
+        name: "Pháp lý",
+        link: "https://drive.google.com/drive/folders/1I1_28mHeUkn85WiFwuW_C8gfuE7y1Quw",
       },
       {
         number: "04",
-        name: "Hình ảnh dự án LA Home",
-        link: "https://drive.google.com/drive/u/0/folders/1wM4qVsSdflToCzWeO5TyXGYubYGgIyZK",
+        name: "Tài kiệu Marketing",
+        link: "https://drive.google.com/drive/folders/13dp3n4j6Jy3z_sMssx892FSAHvU1CPNu",
       },
       {
         number: "05",
-        name: "Video dự án LA Home",
-        link: "https://drive.google.com/drive/u/0/folders/1aIR6Tf82cnr43vxNqLVww4QpBRR4eSdC",
+        name: "Quy trình - FORM mẫu",
+        link: "https://drive.google.com/drive/folders/17Z7bop47dE9m2UcAA9UpwAoO37NdmxeZ",
       },
       {
         number: "06",
-        name: "Chính sách bán hàng",
-        link: "https://drive.google.com/drive/u/0/folders/1nVXb4g2jYZFhm1luX0kN7AVwc6Mwm2S6",
+        name: "Ngân hàng",
+        link: "https://drive.google.com/drive/folders/15Bkhx57d9Lty9scu-x9f0lZlqwPSPog2",
       },
       {
         number: "07",
-        name: "Quy trình - Form mẫu",
-        link: "https://drive.google.com/drive/u/0/folders/1LQsr587rUXfSxwk1xGWSJw8_JTBfGreZ",
+        name: "Tiêu chuẩn bàn giao",
+        link: "https://drive.google.com/drive/folders/1uC9RkcBPi6CXjUViAgXHBUT7YlHA1ZhG",
       },
-      {
-        number: "08",
-        name: "Ngân hàng",
-        link: "https://drive.google.com/drive/u/0/folders/1gUmOzgstu5HjWDV5hBIrqY0acZBTN6GD",
-      },
-      {
-        number: "09",
-        name: "Pháp lý",
-        link: "https://drive.google.com/drive/u/0/folders/1sucNv9dF853ZZdlcSCDC5W3sPb_XO0qB",
-      },
-      {
-        number: "10",
-        name: "Marketing",
-        link: "https://drive.google.com/drive/u/0/folders/1jjbuSHhlXS4UZZiU-XkmH8yNwDBheRbC",
-      },
-      {
-        number: "11",
-        name: "Sự kiện",
-        link: "https://drive.google.com/drive/u/0/folders/1OF6s2KQTSr0JlLgNjKuehOFIODTk_NmT",
-      },
-      {
-        number: "12",
-        name: "KCN PRODEZI Long An",
-        link: "https://drive.google.com/drive/u/0/folders/1afC2iG1-2BKU0O1_ebWr73CQLbALrNjx",
-      },
-      {
-        number: "13",
-        name: "Nhà mẫu – LA Home",
-        link: "https://drive.google.com/drive/u/0/folders/13LFDA5h6kHjmOjf7i_HtDWRX2WrI6tBs",
-      },
+     
     ],
   },
   {
     id: 2,
     name: "SUNSHINE SKY CITY",
     link: "sunshine-sky-city",
+    image: KieuImage,
     toroi: [SSTR1, SSTR2],
     banner: SSBZ,
     map: SSMap,
@@ -152,44 +127,40 @@ const ProjectData = [
     sale: [
       {
         number: "01",
-        name: "Mặt bằng",
-        link: "https://drive.google.com/drive/folders/1I9dTULnQLYJguRk8rpCJ3Wh8k4fnASF1",
+        name: "Thông tin dự án",
+        link: "https://drive.google.com/drive/folders/1ikZfEid0b0kdQsLxfXGlvObNH9bD7qlx",
       },
       {
         number: "02",
-        name: "Hình ảnh",
-        link: "https://drive.google.com/drive/folders/1CBVa6oP87_9XU1etpYUdTiBwhuPUWGiE",
+        name: "Chính sách bán hàng",
+        link: "https://drive.google.com/drive/folders/1ADlK4hF4m_h6C1t3v1ReU2VYrOdJ-1mh",
       },
       {
         number: "03",
-        name: "Mẫu Hợp Đồng",
-        link: "https://drive.google.com/drive/folders/15W0R8V9FfmuRXGBhBBgCB7boIZ6AXxjV",
+        name: "Pháp lý",
+        link: "https://drive.google.com/drive/folders/11LsbHaqtLmTcuI_yIeFLYA6sFegFXpjU",
       },
       {
         number: "04",
-        name: "Danh mục bàn giao",
-        link: "https://drive.google.com/drive/folders/1zQk4cRsPChn7AGWSrBUdVWHeeHE9CNlr",
+        name: "Ngân hàng",
+        link: "https://drive.google.com/drive/folders/1Wc7urbbUyqE_EHpVoKOq2eZ8GmUatOHO",
       },
       {
         number: "05",
         name: "Tài liệu Marketing",
-        link: "https://drive.google.com/drive/folders/1sw0Ymt_tK2IaJVPlgvNw5418GiLNefLW",
+        link: "https://drive.google.com/drive/folders/1KeSCflco47TS1eLvQYzuUDjIGgfPgoad",
       },
       {
         number: "06",
-        name: "Training",
-        link: "https://drive.google.com/drive/folders/1aRXxdF2nmlGt37gpHfMXxUh5tOIt1t2X",
+        name: "Quy trình - FROM mẫu",
+        link: "https://drive.google.com/drive/folders/1GlT8wit2mpFBdMFIEjS3Svc-owwwC1kz",
       },
       {
         number: "07",
-        name: "Chính sách bán hàng",
-        link: "https://drive.google.com/drive/folders/187pvt9egQ_53NAl_Ybfs4kqhUG0aMJyR",
+        name: "Tiêu chuẩn bàn giao",
+        link: "https://drive.google.com/drive/folders/1ARHat0llummVGv6l4dWGP2CfcNXbmqlN",
       },
-      {
-        number: "08",
-        name: "Quy trình - Quy định",
-        link: "https://drive.google.com/drive/folders/1aatxqe_fCvO3oHNEKg9vis2YCOPT5Hj9",
-      },
+      
     ],
   },
 ];

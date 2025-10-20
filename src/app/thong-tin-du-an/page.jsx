@@ -1,4 +1,4 @@
-import TTDAIDComponent from "@/components/Thong-Tin-Du-An/TTDAIDComponent";
+import TTDAComponent from "@/components/Thong-Tin-Du-An/TTDAComponent";
 import React from "react";
 
 export const metadata = {
@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 const ThongTinDuAnID = () => {
-  return <TTDAIDComponent />;
+  return <TTDAComponent />
 };
 
 export default ThongTinDuAnID;
