@@ -13,7 +13,7 @@ const TTDAComponent = () => {
 
       <div className="relative z-50 py-5 md:py-10 mt-20 space-y-16 md:space-y-20">
         <div className="text-center text-[24px] font-bold">
-          CỔNG THÔNG TIN DỰ ÁN NIC ĐANG TRIỂN KHAI
+          CỔNG THÔNG TIN DỰ ÁN NEW LINK ĐANG TRIỂN KHAI
         </div>
 
         <div className="flex items-center justify-center p-10">

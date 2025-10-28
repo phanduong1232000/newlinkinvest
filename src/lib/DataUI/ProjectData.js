@@ -1,14 +1,14 @@
 import SSBZ from "../../assets/images/SSBZ.jpg";
-import SSMap from "../../assets/images/SSMap.png";
+import SSMap from "../../assets/images/SSMap.jpg";
 import SSTR1 from "../../assets/images/SSTR1.png";
 import SSTR2 from "../../assets/images/SSTR2.png";
 
 import LHBZ from "../../assets/images/LHBZ.png";
-import LHMap from "../../assets/images/LHMap.png";
+import LHMap from "../../assets/images/LHMap.jpg";
 import LHTR1 from "../../assets/images/LHTR1.png";
 
 import KieuBZ from "../../assets/images/KieuBZ.png";
-import KieuMap from "../../assets/images/KieuMap.png";
+import KieuMap from "../../assets/images/KieuMap.jpg";
 import KieuTR1 from "../../assets/images/KieuTR1.png";
 import KieuTR2 from "../../assets/images/KieuTR2.png";
 import KieuImage from "../../assets/logo/logoKieu.png"
