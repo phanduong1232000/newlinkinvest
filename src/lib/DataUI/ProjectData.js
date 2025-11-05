@@ -11,7 +11,7 @@ import KieuBZ from "../../assets/images/KieuBZ.png";
 import KieuMap from "../../assets/images/KieuMap.jpg";
 import KieuTR1 from "../../assets/images/KieuTR1.png";
 import KieuTR2 from "../../assets/images/KieuTR2.png";
-import KieuImage from "../../assets/logo/logoKieu.png"
+import KieuImage from "../../assets/logo/logoKieu.png";
 
 const ProjectData = [
   {
@@ -110,7 +110,6 @@ const ProjectData = [
         name: "Tiêu chuẩn bàn giao",
         link: "https://drive.google.com/drive/folders/1uC9RkcBPi6CXjUViAgXHBUT7YlHA1ZhG",
       },
-     
     ],
   },
   {
@@ -152,7 +151,7 @@ const ProjectData = [
       },
       {
         number: "06",
-        name: "Quy trình - FROM mẫu",
+        name: "Quy trình - FORM mẫu",
         link: "https://drive.google.com/drive/folders/1GlT8wit2mpFBdMFIEjS3Svc-owwwC1kz",
       },
       {
@@ -160,7 +159,6 @@ const ProjectData = [
         name: "Tiêu chuẩn bàn giao",
         link: "https://drive.google.com/drive/folders/1ARHat0llummVGv6l4dWGP2CfcNXbmqlN",
       },
-      
     ],
   },
 ];
