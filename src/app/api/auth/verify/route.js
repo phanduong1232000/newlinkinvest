@@ -1,45 +1,53 @@
 // src/app/api/auth/verify/route.js
 import { NextResponse } from "next/server";
-import connectDB from "@/lib/Mongo/database";
-import { User } from "@/model/User";
-import { compare } from "bcryptjs";
+import bcrypt from "bcryptjs";
+// đường dẫn tương đối từ route.js ra thư mục mongodb ở root project
+import users from "../../../../../mongodb/newlinkinvest.users.json";
 
-export const runtime = "nodejs"; // Đảm bảo chạy trong Node.js runtime
+export const runtime = "nodejs";
 
 export async function POST(req) {
   try {
-    // Kết nối database
-    await connectDB();
-
-    // Lấy dữ liệu từ request
     const { email, password } = await req.json();
 
-    // Kiểm tra tài khoản
-    const user = await User.findOne({ email }).select("+password");
+    // tìm user theo email trong file JSON (bỏ những user bị xoá nếu có isDeleted)
+    const user = users.find((u) => u.email === email && !u.isDeleted);
+
     if (!user) {
-      return NextResponse.json(null, { status: 401 });
+      return NextResponse.json(
+        { message: "Email hoặc mật khẩu không đúng" },
+        { status: 401 }
+      );
     }
 
-    // Kiểm tra password
-    const isPasswordValid = await compare(password, user.password);
-    if (!isPasswordValid) {
-      return NextResponse.json(null, { status: 401 });
+    // so sánh mật khẩu (plain text) với hash bcrypt trong JSON
+    const isValid = await bcrypt.compare(password, user.password);
+
+    if (!isValid) {
+      return NextResponse.json(
+        { message: "Email hoặc mật khẩu không đúng" },
+        { status: 401 }
+      );
     }
 
-    // Trả về client thông tin người dùng
+    // không trả về password cho client
+    const { password: _pw, ...safeUser } = user;
+
     return NextResponse.json(
       {
-        id: user._id.toString(),
-        fullName: user.fullName,
-        email: user.email,
-        role: user.role,
-        verify: user.emailVerified,
+        id: safeUser._id?.$oid ?? safeUser._id ?? "",
+        fullName: safeUser.fullName,
+        email: safeUser.email,
+        role: safeUser.role,
+        verify: safeUser.emailVerified,
       },
       { status: 200 }
     );
   } catch (error) {
-    // Trả về lỗi
     console.error("Đăng nhập xảy ra lỗi:", error);
-    return NextResponse.json(null, { status: 500 });
+    return NextResponse.json(
+      { message: "Lỗi server" },
+      { status: 500 }
+    );
   }
 }
