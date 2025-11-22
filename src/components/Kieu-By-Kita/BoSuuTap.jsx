@@ -8,6 +8,13 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 
 const BoSuuTap = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImages, setModalImages] = useState([]);
+  const [modalTitle, setModalTitle] = useState("");
+
+  // 👉 thêm 2 state này
+  const [modalSwiper, setModalSwiper] = useState(null);
+  const [activeThumb, setActiveThumb] = useState(0);
 
   // Reference for scroll tracking
   const ref = useRef(null);
@@ -62,6 +69,37 @@ const BoSuuTap = () => {
             "https://w.ladicdn.com/s800x700/5c7362c6c417ab07e5196b05/artboard-92x-100-20241226092657-cpmal.jpg",
             "https://w.ladicdn.com/s800x750/5c7362c6c417ab07e5196b05/artboard-102x-100-20241226092657-wwx70.jpg",
           ],
+
+           // 👉 ảnh nội thất riêng cho popup
+          interiorImages: [
+            "/uploads/images/duan/kieu-by-ta/kieu1.png",
+            "/uploads/images/duan/kieu-by-ta/kieu2.png",
+            "/uploads/images/duan/kieu-by-ta/kieu3.png",
+            "/uploads/images/duan/kieu-by-ta/kieu4.png",
+            "/uploads/images/duan/kieu-by-ta/kieu5.png",
+            "/uploads/images/duan/kieu-by-ta/kieu6.png",
+            "/uploads/images/duan/kieu-by-ta/kieu7.png",
+            "/uploads/images/duan/kieu-by-ta/kieu8.png",
+            "/uploads/images/duan/kieu-by-ta/kieu9.png",
+            "/uploads/images/duan/kieu-by-ta/kieu10.png",
+            "/uploads/images/duan/kieu-by-ta/kieu11.png",
+            "/uploads/images/duan/kieu-by-ta/kieu12.png",
+            "/uploads/images/duan/kieu-by-ta/kieu13.png",
+            "/uploads/images/duan/kieu-by-ta/kieu14.png",
+            "/uploads/images/duan/kieu-by-ta/kieu15.png",
+            "/uploads/images/duan/kieu-by-ta/kieu16.png",
+            "/uploads/images/duan/kieu-by-ta/kieu17.png",
+            "/uploads/images/duan/kieu-by-ta/kieu18.png",
+            "/uploads/images/duan/kieu-by-ta/kieu19.png",
+            "/uploads/images/duan/kieu-by-ta/kieu20.png",
+            "/uploads/images/duan/kieu-by-ta/kieu21.png",
+            "/uploads/images/duan/kieu-by-ta/kieu22.png",
+            "/uploads/images/duan/kieu-by-ta/kieu23.png",
+            "/uploads/images/duan/kieu-by-ta/kieu24.png",
+            "/uploads/images/duan/kieu-by-ta/kieu25.png",
+            "/uploads/images/duan/kieu-by-ta/kieu26.png",
+          ],
+
           sThongThuy: 125.8,
           sTimTuong: 128,
         },
@@ -117,6 +155,7 @@ const BoSuuTap = () => {
             "https://w.ladicdn.com/s800x650/5c7362c6c417ab07e5196b05/artboard-223x-100-20241211085524-1qnfr.jpg",
             "https://w.ladicdn.com/s800x650/5c7362c6c417ab07e5196b05/tam-20241211085659-nfl2o.jpg",
           ],
+
           sThongThuy: "176.5 - 180.4",
           sTimTuong: "185.5 - 190.4",
         },
@@ -169,11 +208,10 @@ const BoSuuTap = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 * index, duration: 0.5 }} // Staggered delay for each button
-            className={`p-2 px-4 text-[14px] md:text-[18px] font-bold rounded-3xl max-w-[250px] cursor-pointer ${
-              selectedIndex === index
-                ? "bg-[#FAD68C] text-[#3E0303]"
-                : "bg-[#FDF6E9] text-[#3E0303] hover:bg-[#FEF4BD]"
-            }`}
+            className={`p-2 px-4 text-[14px] md:text-[18px] font-bold rounded-3xl max-w-[250px] cursor-pointer ${selectedIndex === index
+              ? "bg-[#FAD68C] text-[#3E0303]"
+              : "bg-[#FDF6E9] text-[#3E0303] hover:bg-[#FEF4BD]"
+              }`}
           >
             {item.title}
           </motion.button>
@@ -244,9 +282,91 @@ const BoSuuTap = () => {
                   </p>
                 </div>
               </motion.div>
+              {detail.interiorImages?.length > 0 && (
+                <button
+                  className="mt-2 px-6 py-2 border border-[#3E0303] rounded-3xl text-[#3E0303] font-bold hover:bg-[#FAD68C] hover:text-[#3E0303] transition"
+                  onClick={() => {
+                    // ưu tiên dùng interiorImages, nếu chưa có thì fallback sang image
+                    const imgs = detail.interiorImages && detail.interiorImages.length > 0
+                      ? detail.interiorImages
+                      : detail.image;
+
+                    setModalImages(imgs);
+                    setModalTitle(detail.name);
+                    setActiveThumb(0);
+                    setShowModal(true);
+                  }}
+                >
+                  Nội Thất
+                </button>
+              )}
             </motion.div>
           ))}
         </motion.div>
+      )}
+
+      {/* POPUP NỘI THẤT */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+          <div className="relative bg-[#FDF6E9] rounded-3xl p-4 w-full max-w-4xl mx-2">
+            {/* nút đóng */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute right-4 top-3 text-[#3E0303] text-2xl font-bold"
+            >
+              ×
+            </button>
+
+            <h3 className="text-center text-[#3E0303] font-bold text-[18px] md:text-[22px] mb-4 mt-2">
+              {modalTitle} – Nội Thất
+            </h3>
+
+            <Swiper
+              modules={[Navigation]}
+              navigation
+              spaceBetween={10}
+              slidesPerView={1}
+              className="w-full"
+              onSwiper={setModalSwiper} // 👉 lưu instance vào state
+              onSlideChange={(swiper) => setActiveThumb(swiper.activeIndex)} // 👉 cập nhật thumbnail đang active
+            >
+              {modalImages.map((img, idx) => (
+                <SwiperSlide key={idx}>
+                  <img
+                    src={img}
+                    alt={`${modalTitle} - hình ${idx + 1}`}
+                    className="w-full max-h-[500px] object-contain rounded-3xl"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {/* dãy thumbnail nhỏ bên dưới */}
+            <div className="mt-4 flex gap-2 overflow-x-auto">
+              {modalImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => {
+                    setActiveThumb(idx);
+                    if (modalSwiper) {
+                      modalSwiper.slideTo(idx);  // 👉 cho Swiper nhảy tới slide tương ứng
+                    }
+                  }}
+                  className={
+                    "min-w-[80px] h-[70px] rounded-2xl overflow-hidden cursor-pointer border " +
+                    (activeThumb === idx ? "border-[#3E0303]" : "border-[#3E0303]/30")
+                  }
+                >
+                  <img
+                    src={img}
+                    alt="thumb"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       )}
     </motion.div>
   );

@@ -6,7 +6,9 @@ import ViTriKieu from "@/components/Kieu-By-Kita/ViTriKieu";
 import SoDoDiChuyen from "@/components/Kieu-By-Kita/SoDoDiChuyen";
 import SoDoMatBang from "@/components/Kieu-By-Kita/SoDoMatBang";
 import BoSuuTap from "@/components/Kieu-By-Kita/BoSuuTap";
-import TienIch from "@/components/Kieu-By-Kita/TienIch";
+import SanhDon from "@/components/Kieu-By-Kita/SanhDon";
+import TienIchDangCap from "@/components/Kieu-By-Kita/TienIchDangCap";
+import CanBangCuocSong from "@/components/Kieu-By-Kita/CanBangCuocSong";
 import LienHe from "@/components/Kieu-By-Kita/LienHe";
 import BackNic from "@/components/BackNic";
 import CauChuyen from "@/components/Kieu-By-Kita/CauChuyen";
@@ -73,7 +75,9 @@ const KieuByKita = () => {
       <SoDoDiChuyen />
       <SoDoMatBang />
       <BoSuuTap />
-      <TienIch />
+      <SanhDon />
+      <TienIchDangCap />
+      <CanBangCuocSong />
       <DichVuDangCap />
       <LienHe />
 
