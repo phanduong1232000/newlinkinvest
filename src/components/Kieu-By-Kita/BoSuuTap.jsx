@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -15,6 +15,23 @@ const BoSuuTap = () => {
   // 👉 thêm 2 state này
   const [modalSwiper, setModalSwiper] = useState(null);
   const [activeThumb, setActiveThumb] = useState(0);
+
+  // ❗ Khóa scroll nền khi mở popup, trả lại khi đóng
+  useEffect(() => {
+    // Lưu overflow hiện tại của body (thường là "visible")
+    const originalOverflow = window.getComputedStyle(document.body).overflow;
+
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = originalOverflow;
+    }
+
+    // Khi component unmount hoặc effect run lại → trả overflow về trạng thái ban đầu
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [showModal]);
 
   // Reference for scroll tracking
   const ref = useRef(null);

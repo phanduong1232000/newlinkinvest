@@ -36,12 +36,12 @@ const SanhDon = () => {
       }}
       className="p-2 py-16 md:py-20 w-full h-full flex flex-col items-center text-black"
     >
-      {/* Tiêu đề */}
-      <h2
-        className="pb-8 pt-5 md:pt-20 font-pd-bold text-[18px] md:text-[32px] text-center bg-[linear-gradient(to_right,_#EFCF9F_0%,_#EDCC9C_8%,_#E8C395_13%,_#DFB488_17%,_#D39F76_21%,_#CE966E_22%,_#D29D74_27%,_#E7C193_54%,_#EFCF9F_68%,_#EBC899_69%,_#DEB286_75%,_#D5A278_82%,_#CF9870_90%,_#CE966E_100%)] bg-clip-text text-transparent"
-      >
-        SẢNH ĐÓN XỨNG TẦM
-      </h2>
+   {/* Tiêu đề */}
+            <h2
+                className="pb-4 pt-5 md:pt-16 font-pd-bold text-[20px] md:text-[34px] text-center bg-[linear-gradient(to_right,_#EFCF9F_0%,_#EDCC9C_8%,_#E8C395_13%,_#DFB488_17%,_#D39F76_21%,_#CE966E_22%,_#D29D74_27%,_#E7C193_54%,_#EFCF9F_68%,_#EBC899_69%,_#DEB286_75%,_#D5A278_82%,_#CF9870_90%,_#CE966E_100%)] bg-clip-text text-transparent uppercase tracking-[0.12em]"
+            >
+                SẢNH ĐÓN XỨNG TẦM
+            </h2>
 
       {/* dòng mô tả */}
       <div className="w-full flex justify-center">
@@ -134,7 +134,7 @@ const SanhDon = () => {
           >
             {slides.map((item, index) => (
               <SwiperSlide key={index} className="flex justify-center">
-                <div className="new-mb relative w-[260px] md:w-[360px] lg:w-[400px] h-[260px] md:h-[310px] rounded-3xl overflow-hidden bg-black/40 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                <div className="new-mb relative w-[260px] md:w-[360px] lg:w-full h-[260px] md:h-[310px] rounded-3xl overflow-hidden bg-black/40 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                   <Image
                     src={item.image}
                     alt={`${item.title} - Kieu By Kita - NewLink Investment`}
@@ -158,7 +158,6 @@ const SanhDon = () => {
           color: #fff;
           font-size: 50px;
           cursor: pointer;
-          z-index: 50;
           border: 0;
         }
         
@@ -174,7 +173,7 @@ const SanhDon = () => {
 
         .sanhdon-next {
           left: 50%;
-          transform: translate(185px, -50%);
+          transform: translate(230px, -50%);
         }
       `}</style>
 

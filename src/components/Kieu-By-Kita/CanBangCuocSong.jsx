@@ -133,7 +133,7 @@ const CanBangCuocSong = () => {
                     >
                         {slides.map((item, index) => (
                             <SwiperSlide key={index} className="flex justify-center">
-                                <div className="new-mb relative w-[260px] md:w-[360px] lg:w-[400px] h-[260px] md:h-[310px] rounded-3xl overflow-hidden bg-black/40 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                                <div className="new-mb relative w-[260px] md:w-[360px] lg:w-full h-[260px] md:h-[310px] rounded-3xl overflow-hidden bg-black/40 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                                     <Image
                                         src={item.image}
                                         alt={`${item.title} - Tien Ich Dang Cap Tang 12B - Kieu By Kita`}
@@ -155,7 +155,6 @@ const CanBangCuocSong = () => {
           color: #fff;
           font-size: 50px;
           cursor: pointer;
-          z-index: 50;
           border: 0;
         }
             @media screen and (max-width: 768px) {
@@ -171,7 +170,7 @@ const CanBangCuocSong = () => {
 
         .sanhdon-next {
           left: 50%;
-          transform: translate(185px, -50%);
+          transform: translate(230px, -50%);
         }
       `}</style>
 
