@@ -66,7 +66,7 @@ const SanhDon = () => {
       </div>
 
       {/* BUTTON TAB */}
-      <div className="flex gap-4 mt-6">
+      <div className="flex gap-4 mt-8 flex-wrap justify-center">
         {["Sảnh Thang", "Sảnh Tiếp Khách", "Lễ Tân"].map((label, idx) => (
           <button
             key={idx}
@@ -120,7 +120,7 @@ const SanhDon = () => {
             onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             loop={false}
             centeredSlides
-            spaceBetween={24}
+            spaceBetween={16}
             slidesPerView={1.1}
             breakpoints={{
               768: {
@@ -134,7 +134,7 @@ const SanhDon = () => {
           >
             {slides.map((item, index) => (
               <SwiperSlide key={index} className="flex justify-center">
-                <div className="relative w-[260px] md:w-[360px] lg:w-[400px] h-[260px] md:h-[310px] rounded-3xl overflow-hidden bg-black/40 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+                <div className="new-mb relative w-[260px] md:w-[360px] lg:w-[400px] h-[260px] md:h-[310px] rounded-3xl overflow-hidden bg-black/40 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
                   <Image
                     src={item.image}
                     alt={`${item.title} - Kieu By Kita - NewLink Investment`}
@@ -149,8 +149,8 @@ const SanhDon = () => {
           </Swiper>
         </div>
       </div>
-      <style jsx>{`
-        /* Đặt style chung cho nút prev/next */
+    {/* CSS nội bộ cho nút next/prev */}
+            <style jsx>{`
         .sanhdon-prev,
         .sanhdon-next {
           position: absolute;
@@ -161,35 +161,36 @@ const SanhDon = () => {
           z-index: 50;
           border: 0;
         }
-
-        /* Nút ở bên trái khung slide giữa */
+        
+          @media screen and (max-width: 768px) {
+           .new-mb{
+              width:100%;
+           }
+          }     
         .sanhdon-prev {
           left: 50%;
           transform: translate(-270px, -50%);
         }
 
-        /* Nút ở bên phải khung slide giữa */
         .sanhdon-next {
           left: 50%;
           transform: translate(185px, -50%);
         }
-
       `}</style>
-      <style jsx global>{`
-        /* slide mặc định nhỏ hơn */
+
+            {/* CSS global cho hiệu ứng slide giữa to hơn */}
+            <style jsx global>{`
         .sanhdon-swiper .swiper-slide {
           transition: transform 0.4s ease, opacity 0.4s ease;
           transform: scale(0.75);
           opacity: 0.6;
         }
 
-        /* slide ở giữa phóng to */
         .sanhdon-swiper .swiper-slide-active {
           transform: scale(1) !important;
           opacity: 1 !important;
         }
 
-        /* slide liền kề (hai bên) */
         .sanhdon-swiper .swiper-slide-prev,
         .sanhdon-swiper .swiper-slide-next {
           transform: scale(0.8);

@@ -70,7 +70,7 @@ const BoSuuTap = () => {
             "https://w.ladicdn.com/s800x750/5c7362c6c417ab07e5196b05/artboard-102x-100-20241226092657-wwx70.jpg",
           ],
 
-           // 👉 ảnh nội thất riêng cho popup
+          // 👉 ảnh nội thất riêng cho popup
           interiorImages: [
             "/uploads/images/duan/kieu-by-ta/kieu1.png",
             "/uploads/images/duan/kieu-by-ta/kieu2.png",
@@ -332,11 +332,14 @@ const BoSuuTap = () => {
             >
               {modalImages.map((img, idx) => (
                 <SwiperSlide key={idx}>
-                  <img
-                    src={img}
-                    alt={`${modalTitle} - hình ${idx + 1}`}
-                    className="w-full max-h-[500px] object-contain rounded-3xl"
-                  />
+                  <div className="w-full aspect-[4/3]">
+                    <img
+                      src={img}
+                      alt={`${modalTitle} - hình ${idx + 1}`}
+                      className="w-full h-full object-cover rounded-3xl"
+                    />
+                  </div>
+
                 </SwiperSlide>
               ))}
             </Swiper>
