@@ -103,7 +103,7 @@ const TTDAIDComponent = () => {
                 </i>
               </div>
             </div>
-            <div className="p-[2px] sm:p-[3px] bg-gradient-to-r from-[#C7A763] via-[#FAD48A] to-[#C7A763] rounded-lg">
+            {/* <div className="p-[2px] sm:p-[3px] bg-gradient-to-r from-[#C7A763] via-[#FAD48A] to-[#C7A763] rounded-lg">
               <div className="bg-[#063543] p-3 sm:p-4 text-center text-white rounded-lg">
                 <Link href={project.linkmap}>
                   <p className="cursor-pointer hover:underline font-bold text-[8px] sm:text-[14px]">
@@ -111,7 +111,7 @@ const TTDAIDComponent = () => {
                   </p>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

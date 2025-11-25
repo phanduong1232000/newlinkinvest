@@ -89,32 +89,32 @@ const BoSuuTap = () => {
 
           // 👉 ảnh nội thất riêng cho popup
           interiorImages: [
-            "/uploads/images/duan/kieu-by-ta/kieu1.png",
-            "/uploads/images/duan/kieu-by-ta/kieu2.webp",
-            "/uploads/images/duan/kieu-by-ta/kieu3.png",
-            "/uploads/images/duan/kieu-by-ta/kieu4.webp",
-            "/uploads/images/duan/kieu-by-ta/kieu5.png",
-            "/uploads/images/duan/kieu-by-ta/kieu6.png",
-            "/uploads/images/duan/kieu-by-ta/kieu7.png",
-            "/uploads/images/duan/kieu-by-ta/kieu8.png",
-            "/uploads/images/duan/kieu-by-ta/kieu9.webp",
-            "/uploads/images/duan/kieu-by-ta/kieu10.webp",
-            "/uploads/images/duan/kieu-by-ta/kieu11.png",
-            "/uploads/images/duan/kieu-by-ta/kieu12.png",
-            "/uploads/images/duan/kieu-by-ta/kieu13.png",
-            "/uploads/images/duan/kieu-by-ta/kieu14.png",
-            "/uploads/images/duan/kieu-by-ta/kieu15.png",
-            "/uploads/images/duan/kieu-by-ta/kieu16.png",
-            "/uploads/images/duan/kieu-by-ta/kieu17.png",
-            "/uploads/images/duan/kieu-by-ta/kieu18.webp",
-            "/uploads/images/duan/kieu-by-ta/kieu19.png",
-            "/uploads/images/duan/kieu-by-ta/kieu20.png",
-            "/uploads/images/duan/kieu-by-ta/kieu21.png",
-            "/uploads/images/duan/kieu-by-ta/kieu22.png",
-            "/uploads/images/duan/kieu-by-ta/kieu23.png",
-            "/uploads/images/duan/kieu-by-ta/kieu24.png",
-            "/uploads/images/duan/kieu-by-ta/kieu25.png",
-            "/uploads/images/duan/kieu-by-ta/kieu26.png",
+            "/uploads/images/duan/kieu-by-ta/kieu1.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu2.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu3.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu4.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu5.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu6.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu7.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu8.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu9.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu10.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu11.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu12.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu13.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu14.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu15.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu16.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu17.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu18.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu19.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu20.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu21.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu22.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu23.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu24.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu25.jpg",
+            "/uploads/images/duan/kieu-by-ta/kieu26.jpg",
           ],
 
           sThongThuy: 125.8,
@@ -353,7 +353,7 @@ const BoSuuTap = () => {
                     <img
                       src={img}
                       alt={`${modalTitle} - hình ${idx + 1}`}
-                      className="w-full h-full object-cover rounded-3xl"
+                      className="w-full h-full object-cotain rounded-3xl"
                     />
                   </div>
 
