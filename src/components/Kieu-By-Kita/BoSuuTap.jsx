@@ -87,7 +87,21 @@ const BoSuuTap = () => {
             "https://w.ladicdn.com/s800x750/5c7362c6c417ab07e5196b05/artboard-102x-100-20241226092657-wwx70.jpg",
           ],
 
-          // 👉 ảnh nội thất riêng cho popup
+
+          sThongThuy: 125.8,
+          sTimTuong: 128,
+        },
+        {
+          name: "Căn Hộ 03 Phòng Ngủ Loại C",
+          image: [
+            "https://w.ladicdn.com/s700x650/5c7362c6c417ab07e5196b05/artboard-143x-20241210043059-lowfz.png",
+            "https://w.ladicdn.com/s800x650/5c7362c6c417ab07e5196b05/artboard-122x-100-20241226093151-g4-0s.jpg",
+            "https://w.ladicdn.com/s800x700/5c7362c6c417ab07e5196b05/artboard-132x-100-20241226093151-zyujq.jpg",
+            "https://w.ladicdn.com/s800x600/5c7362c6c417ab07e5196b05/artboard-162x-100-20241226093151-ixmkd.jpg",
+            "https://w.ladicdn.com/s800x900/5c7362c6c417ab07e5196b05/artboard-152x-100-20241226093151-qhenb.jpg",
+          ],
+
+           // 👉 ảnh nội thất riêng cho popup
           interiorImages: [
             "/uploads/images/duan/kieu-by-ta/kieu1.jpg",
             "/uploads/images/duan/kieu-by-ta/kieu2.jpg",
@@ -117,18 +131,7 @@ const BoSuuTap = () => {
             "/uploads/images/duan/kieu-by-ta/kieu26.jpg",
           ],
 
-          sThongThuy: 125.8,
-          sTimTuong: 128,
-        },
-        {
-          name: "Căn Hộ 03 Phòng Ngủ Loại C",
-          image: [
-            "https://w.ladicdn.com/s700x650/5c7362c6c417ab07e5196b05/artboard-143x-20241210043059-lowfz.png",
-            "https://w.ladicdn.com/s800x650/5c7362c6c417ab07e5196b05/artboard-122x-100-20241226093151-g4-0s.jpg",
-            "https://w.ladicdn.com/s800x700/5c7362c6c417ab07e5196b05/artboard-132x-100-20241226093151-zyujq.jpg",
-            "https://w.ladicdn.com/s800x600/5c7362c6c417ab07e5196b05/artboard-162x-100-20241226093151-ixmkd.jpg",
-            "https://w.ladicdn.com/s800x900/5c7362c6c417ab07e5196b05/artboard-152x-100-20241226093151-qhenb.jpg",
-          ],
+
           sThongThuy: 122.8,
           sTimTuong: 132,
         },
