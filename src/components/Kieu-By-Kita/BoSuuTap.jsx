@@ -88,6 +88,7 @@ const BoSuuTap = () => {
           ],
 
             // 👉 ảnh nội thất riêng cho popup
+            // test commit
           interiorImages: [
             "/uploads/images/duan/kieu-by-ta/canb/00.jpg",
             "/uploads/images/duan/kieu-by-ta/canb/01.jpg",
