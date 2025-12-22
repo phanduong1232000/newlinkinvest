@@ -1,7 +1,3 @@
-import {
-  useSendMailMutation,
-  useUploadPdfMutation,
-} from "@/redux/api/dpfSlice";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
@@ -13,30 +9,28 @@ const FormTD = ({ closeModal, selectedJob }) => {
     confirmEmail: "",
     birthYear: "",
     desc: "",
+    cvFile: null,
   });
-  const [errorEmail, setErrorEmail] = useState(false);
 
-  const [uploadCv] = useUploadPdfMutation();
-  const [sendMail, { isLoading }] = useSendMailMutation();
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "file" ? files[0] : value,
+      [name]: type === "file" ? (files?.[0] || null) : value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorEmail(false);
+
     if (formData.email !== formData.confirmEmail) {
       setErrorEmail(true);
       return;
     }
-
-    let cvLink = "";
-
 
     const file = formData.cvFile;
 
@@ -57,35 +51,34 @@ const FormTD = ({ closeModal, selectedJob }) => {
       return;
     }
 
-
     try {
-      // Upload CV lên server
-      const uploadForm = new FormData();
-      uploadForm.append("pdfs", formData.cvFile);
-      const cv = await uploadCv(uploadForm).unwrap();
+      setIsLoading(true);
 
-      cvLink = `${process.env.NEXT_PUBLIC_URL_NONE}${cv.data[0].url}`;
-      } catch (err) {
-        Swal.fire("Lỗi", "Không thể upload CV hoặc file lớn hơn 2MB", "error");
-        return;
+      const fd = new FormData();
+      fd.append("fullName", formData.fullName);
+      fd.append("gender", formData.gender);
+      fd.append("email", formData.email);
+      fd.append("birthYear", formData.birthYear);
+      fd.append("desc", formData.desc);
+      fd.append("role", selectedJob?.role || "");
+      fd.append("pdfs", file); // key backend đang nhận là "pdfs"
+
+      const res = await fetch("/api/send-recruitment", {
+        method: "POST",
+        body: fd,
+      });
+
+      let data = null;
+      try {
+        data = await res.json();
+      } catch {
+        data = null;
       }
 
-    
-
-    const emailParams = {
-      fullName: formData.fullName,
-      gender: formData.gender,
-      email: formData.email,
-      birthYear: formData.birthYear,
-      desc: formData.desc,
-      cvLink: cvLink,
-      role: selectedJob?.role,
-    };
-
-    try {
-      // Gửi email qua EmailJS
-      const res = await sendMail(emailParams);
-      console.log(res);
+      if (!res.ok || !data?.ok) {
+        const msg = data?.error || `Server lỗi (${res.status})`;
+        throw new Error(msg);
+      }
 
       Swal.fire({
         position: "top-end",
@@ -95,11 +88,11 @@ const FormTD = ({ closeModal, selectedJob }) => {
         timer: 1500,
       });
 
-      // Đóng modal sau khi gửi thành công
       closeModal();
-    } catch (error) {
-      console.error("EmailJS error:", error);
-      Swal.fire("Lỗi", "Không thể gửi email", "error");
+    } catch (err) {
+      Swal.fire("Lỗi", err?.message || "Không thể gửi email", "error");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -113,26 +106,26 @@ const FormTD = ({ closeModal, selectedJob }) => {
         {/* card */}
         <div
           className="
-          relative mx-auto w-full max-w-[560px]
-          rounded-2xl overflow-hidden
-          border border-[#D4C081]/60
-          shadow-[0_20px_80px_rgba(0,0,0,0.55)]
-          max-h-[calc(100dvh-48px)] md:max-h-[calc(100dvh-80px)]
-          flex flex-col
-        "
+            relative mx-auto w-full max-w-[560px]
+            rounded-2xl overflow-hidden
+            border border-[#D4C081]/60
+            shadow-[0_20px_80px_rgba(0,0,0,0.55)]
+            max-h-[calc(100dvh-48px)] md:max-h-[calc(100dvh-80px)]
+            flex flex-col
+          "
         >
           <div className="bg-[#063543] flex flex-col min-h-0">
             {/* header (không scroll) */}
             <div className="relative px-5 md:px-7 pt-6 pb-4 border-b border-white/10 shrink-0">
               <button
                 className="
-                absolute top-4 right-4
-                w-10 h-10 rounded-full
-                border border-[#D4C081]/60
-                text-[#D4C081]
-                hover:bg-white/5
-                transition
-              "
+                  absolute top-4 right-4
+                  w-10 h-10 rounded-full
+                  border border-[#D4C081]/60
+                  text-[#D4C081]
+                  hover:bg-white/5
+                  transition
+                "
                 onClick={closeModal}
                 aria-label="Đóng"
                 type="button"
@@ -151,24 +144,25 @@ const FormTD = ({ closeModal, selectedJob }) => {
               </div>
             </div>
 
-            {/*  body scroll  min-h-0 + overflow-y-auto */}
-            <div className="
-              min-h-0 overflow-y-auto px-5 md:px-7 py-5 md:py-6 text-white
-              [-webkit-overflow-scrolling:touch]
+            {/* body scroll */}
+            <div
+              className="
+                min-h-0 overflow-y-auto px-5 md:px-7 py-5 md:py-6 text-white
+                [-webkit-overflow-scrolling:touch]
 
-              /* ===== Scrollbar tone web ===== */
-              [scrollbar-width:thin]
-              [scrollbar-color:#D4C081_#063543]
+                [scrollbar-width:thin]
+                [scrollbar-color:#D4C081_#063543]
 
-              [&::-webkit-scrollbar]:w-[10px]
-              [&::-webkit-scrollbar-track]:bg-[#063543]
-              [&::-webkit-scrollbar-track]:rounded-full
-              [&::-webkit-scrollbar-thumb]:bg-[#D4C081]
-              [&::-webkit-scrollbar-thumb]:rounded-full
-              [&::-webkit-scrollbar-thumb]:border-[2px]
-              [&::-webkit-scrollbar-thumb]:border-[#063543]
-              hover:[&::-webkit-scrollbar-thumb]:bg-[#E6D59A]
-            ">
+                [&::-webkit-scrollbar]:w-[10px]
+                [&::-webkit-scrollbar-track]:bg-[#063543]
+                [&::-webkit-scrollbar-track]:rounded-full
+                [&::-webkit-scrollbar-thumb]:bg-[#D4C081]
+                [&::-webkit-scrollbar-thumb]:rounded-full
+                [&::-webkit-scrollbar-thumb]:border-[2px]
+                [&::-webkit-scrollbar-thumb]:border-[#063543]
+                hover:[&::-webkit-scrollbar-thumb]:bg-[#E6D59A]
+              "
+            >
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="font-utm-avo-bold text-[13px] md:text-[14px] text-white/95">
@@ -180,14 +174,14 @@ const FormTD = ({ closeModal, selectedJob }) => {
                     onChange={handleChange}
                     type="text"
                     className="
-                    mt-2 w-full px-4 py-2.5 rounded-xl
-                    bg-white/5 text-white
-                    border border-[#D4C081]/35
-                    placeholder:text-white/40
-                    outline-none
-                    focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
-                    transition
-                  "
+                      mt-2 w-full px-4 py-2.5 rounded-xl
+                      bg-white/5 text-white
+                      border border-[#D4C081]/35
+                      placeholder:text-white/40
+                      outline-none
+                      focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
+                      transition
+                    "
                     required
                   />
                 </div>
@@ -205,14 +199,15 @@ const FormTD = ({ closeModal, selectedJob }) => {
                         <label
                           key={gender}
                           className={`
-                          flex items-center gap-2 cursor-pointer
-                          px-4 py-2 rounded-xl
-                          border transition
-                          ${checked
-                              ? "border-[#D4C081]/70 bg-white/5"
-                              : "border-white/10 bg-transparent hover:bg-white/5"
+                            flex items-center gap-2 cursor-pointer
+                            px-4 py-2 rounded-xl
+                            border transition
+                            ${
+                              checked
+                                ? "border-[#D4C081]/70 bg-white/5"
+                                : "border-white/10 bg-transparent hover:bg-white/5"
                             }
-                        `}
+                          `}
                         >
                           <input
                             type="radio"
@@ -249,14 +244,14 @@ const FormTD = ({ closeModal, selectedJob }) => {
                     value={formData.email}
                     onChange={handleChange}
                     className="
-                    mt-2 w-full px-4 py-2.5 rounded-xl
-                    bg-white/5 text-white
-                    border border-[#D4C081]/35
-                    placeholder:text-white/40
-                    outline-none
-                    focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
-                    transition
-                  "
+                      mt-2 w-full px-4 py-2.5 rounded-xl
+                      bg-white/5 text-white
+                      border border-[#D4C081]/35
+                      placeholder:text-white/40
+                      outline-none
+                      focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
+                      transition
+                    "
                     required
                   />
                 </div>
@@ -271,14 +266,14 @@ const FormTD = ({ closeModal, selectedJob }) => {
                     value={formData.confirmEmail}
                     onChange={handleChange}
                     className="
-                    mt-2 w-full px-4 py-2.5 rounded-xl
-                    bg-white/5 text-white
-                    border border-[#D4C081]/35
-                    placeholder:text-white/40
-                    outline-none
-                    focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
-                    transition
-                  "
+                      mt-2 w-full px-4 py-2.5 rounded-xl
+                      bg-white/5 text-white
+                      border border-[#D4C081]/35
+                      placeholder:text-white/40
+                      outline-none
+                      focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
+                      transition
+                    "
                     required
                   />
                 </div>
@@ -293,14 +288,14 @@ const FormTD = ({ closeModal, selectedJob }) => {
                     value={formData.birthYear}
                     onChange={handleChange}
                     className="
-                    mt-2 w-full px-4 py-2.5 rounded-xl
-                    bg-white/5 text-white
-                    border border-[#D4C081]/35
-                    placeholder:text-white/40
-                    outline-none
-                    focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
-                    transition
-                  "
+                      mt-2 w-full px-4 py-2.5 rounded-xl
+                      bg-white/5 text-white
+                      border border-[#D4C081]/35
+                      placeholder:text-white/40
+                      outline-none
+                      focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
+                      transition
+                    "
                     required
                   />
                 </div>
@@ -314,14 +309,14 @@ const FormTD = ({ closeModal, selectedJob }) => {
                     value={formData.desc}
                     onChange={handleChange}
                     className="
-                    mt-2 w-full min-h-[110px] px-4 py-2.5 rounded-xl
-                    bg-white/5 text-white
-                    border border-[#D4C081]/35
-                    placeholder:text-white/40
-                    outline-none resize-none
-                    focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
-                    transition
-                  "
+                      mt-2 w-full min-h-[110px] px-4 py-2.5 rounded-xl
+                      bg-white/5 text-white
+                      border border-[#D4C081]/35
+                      placeholder:text-white/40
+                      outline-none resize-none
+                      focus:border-[#D4C081]/70 focus:ring-2 focus:ring-[#D4C081]/20
+                      transition
+                    "
                     required
                   />
                 </div>
@@ -340,11 +335,11 @@ const FormTD = ({ closeModal, selectedJob }) => {
 
                   <label
                     className="
-                    mt-3 flex items-center justify-between gap-3
-                    border border-dashed border-[#D4C081]/45
-                    rounded-2xl px-4 py-3 cursor-pointer
-                    hover:bg-white/5 transition
-                  "
+                      mt-3 flex items-center justify-between gap-3
+                      border border-dashed border-[#D4C081]/45
+                      rounded-2xl px-4 py-3 cursor-pointer
+                      hover:bg-white/5 transition
+                    "
                   >
                     <span className="text-white/85 text-[13px] md:text-[14px] truncate">
                       {formData.cvFile ? formData.cvFile.name : "Chọn file CV (.PDF)"}
@@ -352,11 +347,11 @@ const FormTD = ({ closeModal, selectedJob }) => {
 
                     <span
                       className="
-                      shrink-0 px-4 py-2 rounded-xl text-[12px] md:text-[13px]
-                      font-utm-avo-bold
-                      bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770]
-                      text-[#063543]
-                    "
+                        shrink-0 px-4 py-2 rounded-xl text-[12px] md:text-[13px]
+                        font-utm-avo-bold
+                        bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770]
+                        text-[#063543]
+                      "
                     >
                       Tải CV
                     </span>
@@ -376,14 +371,14 @@ const FormTD = ({ closeModal, selectedJob }) => {
                   type="submit"
                   disabled={isLoading}
                   className={`
-                  w-full mt-2 px-6 py-3 rounded-2xl
-                  font-utm-avo-bold
-                  bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770]
-                  text-[#063543]
-                  hover:brightness-105 active:scale-[0.99]
-                  transition
-                  ${isLoading ? "opacity-70 cursor-not-allowed" : "cursor-pointer"}
-                `}
+                    w-full mt-2 px-6 py-3 rounded-2xl
+                    font-utm-avo-bold
+                    bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770]
+                    text-[#063543]
+                    hover:brightness-105 active:scale-[0.99]
+                    transition
+                    ${isLoading ? "opacity-70 cursor-not-allowed" : "cursor-pointer"}
+                  `}
                 >
                   {isLoading ? "Đang gửi..." : "Gửi"}
                 </button>
