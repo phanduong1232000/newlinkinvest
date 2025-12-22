@@ -19,6 +19,8 @@ import linhvuc2 from "../assets/images/linhvuc2.png";
 import tuyendung1 from "../assets/images/tuyendung1.png";
 import tuyendung2 from "../assets/images/tuyendung2.png";
 import tuyendung3 from "../assets/images/tuyendung3.png";
+import tuyendung4 from "../assets/images/tuyendung4.png";
+import tuyendung5 from "../assets/images/tuyendung5.png";
 
 import lahome from "../assets/images/lahome.png";
 import kitahome from "../assets/images/kitahome.png";
@@ -228,30 +230,52 @@ export const TuyenDung = [
   {
     id: 1,
     role: "NHÂN VIÊN KINH DOANH",
-    yc: "không yêu cầu kinh nghiệm trong ngành bất động sản, nhưng kinh nghiệm trong lĩnh vực sales bảo hiểm, chứng khoán, ngân hàng là một lợi thế.",
-    ql: "Lương Cơ bản 7,5 triệu/tháng. <br /> - Hoa hồng lên đến 70% + thưởng nóng hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 1 tỷ. <br /> - Thưởng hoa hồng trên doanh thu đem về. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên cấp quản lý.",
-    cddn: "Công ty cung cấp data khách hàng tiềm năng, ngân sách marketing mạnh và đào tạo chuyên sâu để bạn có thể nhanh chóng nắm bắt công việc.",
-    mt: "Môi trường làm việc chuyên nghiệp, năng động với cơ hội thăng tiến rõ ràng.",
-    image: tuyendung3,
+    yc: "không yêu cầu kinh nghiệm trong ngành bất động sản, kinh nghiệm trong lĩnh vực <br /> sales bảo hiểm, chứng khoán, ngân hàng là một lợi thế.",
+    ql: "Lương Cơ bản 7,5 triệu/tháng. <br /> Hoa hồng lên đến 70% + thưởng nóng hấp dẫn. <br /> Thưởng hoa hồng trên doanh thu đem về. <br /> Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> Thu nhập cao, không giới hạn. <br /> Cơ hội thăng tiến lên cấp quản lý.",
+    mt: "Môi trường làm việc chuyên nghiệp, năng động & cơ hội thăng tiến rõ ràng.",
+    image: tuyendung1,
   },
   {
     id: 2,
     role: "TRƯỞNG PHÒNG KINH DOANH",
     yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có đội ngũ sales tối thiểu 5 người.",
-    ql: "Lương cơ bản từ 15,5 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 2 tỷ. <br /> - Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến lên quản ký cấp cao. ",
-    cddn: "Hấp dẫn nhất thị trường",
-    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
+    ql: "Lương cơ bản từ 15,5 triệu/ tháng. <br /> Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> Hoa hồng team cực kỳ hấp dẫn. <br /> Thưởng KPI cuối năm lên đến 2 tỷ. <br /> Đào tạo bài bản, hỗ trợ data khách hàng tiềm năng. <br /> Thu nhập cao, không giới hạn. <br /> Cơ hội thăng tiến lên quản lý cấp cao.",
+    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển <br /> sự nghiệp lâu dài.",
     image: tuyendung2,
   },
   {
     id: 3,
-    role: "GIÁM ĐỐC SÀN",
+    role: "GIÁM ĐỐC KINH DOANH",
     yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có sẵn ngũ sales tối thiểu 15 người.",
-    ql: "Lương cơ bản từ 25 triệu/ tháng. <br /> - Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> - Hoa hồng team cực kỳ hấp dẫn. <br /> - Thưởng KPI cuối năm lên đến 5 tỷ. <br /> - Thưởng hoa hồng trên doanh thu đem về. <br /> - Thu nhập cao, không giới hạn. <br /> - Cơ hội thăng tiến và hỗ trợ mở sàn và chi nhánh riêng trong tương lai. ",
-    cddn: "Hấp dẫn nhất thị trường",
-    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển sự nghiệp lâu dài.",
+    ql: "Lương cơ bản từ 25 triệu/ tháng. <br /> Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> Hoa hồng team cực kỳ hấp dẫn. <br /> Thưởng KPI cuối năm lên đến 5 tỷ. <br /> Thưởng hoa hồng trên doanh thu đem về. <br /> Thu nhập cao, không giới hạn. <br /> Cơ hội thăng tiến và hỗ trợ mở sàn và chi nhánh riêng trong tương lai.",
+    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển <br /> sự nghiệp lâu dài.",
     image: tuyendung3,
   },
+  {
+    id: 4,
+    role: "GIÁM ĐỐC QUAN HỆ KHÁCH HÀNG",
+
+    mcvTitle: "Mô tả công việc",
+    mcv: "Xây dựng & triển khai kế hoạch kinh doanh, đảm bảo doanh thu. <br /> Tìm kiếm, phát triển, duy trì quan hệ với khách hàng, đối tác, chủ đầu tư. <br /> Đại diện hình ảnh công ty trong các hoạt động kinh doanh & sự kiện. <br /> Theo dõi tiến độ bán hàng, đề xuất giải pháp xử lý vướng mắc. <br /> Quản lý, báo cáo tình hình kinh doanh & thị trường.",
+
+    ycTitle: "Yêu cầu",
+    yc: "Có ít nhất 5 năm kinh nghiệm trong lĩnh vực bất động sản. <br /> Quan hệ rộng, am hiểu thị trường, kỹ năng giao tiếp & đàm phán tốt. <br /> Có nhiều nguồn khách hàng tiềm năng cho các dự án/ sản phẩm BĐS. <br /> Chịu áp lực doanh số tốt.",
+
+    qlTitle: "Quyền Lợi Và Chế Độ Đãi Ngộ",
+    ql: "Lương cơ bản lên đến 40 triệu/ tháng. <br /> Thu nhập hấp dẫn: lương cơ bản + hoa hồng + thưởng. <br /> Đầy đủ BHXH, BHYT, BHTN theo luật. <br /> Thưởng lễ, Tết, thưởng nóng theo hiệu quả. <br /> Cơ hội thăng tiến & tham gia dự án lớn.",
+    image: tuyendung4,
+  },
+  {
+    id: 5,
+    role: "CỘNG TÁC VIÊN KINH DOANH BDS",
+
+    qlTitle: "Quyền Lợi",
+    ql: "Hoa hồng lên đến 80%. <br /> Linh hoạt thời gian – không bắt buộc lên văn phòng. <br /> Có thể sử dụng không gian làm việc chuyên nghiệp tại công ty khi cần. <br /> Nhận data nóng từ Marketing. <br /> Đào tạo dự án đầy đủ, có tài liệu hỗ trợ. <br /> Thưởng du lịch, Team Building, KPI và các phúc lợi hàng năm. <br /> Hoa hồng lũy tiến F1 từ chủ đầu tư.",
+
+    ycTitle: "Yêu cầu",
+    yc: "Không yêu cầu kinh nghiệm. <br /> Đam mê kinh doanh, giao tiếp tốt, chủ động.",
+    image: tuyendung5,
+  }
 ];
 
 export const DuAn = [

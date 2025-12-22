@@ -1,34 +1,34 @@
-export const DOMAIN = process.env.NEXT_PUBLIC_URL_API;
+export const DOMAIN = (process.env.NEXT_PUBLIC_URL_API || "").replace(/\/+$/, "");
 
 export const API = {
   // --------------- PRODUCT ---------------
-  PRODUCT: DOMAIN + `product`,
+  PRODUCT: `${DOMAIN}/product`,
 
   // --------------- AUTH ---------------
-  AUTH: DOMAIN + `auth`,
+  AUTH: `${DOMAIN}/auth`,
 
   // --------------- CHECKOUT ---------------
-  CHECKOUT: DOMAIN + `checkout`,
-  MOMOPAYMENT: DOMAIN + `momo`,
+  CHECKOUT: `${DOMAIN}/checkout`,
+  MOMOPAYMENT: `${DOMAIN}/momo`,
 
   // --------------- IMAGE ---------------
-  IMAGE: DOMAIN + "image",
+  IMAGE: `${DOMAIN}/image`,
 
-  // --------------- DPF ---------------
-  PDF: DOMAIN + "pdf",
-  SEND_RECRUITMENT: DOMAIN + "send-recruitment",
+  // --------------- PDF ---------------
+  PDF: `${DOMAIN}/pdf`,
+  SEND_RECRUITMENT: `${DOMAIN}/send-recruitment`,
 
   // --------------- ORDER ---------------
-  ORDER: DOMAIN + "order",
+  ORDER: `${DOMAIN}/order`,
 
   // --------------- BLOG ---------------
-  BLOG: DOMAIN + "blog",
+  BLOG: `${DOMAIN}/blog`,
 
   // --------------- CATEGORY BLOG ---------------
-  CATEBLOG: DOMAIN + "cate-blog",
+  CATEBLOG: `${DOMAIN}/cate-blog`,
 
   // --------------- Cloudflare ---------------
-  USERIP: DOMAIN + "cloudflare",
+  USERIP: `${DOMAIN}/cloudflare`,
 };
 
 export const LOCAL_STORAGE = {

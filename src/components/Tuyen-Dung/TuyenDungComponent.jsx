@@ -1,5 +1,6 @@
 "use client";
 import MainTuyenDung from "./MainTuyenDung";
+import LogoTuyenDung from "./LogoTuyenDung";
 import ItemTuyenDung from "./ItemTuyenDung";
 import Menu from "../Menu";
 import useTrackUserIP from "@/hooks/TrackerIP/useTrackUserIP";
@@ -15,6 +16,7 @@ const TuyenDungComponent = () => {
       </div>
       <div className="max-w-[1240px] mx-auto  pt-10 md:pt-20 px-4">
         <MainTuyenDung />
+        <LogoTuyenDung />
         <ItemTuyenDung />
       </div>
     </div>

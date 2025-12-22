@@ -1,18 +1,180 @@
 "use client";
+
+import React, { useMemo, useState } from "react";
 import Image from "next/image";
-import React, { useState } from "react";
 import { TuyenDung } from "@/utils/data";
 import FormTD from "./FormTD";
-import tuyendung1 from "../../assets/images/tuyendung1.png";
+
+const GRAD_TEXT =
+  "bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770] bg-clip-text text-transparent";
+
+const LINE_COLOR = "bg-[rgba(212,192,129,0.45)]";
+
+function splitToLis(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value;
+
+  return String(value)
+    .replaceAll("<br />", "\n")
+    .replaceAll("<br/>", "\n")
+    .replaceAll("<br>", "\n")
+    .split("\n")
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+function BulletBlock({
+  title,
+  value,
+  showDivider = false,
+  splitLi = true, // ✅ true: <br> => tách nhiều <li> | false: <br> => xuống dòng trong 1 <li>
+}) {
+  if (!value) return null;
+
+  // ✅ chế độ tách nhiều <li>
+  const lines = splitLi ? splitToLis(value) : ["__single__"];
+  if (!lines.length) return null;
+
+  return (
+    <div className="mt-4">
+      <div className="font-utm-avo-bold text-white italic text-[13px] md:text-[14px]">
+        {title}
+      </div>
+
+      <ul className="mt-2 list-disc list-outside pl-5 space-y-1 text-white/90 text-[12px] md:text-[13px] leading-relaxed marker:text-white">
+        {splitLi ? (
+          lines.map((t, idx) => (
+            <li key={idx}>{t.replace(/^•\s?/, "")}</li>
+          ))
+        ) : (
+          // ✅ 1 <li> duy nhất, cho phép <br /> xuống dòng "có nghĩa"
+          <li
+            dangerouslySetInnerHTML={{
+              __html: String(value).replace(/^•\s?/, ""),
+            }}
+          />
+        )}
+      </ul>
+
+      {showDivider && <div className="mt-4 h-px w-full bg-white/30" />}
+    </div>
+  );
+}
+
+
+function JobSection({
+  item,
+  imageLeft,
+  onApply,
+  priority = false,
+  showTopLine = false,
+  className = "", // ✅ thêm để nhận -mt
+  hideLastDivider = false,
+  isLast = false,
+}) {
+  return (
+    <section className={`w-full overflow-visible ${className}`}>
+      <div className="max-w-[1240px] mx-auto px-4 relative overflow-visible">
+        {/* line trên chỉ block đầu */}
+        {showTopLine && <div className={`h-px ${LINE_COLOR}`} />}
+
+        {/* content */}
+        <div className="pt-10 md:pt-14 pb-10 md:pb-14">
+          <div
+            className={`grid items-center gap-10 md:gap-14 ${imageLeft ? "md:grid-cols-[560px_1fr]" : "md:grid-cols-[1fr_560px]"
+              }`}
+          >
+            {/* IMAGE */}
+            <div
+              className={`relative overflow-visible z-10 ${imageLeft ? "" : "md:order-2"
+                }`}
+            >
+              <Image
+                src={item.image}
+                alt={item.role}
+                priority={priority}
+                className={`
+                  relative z-10 w-auto object-contain origin-bottom
+                  h-[360px] md:h-[600px] lg:h-[500px]
+                  ${isLast ? "scale-[1.15] md:scale-[1.22] translate-y-0 md:translate-y-6"
+                    : "scale-[1.25] md:scale-[1.42] translate-y-10 md:translate-y-36"}
+                `}
+              />
+            </div>
+
+            {/* CONTENT */}
+            <div className={`${imageLeft ? "" : "md:order-1"}`}>
+              <h3
+                className={`font-utm-avo-bold text-[18px] md:text-[26px] ${GRAD_TEXT}`}
+              >
+                {item.role}
+              </h3>
+
+              {/* 1) Mô tả công việc (nếu có) - tách nhiều bullet */}
+              {item.mcv && (
+                <BulletBlock
+                  title={item.mcvTitle || "Mô tả công việc"}
+                  value={item.mcv}
+                  showDivider={true}
+                  splitLi={true}
+                />
+              )}
+
+              {/* 2) Yêu cầu - ✅ cho phép <br/> xuống dòng trong 1 bullet */}
+              <BulletBlock
+                title={item.ycTitle || "Yêu cầu"}
+                value={item.yc}
+                showDivider={true}
+                splitLi={(item.id === 4 || item.id === 5)}
+              />
+
+              {/* 3) Quyền lợi - tách nhiều bullet */}
+              <BulletBlock
+                title={item.qlTitle || "Quyền Lợi Và Chế Độ Đãi Ngộ"}
+                value={item.ql}
+                showDivider={Boolean(item.mt)} // mt có thì ql mới có line
+                splitLi={true}
+              />
+
+              {/* 4) Môi trường - ✅ 1 bullet + <br/> trong cùng <li>, và luôn tắt line */}
+              {item.mt && (
+                <BulletBlock
+                  title={item.mtTitle || "Môi Trường"}
+                  value={item.mt}
+                  showDivider={false}
+                  splitLi={false}
+                />
+              )}
+
+
+              <div className="mt-6">
+                <button
+                  onClick={onApply}
+                  className="inline-flex items-center justify-center rounded-full
+                    bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#D9B770]
+                    px-6 py-3
+                    text-[#063543] font-utm-avo-bold text-[12px] md:text-[14px]
+                    cursor-pointer select-none"
+                >
+                  Ứng Tuyển Ngay
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* line dưới */}
+        <div
+          className={`absolute left-4 right-4 bottom-0 h-px ${LINE_COLOR} z-0`}
+        />
+      </div>
+    </section>
+  );
+}
 
 const ItemTuyenDung = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
-
-  const job = {
-    id: 4,
-    role: "GIÁM ĐỐC QUAN HỆ KHÁCH HÀNG",
-  };
 
   const openModal = (job) => {
     setSelectedJob(job);
@@ -25,164 +187,28 @@ const ItemTuyenDung = () => {
   };
 
   return (
-    <div className="mt-10 md:mt-20 space-y-20 md:space-y-40 ">
-      <div className="flex items-center space-x-4">
-        <div className="w-full max-w-[530px] md:w-[530px]">
-          <p className="text-end text-[14px] md:text-[20px] font-utm-avo  bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-            VỊ TRÍ
-          </p>
-          <h3 className="text-end -mt-2 text-[20px] md:text-[28px] font-utm-avo  bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-            GIÁM ĐỐC QUAN HỆ KHÁCH HÀNG
-          </h3>
-          <div className="w-full py-4 bg-[linear-gradient(128deg,#0C5D75,#09303D)] element-t space-y-2 text-[14px]">
-            <div className="font-utm-avo">
-              <h4 className="font-utm-avo-bold">Mô tả công việc:</h4>
-              <ul className="">
-                <li>
-                  - Xây dựng & triển khai kế hoạch kinh doanh, đảm bảo doanh
-                  thu.
-                </li>
-                <li>
-                  - Tìm kiếm, phát triển & duy trì quan hệ với khách hàng, đối
-                  tác, chủ đầu tư.
-                </li>
-                <li>
-                  - Đại diện hình ảnh công ty trong các hoạt động kinh doanh &
-                  sự kiện.
-                </li>
-                <li>
-                  - Theo dõi tiến độ bán hàng, đề xuất giải pháp xử lý vướng
-                  mắc.
-                </li>
-                <li>- Quản lý, báo cáo tình hình kinh doanh & thị trường.</li>
-              </ul>
-            </div>
-            <div className="font-utm-avo">
-              <h4 className="font-utm-avo-bold">Yêu cầu:</h4>
-              <ul className="">
-                <li>
-                  - Có ít nhất 5 năm kinh nghiệm trong lĩnh vực bất động sản
-                </li>
-                <li>
-                  - Quan hệ rộng, am hiểu thị trường, kỹ năng giao tiếp & đàm
-                  phán tốt.
-                </li>
-                <li>
-                  - Có nhiều nguồn khách hàng tiềm năng cho các dự án/ sản phẩm
-                  BĐS
-                </li>
-                <li>- Chịu áp lực doanh số tốt.</li>
-              </ul>
-            </div>
-            <div className="font-utm-avo">
-              <h4 className="font-utm-avo-bold">
-                Quyền Lợi Và Chế Độ Đãi Ngộ:
-              </h4>
-              <ul className="">
-                <li>Lương cơ bản từ 40 triệu/ tháng</li>
-                <li>- Thu nhập hấp dẫn: lương cơ bản + hoa hồng + thưởng.</li>
-                <li>- Đầy đủ BHXH, BHYT, BHTN theo luật.</li>
-                <li>- Thưởng lễ, Tết, thưởng nóng theo hiệu quả.</li>
-                <li>- Cơ hội thăng tiến & tham gia dự án lớn.</li>
-                <li>- Môi trường chuyên nghiệp, năng động.</li>
-              </ul>
-            </div>{" "}
-            <div className="absolute inset-0 -bottom-5 ">
-              <div className="flex justify-center items-end h-full ">
-                <button
-                  onClick={() => openModal(job)}
-                  className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer"
-                >
-                  ỨNG TUYỂN NGAY
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Image src={tuyendung1} alt="anh" className="hidden md:block" />
-      </div>
+    <div className="space-y-10 md:space-y-12">
+      {TuyenDung.map((item, index) => {
+        const isFirst = index === 0;
 
-      {TuyenDung.map((item, index) => (
-        <div key={index} className="flex items-center space-x-4">
-          {index % 2 === 0 ? (
-            <>
-              <Image src={item.image} alt="anh" className="hidden md:block" />
-              <div className="w-[530px]  ">
-                <p className="text-[14px] md:text-[20px] font-utm-avo  bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-                  VỊ TRÍ
-                </p>
-                <h3 className="-mt-2 text-[20px] md:text-[32px] font-utm-avo  bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-                  {item.role}
-                </h3>
-                <div className="w-full py-4 bg-[linear-gradient(128deg,#09303D,#0C5D75)] element space-y-2 text-[14px] relative">
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Yêu Cầu:</h4>
-                    <p className="">{item.yc}</p>
-                  </div>
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">
-                      Quyền Lợi Và Chế Độ Đãi Ngộ:
-                    </h4>
-                    <p dangerouslySetInnerHTML={{ __html: item.ql }} />
-                  </div>{" "}
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Môi Trường:</h4>
-                    <p className="">{item.mt}</p>
-                  </div>{" "}
-                  <div className="absolute inset-0 -bottom-5 ">
-                    <div className="flex justify-center items-end h-full ">
-                      <button
-                        onClick={() => openModal(item)}
-                        className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer"
-                      >
-                        ỨNG TUYỂN NGAY
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          ) : (
-            <>
-              <div className="w-[530px] ">
-                <p className="text-end text-[14px] md:text-[20px] font-utm-avo bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-                  VỊ TRÍ
-                </p>
-                <h3 className="text-end -mt-2 text-[20px] md:text-[32px] font-utm-avo  bg-gradient-to-t from-[#FAD48A] from-[0%] via-[#FFF5BE] via-[50%] to-[#D9B770] to-[100%] bg-clip-text text-transparent">
-                  {item.role}
-                </h3>
-                <div className="w-full py-4 bg-[linear-gradient(128deg,#0C5D75,#09303D)] element-t space-y-2 text-[14px]">
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Yêu Cầu:</h4>
-                    <p className="">{item.yc}</p>
-                  </div>
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">
-                      Quyền Lợi Và Chế Độ Đãi Ngộ:
-                    </h4>
-                    <p dangerouslySetInnerHTML={{ __html: item.ql }} />
-                  </div>{" "}
-                  <div className="font-utm-avo">
-                    <h4 className="font-utm-avo-bold">Môi Trường:</h4>
-                    <p className="">{item.mt}</p>
-                  </div>
-                  <div className="absolute inset-0 -bottom-5 ">
-                    <div className="flex justify-center items-end h-full ">
-                      <button
-                        onClick={() => openModal(item)}
-                        className="text-[#09303D] bg-gradient-to-r from-[#FAD48A] via-[#FFF5BE] to-[#FAD48A] px-3 md:px-5 py-2 rounded-[55px] font-utm-avo-bold text-[12px] md:text-[16px] cursor-pointer"
-                      >
-                        ỨNG TUYỂN NGAY
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <Image src={item.image} alt="anh" className="hidden md:block" />
-            </>
-          )}
-        </div>
-      ))}
+        // block đầu: ảnh trái - text phải, các block sau đối nghịch
+        const imageLeft = isFirst ? true : index % 2 === 0;
+        const isLast = index === TuyenDung.length - 1;
+        return (
+          <JobSection
+            key={item.id ?? index}
+            item={item}
+            imageLeft={imageLeft}
+            onApply={() => openModal(item)}
+            priority={isFirst}
+            showTopLine={isFirst}
+            // ✅ block 2 kéo lên -70px
+            className={index === 1 ? "-mt-[50px]" : ""}
+            hideLastDivider={item.id === 4 || item.id === 5}
+            isLast={isLast}
+          />
+        );
+      })}
 
       {isOpen && <FormTD closeModal={closeModal} selectedJob={selectedJob} />}
     </div>

@@ -23,7 +23,7 @@ const TuyenDung = () => {
   return (
     <div>
       <TuyenDungComponent />
-      <BannerTD />
+      {/* <BannerTD /> */}
     </div>
   );
 };
