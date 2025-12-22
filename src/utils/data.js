@@ -248,7 +248,7 @@ export const TuyenDung = [
     role: "GIÁM ĐỐC KINH DOANH",
     yc: "Hơn 5 năm kinh nghiệm trong ngành bất động sản và có sẵn ngũ sales tối thiểu 15 người.",
     ql: "Lương cơ bản từ 25 triệu/ tháng. <br /> Hoa hồng bán lên đến 70% + thưởng nóng hấp dẫn. <br /> Hoa hồng team cực kỳ hấp dẫn. <br /> Thưởng KPI cuối năm lên đến 5 tỷ. <br /> Thưởng hoa hồng trên doanh thu đem về. <br /> Thu nhập cao, không giới hạn. <br /> Cơ hội thăng tiến và hỗ trợ mở sàn và chi nhánh riêng trong tương lai.",
-    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và phát triển <br /> sự nghiệp lâu dài.",
+    mt: "Môi trường làm việc chuyên nghiệp, năng động, tạo cơ hội thăng tiến rõ ràng và<br /> phát triển  sự nghiệp lâu dài.",
     image: tuyendung3,
   },
   {

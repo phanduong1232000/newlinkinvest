@@ -28,7 +28,7 @@ export default function LogoTuyenDung() {
             [&::-webkit-scrollbar]:hidden
           "
         >
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             {logos.map((item) => (
               <div key={item.src} className="shrink-0">
                 <Image
@@ -36,7 +36,7 @@ export default function LogoTuyenDung() {
                   alt={item.alt}
                   width={320}
                   height={120}
-                  className="h-16 w-auto object-contain"
+                  className="h-22 w-auto object-contain"
                 />
               </div>
             ))}
@@ -45,7 +45,7 @@ export default function LogoTuyenDung() {
 
         {/* TABLET/DESKTOP: như cũ */}
         <div className="hidden md:block py-3">
-          <div className="flex items-center justify-between gap-6">
+          <div className="flex items-center justify-center gap-4 lg:gap-6 flex-wrap">
             {logos.map((item) => (
               <div key={item.src} className="shrink-0">
                 <Image
@@ -53,7 +53,7 @@ export default function LogoTuyenDung() {
                   alt={item.alt}
                   width={800}
                   height={300}
-                  className="h-28 md:h-32 lg:h-36 w-auto object-contain"
+                  className="h-20 md:h-24 lg:h-28 w-auto object-contain"
                   sizes="(max-width: 768px) 180px, 260px"
                 />
               </div>

@@ -97,7 +97,7 @@ function JobSection({
                   relative z-10 w-auto object-contain origin-bottom
                   h-[360px] md:h-[600px] lg:h-[500px]
                   ${isLast ? "scale-[1.15] md:scale-[1.22] translate-y-0 md:translate-y-6"
-                    : "scale-[1.25] md:scale-[1.42] translate-y-10 md:translate-y-36"}
+                    : "scale-[1.35] md:scale-[1.42] translate-y-10 md:translate-y-36"}
                 `}
               />
             </div>
@@ -203,7 +203,14 @@ const ItemTuyenDung = () => {
             priority={isFirst}
             showTopLine={isFirst}
             // ✅ block 2 kéo lên -70px
-            className={index === 1 ? "-mt-[50px]" : ""}
+           className={
+              index === 1
+                ? "-mt-[30px  md:mt-[50px]"
+                : (index === 2 || index === 3 || index === 4)
+                ? "-mt-[30px] md:mt-[0px]"
+                : ""
+            }
+
             hideLastDivider={item.id === 4 || item.id === 5}
             isLast={isLast}
           />
