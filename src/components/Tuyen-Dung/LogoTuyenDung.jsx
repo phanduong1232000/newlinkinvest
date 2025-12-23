@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const logos = Array.from({ length: 7 }, (_, i) => ({
+const logos = Array.from({ length: 8 }, (_, i) => ({
   src: `/uploads/images/tuyendung/lg-tuyendung${i + 1}.png`,
   alt: `Logo tuyển dụng ${i + 1}`,
 }));
@@ -14,7 +14,7 @@ export default function LogoTuyenDung() {
       <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-[1px] bg-[#D4C081]" />
 
       {/* logo giữ trong container */}
-      <div className="max-w-[1240px] mx-auto px-4">
+      <div className="max-w-[1240px] mx-auto px-2">
         {/* MOBILE: slider vuốt ngang */}
         <div
           className="
@@ -45,7 +45,7 @@ export default function LogoTuyenDung() {
 
         {/* TABLET/DESKTOP: như cũ */}
         <div className="hidden md:block py-3">
-          <div className="flex items-center justify-center gap-4 lg:gap-6 flex-wrap">
+          <div className="flex items-center justify-center gap-2 lg:gap-4 flex-wrap">
             {logos.map((item) => (
               <div key={item.src} className="shrink-0">
                 <Image

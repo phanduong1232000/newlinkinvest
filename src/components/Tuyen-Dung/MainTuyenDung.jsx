@@ -104,7 +104,7 @@ const MainTuyenDung = () => {
 
             <div className="animate-line">
               <p className="text-[12px] md:text-[14px] text-white/80 leading-relaxed">
-                NewLink mang đến môi trường làm việc chuyên nghiệp, năng động cùng <br />
+                <span class="font-utm-avo-bold">NEWLINK </span> mang đến môi trường làm việc chuyên nghiệp, năng động cùng <br />
                 chương trình đào tạo toàn diện về bán hàng, marketing, xây dựng thương
                 hiệu<br /> cá nhân và kiến thức chuyên sâu các dự án BĐS hot.
               </p>
@@ -113,7 +113,7 @@ const MainTuyenDung = () => {
             <div className="animate-line">
               <p className="text-[12px] md:text-[14px] text-white/80 leading-relaxed">
                 Với chính sách đãi ngộ cực hấp dẫn, thu nhập cạnh tranh và hệ thống vị trí<br />
-                đa dạng từ CTV, Chuyên viên kinh doanh đến cấp quản lý, NewLink tạo điều
+                đa dạng từ CTV, Chuyên viên kinh doanh đến cấp quản lý, <span class="font-utm-avo-bold">NEWLINK </span> tạo điều
                 kiện<br /> để bạn phát triển nhanh chóng và bứt phá thu nhập.
               </p>
             </div>
@@ -144,7 +144,7 @@ const MainTuyenDung = () => {
       bg-gradient-to-t from-[#FAD48A] via-[#FFF5BE] to-[#D9B770]
       bg-clip-text text-transparent"
                   >
-                    Gia nhập NewLink
+                    Gia nhập NEWLINK
                   </span>
 
                  
